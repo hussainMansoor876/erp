@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <title>Employee Portal</title>
+    <style>
+        .row{
+        margin-bottom: 10px;
+    }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="jumbotron" style='padding:2em'>
+            <h2 class='text-center'>Employee Portal</h2>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Apply for a Leave</h4>
+                        </div>
+                        <div class="card-body">
+                            <form class='form' action='./apply_for_leave' method="POST" enctype="multipart/form-data">
+
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            Title
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='text' class='form-control' name='title' required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            Detail
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <textarea type='text' class='form-control' name='detail' required rows="4">
+                                        </textarea>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label>Date/s</label>
+                                    </div>
+                                    <div class="col-md-5">
+                                            <input type='hidden' class="form-control" id='dates_input' name='dates' >
+                                        <input type='date' class='form-control' id='dates_select'>
+                                        <br>
+                                        <buton class='btn btn-primary' style="width:inherit" onClick='add_dates()'>Add Date/s</button>
+                                    </div>
+                                    <div class="col-md-3">
+                                                    <div class="container-fluid" id='dates_output'></div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="row">
+                                        <div class="col-md-4"><label class='form-control-label'>
+                                                File/Document
+                                            </label></div>
+                                        <div class="col-md-8">
+                                            <input type='file' name='file' class='form-control' required>
+                                        </div>
+                                </div>
+                               
+                               
+                                <div class="row">
+                                        <div class="col-md-2">&nbsp;</div>
+                                        <div class="col-md-8">
+
+                                            <button class='btn btn-primary text-center' style='width: inherit'>Apply for a leave</button>
+                                        </div>
+                                        
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function add_experience(){
+            let x_input = document.getElementById('experience_input');
+            let x_output = document.getElementById('experience_output');
+            let x_org = document.getElementById('x_org');
+            let x_year = document.getElementById('x_year');
+            let x_post = document.getElementById('x_post');
+            if(x_org.value==='' || x_year.value==='' || x_post.value==='')
+            {
+                alert('please fill all fields');
+            }
+            else{
+                let obj;
+            if (x_input.value === '') {
+                obj = [{ org: x_org.value, period: x_year.value, post: x_post.value }];
+
+            }
+            else {
+                obj = JSON.parse(x_input.value);
+                obj.push({ org: x_org.value, period: x_year.value, post: x_post.value});
+            }
+            x_input.value = JSON.stringify(obj);
+            x_output.innerHTML += `<div class="row" style='margin-bottom: 0px;'>
+                    <div class="col-md-8">
+                        <span>
+                            `+ x_org.value + `
+                        </span>
+                    </div>
+                    <div class="col-md-4">
+                        <span>
+                                `+ x_year.value + `
+
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <span>
+                                `+ x_post.value + `
+                        </span>
+                    </div>
+                </div>`;
+                x_org.value ='';
+                x_year.value ='';
+                x_post.value ='';
+            }
+            
+        }
+        function add_education() {
+
+            let education_input = document.getElementById('education_input');
+            let education_output = document.getElementById('education_output');
+            let e_title = document.getElementById('e_title');
+            let e_year = document.getElementById('e_year');
+            let e_name = document.getElementById('e_name');
+            let e_grade = document.getElementById('e_grade');
+            let obj;
+            if(e_name.value==='' || e_title.value==='' || e_year.value==='' || e_grade.value==='' )
+            {
+                alert('please fill all fields');
+            }
+         else{
+            if (education_input.value === '') {
+                obj = [{ title: e_title.value, institute: e_name.value, year: e_year.value, grade: e_grade.value }];
+
+            }
+            else {
+                obj = JSON.parse(education_input.value);
+                obj.push({ title: e_title.value, institute: e_name.value, year: e_year.value, grade: e_grade.value });
+            }
+            education_input.value = JSON.stringify(obj);
+            education_output.innerHTML += `<div class="row" style='margin-bottom: 0px;'>
+                    <div class="col-md-8">
+                        <span>
+                            `+ e_title.value + `
+                        </span>
+                    </div>
+                    <div class="col-md-4">
+                        <span>
+                                `+ e_year.value + `
+
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <span>
+                                `+ e_name.value + `
+                        </span>
+                    </div>
+                    <div class="col-md-4">
+                        <span>
+                                `+ e_grade.value + `
+
+                        </span>
+                    </div>
+                </div>`
+                e_title.value ='';
+                e_year.value ='';
+                e_name.value='';
+                e_grade.value='';
+
+            }
+           
+        }
+        function add_dates() {
+
+let d_i = document.getElementById('dates_input');
+let d_o = document.getElementById('dates_output');
+let d_s = document.getElementById('dates_select');
+let obj = [];
+if(d_s.value==='' )
+{
+    alert('please select a date first');
+}
+else{
+if (d_i.value === '') {
+    obj = [d_s.value];
+
+}
+else {
+    obj = JSON.parse(d_i.value);
+    obj.push(d_s.value);
+}
+d_i.value = JSON.stringify(obj);
+d_o.innerHTML += `<p>`+d_s.value+`</p>`
+}
+
+}
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

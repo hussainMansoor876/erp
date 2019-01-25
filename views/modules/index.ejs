@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap-reboot.css" />
+    <title>Greeshams</title>
+</head>
+
+<body>
+    <div class="container-fluid" style='padding-top:1em'>
+        <div class="row">
+            <div class="col-9">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class='text-center'>Human Resource Management</h5>
+                                </div>
+                                <div class="card-body text-center">
+                                    <button class='btn btn-primary' data-toggle="modal" data-target="#hrm_modal">Proceed</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class='text-center'>Order Process Management</h5>
+                                </div>
+                                <div class="card-body text-center">
+                                    <button class='btn btn-primary '>Proceed</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class='text-center'>Customer Order Tracking</h5>
+                                </div>
+                                <div class="card-body text-center">
+                                    <button class='btn btn-primary '>Proceed</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class='text-center'>Finance & Accounts Management</h5>
+                                </div>
+                                <div class="card-body text-center">
+                                    <button class='btn btn-primary '>Proceed</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class='text-center'>Orientation,Training & Development</h5>
+                                </div>
+                                <div class="card-body text-center">
+                                    <button class='btn btn-primary '>Proceed</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class='text-center'>Task Management</h5>
+                                </div>
+                                <div class="card-body text-center">
+                                    <button class='btn btn-primary ' data-toggle="modal" data-target="#tm_modal">Proceed</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class='text-center'>Preventive Maintenance & Calibration</h5>
+                                </div>
+                                <div class="card-body text-center">
+                                    <button class='btn btn-primary '>Proceed</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class='text-center'>Gel Portal</h5>
+                                </div>
+                                <div class="card-body text-center">
+                                    <button class='btn btn-primary '>Proceed</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class='text-center'>Employee Portal</h5>
+                                </div>
+                                <div class="card-body text-center">
+                                    <button class='btn btn-primary ' data-toggle="modal" data-target="#ep_modal">Proceed</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="container" style='margin-bottom:10px;'>
+                    <div class="row">
+                        <button class='btn btn-primary'>Extension List</button>
+                    </div>
+                </div>
+                <div class="container" style='margin-bottom:10px'>
+                    <div class="row">
+                        <button class='btn btn-primary'>Emails List</button>
+                    </div>
+                </div>
+                <div class="container" style='margin-bottom:10px'>
+                    <div class="card">
+                        <div class="card-header">
+                            <p>Notice Board</p>
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                Aliqua deserunt eiusmod ea exercitation ex nisi labore ullamco dolore. Non exercitation cillum incididunt enim eu cupidatat esse voluptate id aliquip cupidatat. Ullamco dolore commodo consequat velit fugiat aute. Eu ullamco nostrud amet in laboris ullamco nisi enim sunt. In duis dolore id est esse adipisicing.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- proceed modal -->
+        <!-- HRM Modal -->
+  <div class="modal fade" id="hrm_modal" role="dialog">
+  <div class="modal-dialog">
+  
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">HUMAN RESOURCE MANAGEMENT</h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+    
+  </div>
+    </div>
+            <!-- HRM Modal -->
+<!-- EP Modal -->
+<div class="modal fade" id="ep_modal" role="dialog">
+    <form action='/modules/ep' method='POST'>
+    <div class="modal-dialog">
+
+  <!-- Modal content-->
+  <div class="modal-content">
+    <div class="modal-header">
+    <h4 class="modal-title">EMPLOYEE PORTAL</h4>
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+    </div>
+    <div class="modal-body">
+        <div class="container">
+                <div class="form-group">
+                        <label for="usr">Name:</label>
+                        <input type="text" class="form-control" name='username'>
+                      </div>
+                      <div class="form-group">
+                        <label for="pwd">Password:</label>
+                        <input type="password" class="form-control" name='password'>
+                      </div>
+        </div>
+        
+    </div>
+    <div class="modal-footer">
+       <button class='btn btn-primary'>Proceed</button> 
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+  
+</div>
+<!-- Modal content-->
+    </form>
+  </div>
+          <!-- EP Modal -->
+        <!-- TM Modal -->
+<div class="modal fade" id="tm_modal" role="dialog">
+<form action='/modules/tm' method='POST'>
+<div class="modal-dialog">
+
+<!-- Modal content-->
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title">TASK MANAGEMENT</h4>
+  <button type="button" class="close" data-dismiss="modal">&times;</button>
+</div>
+<div class="modal-body">
+    <div class="container">
+            <div class="form-group">
+                    <label for="usr">Name:</label>
+                    <input type="text" class="form-control" name='username'>
+                  </div>
+                  <div class="form-group">
+                    <label for="pwd">Password:</label>
+                    <input type="password" class="form-control" name='password'>
+                  </div>
+    </div>
+    
+</div>
+<div class="modal-footer">
+   <button class='btn btn-primary'>Proceed</button> 
+  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+</div>
+</div>
+
+</div>
+<!-- Modal content-->
+</form>
+</div>
+      <!-- TM Modal -->
+
+    <!-- proceed modal end --->
+    <script src='/js/jquery-3.2.1.min.js'></script>
+    <script src='/js/popper.min.js'></script>
+    <script src='/js/bootstrap.min.js'></script>
+    <script src='/js/tooltip.js'></script>
+
+</body>
+
+</html>

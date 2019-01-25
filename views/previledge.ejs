@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap-reboot.css" />
+    <title>Previledge</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-fluid">
+            <br>
+            <h4 class='text-center'>Previledge Access</h4>
+        </div>
+        <hr>
+        <table class='table table-light table-striped'>
+            <thead>
+                <tr>
+                    <th colspan="1">Name</th>
+                    <th colspan="9" class='text-center'>Previledges</th>
+                    <th colspan="1">Grant</th>
+                </tr>
+                <tr>
+                        <th colspan="1">&nbsp;</th>
+                        <th colspan="1">hrm</th>
+                        <th colspan="1">opm</th>
+                        <th colspan="1">cot</th>
+                        <th colspan="1">fam</th>
+                        <th colspan="1">otd</th>
+                        <th colspan="1">tm</th>
+                        <th colspan="1">pmc</th>
+                        <th colspan="1">gp</th>
+                        <th colspan="1">ep</th>
+
+                        <th colspan="1">&nbsp;</th>
+                    </tr>
+            </thead>
+            <tbody id='users_table'>
+                
+
+            </tbody>
+        </table>
+    </div>
+    
+    <script src='/js/jquery-3.2.1.min.js'></script>
+    <script src='/js/popper.min.js'></script>
+    <script src='/js/bootstrap.min.js'></script>
+    <script src='/js/tooltip.js'></script>
+    <script>
+        let users=[];
+       function get_users(){
+        $.get('/get_users',function(data){
+            users = JSON.parse(data);
+            update_table();
+       })
+       }
+       get_users();
+       function update_table(){
+           let users_table = $('#users_table');
+           let str  =``;
+           users.forEach((user)=>{
+               str += `
+               <tr id=`+user._id+`>
+                    <td>`+user.name+`<br><span>`+JSON.stringify(user.previledge)+`</span></td>
+                    <td>  <input type="checkbox" class="hrm" value="hrm" ></td>
+                    <td> <input type="checkbox" class="opm" value="opm" > </td>
+                    <td> <input type="checkbox" class="cot" value="cot" > </td>
+                    <td> <input type="checkbox" class="fam" value="fam" > </td>
+                    <td> <input type="checkbox" class="otd" value="otd" > </td>
+                    <td> <input type="checkbox" class="tm" value="tm" > </td>
+                    <td> <input type="checkbox" class="pmc" value="pmc" > </td>
+                    <td> <input type="checkbox" class="gp" value="gp" > </td>
+                    <td> <input type="checkbox" class="ep" value="ep" > </td>
+                    <td> <button class='btn btn-primary' onClick='update_row(this)' >Grant</button> </td>
+                </tr>
+               `;
+               console.log("user ind",user);
+           })
+           users_table.html(str);
+           update_checkbox();
+       }
+       function update_checkbox(){
+           let table = document.getElementById('users_table');
+           let tr = table.getElementsByTagName('tr');
+           for(let i = 0 ; i< tr.length ; i++)
+           {
+             users[i].previledge.forEach((p)=>{
+                // console.log(p)
+                 for(let j=1 ; j < tr[i].getElementsByTagName('td').length - 1 ; j++)
+                 {  //console.log("check",tr[i].getElementsByTagName('td')[j].getElementsByTagName('input')[0])
+                     if(tr[i].getElementsByTagName('td')[j].getElementsByTagName('input')[0].value===p)
+                     {
+                        tr[i].getElementsByTagName('td')[j].getElementsByTagName('input')[0].setAttribute("checked","true");
+                     }
+                 }
+             })
+           }
+       }   
+       function update_row(e){
+           let row = e.parentNode.parentNode;
+           let previledge = [];
+           let id = row.id;
+           for(let i = 1 ; i < 10 ; i++)
+           {
+               if(row.getElementsByTagName('td')[i].getElementsByTagName('input')[0].checked)
+               {
+                   previledge.push(row.getElementsByTagName('td')[i].getElementsByTagName('input')[0].value);
+               }
+           }
+           console.log(row);
+           console.log(previledge);
+           $.post('/admin/previledges/update_previledges',{id:id,previledges : JSON.stringify(previledge)},function(data){
+            get_users();   
+            console.log(data);
+           })
+       } 
+        </script>
+</body>
+
+</html>

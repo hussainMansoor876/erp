@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <title>Human Resource Management</title>
+    <style>
+        .row{
+        margin-bottom: 10px;
+    }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="jumbotron" style='padding:2em'>
+            <h2 class='text-center'>Human Resource Management</h2>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Add Employee</h4>
+                        </div>
+                        <div class="card-body">
+                            <form class='form' action='./add_employee' method="POST" enctype="multipart/form-data">
+
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            Full Name
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='text' class='form-control' name='name' required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            Father Name
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='text' class='form-control' name='father_name' required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                        <div class="col-md-4"><label class='form-control-label'>
+                                                Picture
+                                            </label></div>
+                                        <div class="col-md-8">
+                                            <input type='file' name='picture' class='form-control' required>
+                                        </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            CNIC
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='text' class='form-control' name='cnic' required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            Father CNIC
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='text' class='form-control' name='father_cnic' required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            Address
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='text' class='form-control' name='address' required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            City
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='text' class='form-control' name='city' required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            Email
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='text' class='form-control' name='email' required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            Telephone
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='text' class='form-control' name='telephone'>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            Mobile
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='text' class='form-control' name='mobile' required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            Ext
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='text' class='form-control' name='ext'>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            Religion
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <select class='form-control' name='religion' required>
+                                            <option value='muslim'>Muslim</option>
+                                            <option value='non muslim'>Non Muslim</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            Age
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='number' min='16' max='150' class='form-control' name='age'
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            Marital Status
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <select type='text' class='form-control' name='marital_status' required>
+                                            <option>Non Married</option>
+                                            <option>Married</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            Department
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <select type='text' class='form-control' name='dept' >
+                                        <option value='HR'>HR</option>
+                                        <option value='Admin'>Admin</option>
+                                        <option value='Marketing'>Marketing</option>
+                                        <option value='Engineering'>Engineering</option>
+                                        <option value='Procurement'>Procurement</option>
+                                        <option value='Store'>Store</option>
+                                        <option value='Production'>Production</option>
+                                        <option value='Quality Control'>Quality Control</option>
+                                        <option value='Services'>Services</option>
+                                        <option value='Accounts'>Accounts</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            Designation
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <select type='text' class='form-control' name='designation'>
+                                            <option value='Internee'>Internee</option>
+                                            <option value='Trainee'>Trainee</option>
+                                            <option value='Employee'>Employee</option>
+                                            <option value='Senior Employee'>Senior Employee</option>
+                                            <option value='Super Visor'>Super Visor</option>
+                                            <option value='Manager'>Manager</option>
+                                            <option value='Asst. Manager'>Asst. Manager</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            Education
+                                        </label>
+                                        <input id='education_input' type="hidden" name='education'>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <input type='text' class='form-control' id='e_title' placeholder='Title (Matric/Intermediate/bachelors)'>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input type='text' class='form-control' id='e_year' placeholder='Passing Year'>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <input type='text' class='form-control' id='e_name' placeholder='Institute Name'>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input type='text' class='form-control' id='e_grade' placeholder='Passing Grade'>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12"><button type="button" class='btn btn-primary' style="width:inherit"
+                                                    onclick="add_education()">Add</button></div>
+                                        </div>
+
+                                        <div class="container-fluid" id='education_output'>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                        <div class="col-md-4"><label class='form-control-label'>
+                                                Experiences
+                                            </label>
+                                            <input id='experience_input' type="hidden" name='experience'>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <input type='text' class='form-control' id='x_org' placeholder='Organization Name'>
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <input type='text' class='form-control' id='x_post' placeholder='Designation'>
+                                                </div>
+                                                <div class="col-md-6">
+                                                        <input type='text' class='form-control' id='x_year' placeholder='Working Period'>
+                                                </div>
+                        
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12"><button type="button" class='btn btn-primary' style="width:inherit"
+                                                        onclick="add_experience()">Add</button></div>
+                                            </div>
+    
+                                            <div class="container-fluid" id='experience_output'>
+    
+    
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="row">
+                                        <div class="col-md-4"><label class='form-control-label'>
+                                                Basic Salary
+                                            </label></div>
+                                        <div class="col-md-8">
+                                            <input type='number' class='form-control' name='basic_salary'>
+                                        </div>
+                                    </div>
+                                <hr>
+                                <div class="row">
+                                        <div class="col-md-2">&nbsp;</div>
+                                        <div class="col-md-8">
+
+                                            <button class='btn btn-primary text-center' style='width: inherit'>Add Employee</button>
+                                        </div>
+                                        
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+       
+        function add_experience(){
+            let x_input = document.getElementById('experience_input');
+            let x_output = document.getElementById('experience_output');
+            let x_org = document.getElementById('x_org');
+            let x_year = document.getElementById('x_year');
+            let x_post = document.getElementById('x_post');
+            if(x_org.value==='' || x_year.value==='' || x_post.value==='')
+            {
+                alert('please fill all fields');
+            }
+            else{
+                let obj;
+            if (x_input.value === '') {
+                obj = [{ org: x_org.value, period: x_year.value, post: x_post.value }];
+
+            }
+            else {
+                obj = JSON.parse(x_input.value);
+                obj.push({ org: x_org.value, period: x_year.value, post: x_post.value});
+            }
+            x_input.value = JSON.stringify(obj);
+            x_output.innerHTML += `<div class="row" style='margin-bottom: 0px;'>
+                    <div class="col-md-8">
+                        <span>
+                            `+ x_org.value + `
+                        </span>
+                    </div>
+                    <div class="col-md-4">
+                        <span>
+                                `+ x_year.value + `
+
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <span>
+                                `+ x_post.value + `
+                        </span>
+                    </div>
+                </div>`;
+                x_org.value ='';
+                x_year.value ='';
+                x_post.value ='';
+            }
+            
+        }
+        function add_education() {
+
+            let education_input = document.getElementById('education_input');
+            let education_output = document.getElementById('education_output');
+            let e_title = document.getElementById('e_title');
+            let e_year = document.getElementById('e_year');
+            let e_name = document.getElementById('e_name');
+            let e_grade = document.getElementById('e_grade');
+            let obj;
+            if(e_name.value==='' || e_title.value==='' || e_year.value==='' || e_grade.value==='' )
+            {
+                alert('please fill all fields');
+            }
+         else{
+            if (education_input.value === '') {
+                obj = [{ title: e_title.value, institute: e_name.value, year: e_year.value, grade: e_grade.value }];
+
+            }
+            else {
+                obj = JSON.parse(education_input.value);
+                obj.push({ title: e_title.value, institute: e_name.value, year: e_year.value, grade: e_grade.value });
+            }
+            education_input.value = JSON.stringify(obj);
+            education_output.innerHTML += `<div class="row" style='margin-bottom: 0px;'>
+                    <div class="col-md-8">
+                        <span>
+                            `+ e_title.value + `
+                        </span>
+                    </div>
+                    <div class="col-md-4">
+                        <span>
+                                `+ e_year.value + `
+
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <span>
+                                `+ e_name.value + `
+                        </span>
+                    </div>
+                    <div class="col-md-4">
+                        <span>
+                                `+ e_grade.value + `
+
+                        </span>
+                    </div>
+                </div>`
+                e_title.value ='';
+                e_year.value ='';
+                e_name.value='';
+                e_grade.value='';
+
+            }
+           
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

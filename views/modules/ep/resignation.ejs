@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <title>Employee Portal</title>
+    <style>
+        .row{
+        margin-bottom: 10px;
+    }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="jumbotron" style='padding:2em'>
+            <h2 class='text-center'>Employee Portal</h2>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Apply for Resignation</h4>
+                        </div>
+                        <div class="card-body">
+                            <form class='form' action='./apply_for_resignation' method="POST" >
+
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            Reason
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <textarea type='text' class='form-control' name='reason' required rows="4">
+                                        </textarea>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label>Date</label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type='date' class='form-control' name='date' >
+                                    </div>  
+                                </div>
+                                <div class="row">
+                                        <div class="col-md-2">&nbsp;</div>
+                                        <div class="col-md-8">
+
+                                            <button class='btn btn-primary text-center' style='width: inherit'>Apply for a leave</button>
+                                        </div>
+                                        
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+    function add_dates() {
+    let d_i = document.getElementById('dates_input');
+    let d_o = document.getElementById('dates_output');
+    let d_s = document.getElementById('dates_select');
+    let obj = [];
+    if(d_s.value==='' )
+    {
+    alert('please select a date first');
+    }
+else{
+if (d_i.value === '') {
+    obj = [d_s.value];
+
+}
+else {
+    obj = JSON.parse(d_i.value);
+    obj.push(d_s.value);
+}
+d_i.value = JSON.stringify(obj);
+d_o.innerHTML += `<p>`+d_s.value+`</p>`
+}
+
+}
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

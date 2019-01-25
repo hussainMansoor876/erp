@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <title>Tasks Management</title>
+    <style>
+        .row{
+        margin-bottom: 10px;
+    }
+    </style>
+</head>
+
+<body onload="load()">
+
+    <div class="container">
+        <div class="jumbotron" style='padding:2em'>
+            <h2 class='text-center'>Tasks Management</h2>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Assign a Task</h4>
+                        </div>
+                        <div class="card-body">
+                            <form class='form' action='./task_assignment' method="POST" >
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            Task Name
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='text' class='form-control' name='name' required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            Task Detail
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <textarea rows="4" cols="" class='form-control' name='detail' required></textarea>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            Attached Doc
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='file' name='file' class='form-control' required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            Department
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <select type='text' class='form-control' name='dept' onChange='employees_fetch(this)'>
+                                            <option value='HR'>HR</option>
+                                            <option value='Admin'>Admin</option>
+                                            <option value='Marketing'>Marketing</option>
+                                            <option value='Engineering'>Engineering</option>
+                                            <option value='Procurement'>Procurement</option>
+                                            <option value='Store'>Store</option>
+                                            <option value='Production'>Production</option>
+                                            <option value='Quality Control'>Quality Control</option>
+                                            <option value='Services'>Services</option>
+                                            <option value='Accounts'>Accounts</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            Employee/s
+                                        </label></div>
+                                    <div class="col-md-8">
+                                       <div class="container-fluid" id='employees_list'>
+
+                                       </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-2">&nbsp;</div>
+                                    <div class="col-md-8">
+
+                                        <button class='btn btn-primary text-center' style='width: inherit'>Task Assignment</button>
+                                    </div>
+
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+    <script>
+        var employees = [];
+         function employees_fetch(a){
+            // alert(e.value);
+            let str = '';
+            employees.forEach((e)=>{
+                if(e.dept===a.value)
+                {
+                    str += `<div style='display:inline;padding:5px;margin-right:10px;'><span style='margin-right:5px;'>`+e.name+`</span><input type='checkbox'></div>`
+                }
+            })
+            document.getElementById('employees_list').innerHTML = str;
+            }
+        function load() {
+           $.get('./get_employees',function(data){
+               employees = data.employees;
+               console.log(employees);
+              
+           })
+        }
+        function add_education() {
+
+            let education_input = document.getElementById('education_input');
+            let education_output = document.getElementById('education_output');
+            let e_title = document.getElementById('e_title');
+            let e_year = document.getElementById('e_year');
+            let e_name = document.getElementById('e_name');
+            let e_grade = document.getElementById('e_grade');
+            let obj;
+            if (e_name.value === '' || e_title.value === '' || e_year.value === '' || e_grade.value === '') {
+                alert('please fill all fields');
+            }
+            else {
+                if (education_input.value === '') {
+                    obj = [{ title: e_title.value, institute: e_name.value, year: e_year.value, grade: e_grade.value }];
+
+                }
+                else {
+                    obj = JSON.parse(education_input.value);
+                    obj.push({ title: e_title.value, institute: e_name.value, year: e_year.value, grade: e_grade.value });
+                }
+                education_input.value = JSON.stringify(obj);
+                education_output.innerHTML += `<div class="row" style='margin-bottom: 0px;'>
+                    <div class="col-md-8">
+                        <span>
+                            `+ e_title.value + `
+                        </span>
+                    </div>
+                    <div class="col-md-4">
+                        <span>
+                             `+ e_year.value + `
+
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <span>
+                                `+ e_name.value + `
+                        </span>
+                    </div>
+                    <div class="col-md-4">
+                        <span>
+                                `+ e_grade.value + `
+
+                        </span>
+                    </div>
+                </div>`
+                e_title.value = '';
+                e_year.value = '';
+                e_name.value = '';
+                e_grade.value = '';
+
+            }
+
+        }
+    </script>
+   
+</body>
+
+</html>

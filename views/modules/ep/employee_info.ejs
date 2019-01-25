@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <title>Employee Portal</title>
+    <style>
+        .row {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body onLoad='load()'>
+
+    <div class="container">
+        <div class="jumbotron" style='padding:2em'>
+            <h2 class='text-center'>Employee Portal</h2>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Employees Info</h4>
+                        </div>
+                        <div class="card-body">
+
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-4">Name</div>
+                                    <div class="col-md-6" id='e_name'></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">Father Name</div>
+                                    <div class="col-md-6" id='e_father_name'></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">CNIC</div>
+                                    <div class="col-md-6" id='e_cnic'></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">Father Cnic</div>
+                                    <div class="col-md-6" id='e_father_cnic'></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">Address</div>
+                                    <div class="col-md-6" id='e_address'></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">City</div>
+                                    <div class="col-md-6" id='e_city'></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">Mobile</div>
+                                    <div class="col-md-6" id='e_mobile'></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">Dept</div>
+                                    <div class="col-md-6" id='e_dept'></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">Designation</div>
+                                    <div class="col-md-6" id='e_designation'></div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var employee;
+        function load() {
+            console.log('happening..');
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                     employee = JSON.parse(this.responseText).employee;
+                     console.log(employee);
+                   document.getElementById('e_name').innerHTML = employee.name;
+                   document.getElementById('e_father_name').innerHTML = employee.father_name;
+                   document.getElementById('e_cnic').innerHTML = employee.cnic;
+                   document.getElementById('e_father_cnic').innerHTML = employee.father_cnic;
+                   document.getElementById('e_address').innerHTML = employee.address;
+                   document.getElementById('e_city').innerHTML = employee.city;
+                   document.getElementById('e_mobile').innerHTML = employee.mobile;
+                   document.getElementById('e_dept').innerHTML = employee.dept;
+                   document.getElementById('e_designation').innerHTML = employee.designation;
+
+
+                }
+            };
+            xhttp.open("GET", "./get_loggedin_employee", true);
+            xhttp.send();
+        }
+        function search(e, table_id) {
+            var input, filter, found, table, tr, td, i, j;
+            input = e;
+            filter = input.value.toUpperCase();
+            table = document.getElementById(table_id);
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td");
+                for (j = 0; j < td.length; j++) {
+                    if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        found = true;
+                    }
+                }
+                if (found) {
+                    tr[i].style.display = "";
+                    found = false;
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
