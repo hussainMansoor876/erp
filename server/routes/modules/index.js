@@ -11,7 +11,7 @@ const tm = require("./all/tm");
 
 //const all = require('./all');
 modules.get('/',(req,res)=>{
-   res.render('modules/index');
+   res.redirect('/');
 });
 modules.use('/cot',cot);
 modules.use('/ep',ep);
@@ -23,5 +23,13 @@ modules.use('/otd',otd);
 modules.use('/pmc',pmc);
 modules.use('/tm',tm);
 
+modules.get('/get_employees',(req,res)=>{
+    console.log('all_employees');
+    Employee.find({},(err,employees)=>{
+        res.json({employees:employees});
+        res.end();
+    })
+   // res.render('modules/hrm/add_employee');
+});
 
 module.exports = modules;

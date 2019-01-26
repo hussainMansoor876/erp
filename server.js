@@ -24,7 +24,7 @@ app.use(sessions({
 }));
 app.set('view engine' , 'ejs');
 app.set('views' , path.join(__dirname,"/views"));
-app.listen(80,()=>{
+app.listen(3000,()=>{
     console.log('server is started');
 })
 // configuring express app end//
@@ -35,7 +35,6 @@ mongoose.connect("mongodb://rapshek:natsikap1@ds026898.mlab.com:26898/greeshams"
     }
     else {
         console.log("connection with mongodb is successfull");
-
     }
 });
 // mongoose connection //
