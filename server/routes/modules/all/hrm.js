@@ -10,6 +10,7 @@ const Notifications = require('../../../models/notifications');
 hrm.get('/',(req,res)=>{
     res.render('modules/hrm/index');
 });
+
 hrm.get('/add_employee',(req,res)=>{
     res.render('modules/hrm/add_employee');
 });
@@ -28,6 +29,7 @@ hrm.get('/add_resignation',(req,res)=>{
         res.end('done');
     });
 })
+
 hrm.get('/get_resignations_info',(req,res)=>{
     Resignations.find({},(err,resignations)=>{
         res.json({resignations:resignations});
@@ -35,13 +37,16 @@ hrm.get('/get_resignations_info',(req,res)=>{
     })
    // res.render('modules/hrm/add_employee');
 });
+
 hrm.get('/employees_list',(req,res)=>{
     res.render('modules/hrm/employees_list');
 });
+
 hrm.get('/resignations_info',(req,res)=>{
     res.render('modules/hrm/resignations_info');
 
 });
+
 hrm.get('/leaves_applications',(req,res)=>{
     res.render('modules/hrm/leaves_applications');
 });
@@ -55,6 +60,7 @@ hrm.post('/leaves_action',(req,res)=>{
         res.end();
     })
 })
+
 hrm.post('/resignations_action',(req,res)=>{
     let id = req.body.id;
     let flag = req.body.flag;
@@ -64,6 +70,34 @@ hrm.post('/resignations_action',(req,res)=>{
         res.end();
     })
 })
+
+hrm.post('/',(req,res)=>{
+    let username = req.body.username;
+    let password = req.body.password;
+    Employee.findOne({name:username},(err,user)=>{
+        if(user===null)
+        {
+            res.end('employee does not exist')
+        }
+        else{
+            if(user.password===password)
+            {
+                if(user.previledge.indexOf('hrm')!== -1 ||  true)
+                {   res.cookie('employee',JSON.stringify(user),{maxAge:1000*60*60*24});
+                    res.redirect('/modules/hrm');
+                }
+                else{
+                    res.end('employee does not have previledge to access this module');
+ 
+                }
+            }
+            else{
+                res.end("password does not match with user");
+            }
+        }
+    })
+})
+
 hrm.post('/add_employee',(req,res)=>{
     let form = new formidable.IncomingForm();
       

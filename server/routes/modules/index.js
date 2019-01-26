@@ -37,7 +37,7 @@ modules.get('/get_leaves_applications',(req,res)=>{
   // res.render('modules/hrm/add_employee');
 });
 modules.get('/',(req,res)=>{
-   res.render('modules/index');
+   res.redirect('/');
 });
 modules.use('/cot',cot);
 modules.use('/ep',ep);
@@ -48,6 +48,7 @@ modules.use('/opm',opm);
 modules.use('/otd',otd);
 modules.use('/pmc',pmc);
 modules.use('/tm',tm);
+
 
 
 module.exports = modules;
