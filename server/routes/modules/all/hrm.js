@@ -5,6 +5,7 @@ const hrm = require('express').Router();
 const Employee = require('../../../models/employee');
 const Leaves = require('../../../models/leaves_applications');
 const Resignations = require('../../../models/resignation');
+const Notifications = require('../../../models/notifications');
 
 hrm.get('/',(req,res)=>{
     res.render('modules/hrm/index');
@@ -12,21 +13,7 @@ hrm.get('/',(req,res)=>{
 hrm.get('/add_employee',(req,res)=>{
     res.render('modules/hrm/add_employee');
 });
-hrm.get('/get_employees',(req,res)=>{
-    console.log('all_employees');
-    Employee.find({},(err,employees)=>{
-        res.json({employees:employees});
-        res.end();
-    })
-   // res.render('modules/hrm/add_employee');
-});
-hrm.get('/get_leaves_applications',(req,res)=>{
-    Leaves.find({},(err,leaves)=>{
-        res.json({leaves:leaves});
-        res.end();
-    })
-   // res.render('modules/hrm/add_employee');
-});
+
 hrm.get('/add_resignation',(req,res)=>{
     new Resignations({
         employee_id:"32323232fggf",
@@ -100,6 +87,10 @@ hrm.post('/add_employee',(req,res)=>{
         obj.basic_salary = fields.basic_salary;
         obj.dept = fields.dept;
         obj.designation = fields.designation;
+        new Notifications({title:'Orientation and training',
+                        detail:'New employee named '+obj.name+' joined in '+obj.dept+' department , please take his orientation',
+                        from:'HR' ,
+                        to:obj.dept}).save();
        // console.log(obj);
          let unique =  Math.floor((Math.random()*100000)+(Math.random()*100000));
          var oldpath = files.picture.path;

@@ -1,7 +1,7 @@
 const formidable = require('formidable');
 const path = require('path');
 const fs = require('fs');
-
+const Notifications = require('../../../models/notifications');
 var User = require('../../../models/users');
 const Employee = require('../../../models/employee');
 const Leaves = require('../../../models/leaves_applications');
@@ -13,6 +13,7 @@ ep.get('/',(req,res)=>{
 ep.get('/employee_info',(req,res)=>{
     res.render('modules/ep/employee_info');
 });
+
 ep.get('/resignation',(req,res)=>{
     res.render('modules/ep/resignation');
 });

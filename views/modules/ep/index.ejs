@@ -1,17 +1,100 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Employee Portal</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <title>Human Resource Management</title>
+    <style>
+        .row{
+        margin-bottom: 10px;
+    }
+    </style>
 </head>
-<body>
-   <h1>Employee Portal</h1>
-   <a href='ep/employee_info' >Employee Info</a>
-   <a href='ep/leaves_status' >Leaves Status</a> 
-   <a href='ep/resignation' >Resignations Info</a> 
 
- 
+<body >
+
+    <div class="container">
+        <div class="jumbotron" style='padding:2em'>
+            <h2 class='text-center'>Employee Portal</h2>
+        </div>
+         <div class="container">
+            <h1>Employee Portal</h1>
+            <div class="row">
+                <div class="col-md-10">
+                    <a href='ep/employee_info' >Employee Info</a>
+                    <a href='ep/leaves_status' >Leaves Status</a> 
+                    <a href='ep/resignation' >Resignations Info</a> 
+                </div>
+                <div class="col-md-2">
+                    <div id='notifications_div'></div>
+                </div>
+            </div>
+  
+         </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+        <script>
+    var notifications;
+       function load(){
+           console.log('happening..');
+        var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      notifications = JSON.parse(this.responseText).notifications;
+      let div=document.getElementById('notifications_div');
+      let str='';
+      notifications.forEach((e)=>{
+          str += `<div class='alert alert-primary'><p><b>`+e.title+` </b><br>
+            <i>`+e.detail+`</i></p></div>`;
+      });
+      div.innerHTML = str;
+    }
+  };
+  xhttp.open("GET", "./get_notifications", true);
+  xhttp.send(); 
+       }
+       load();
+       function leaves_action(id,flag){
+          $.post('./leaves_action',{id,flag},function(data){
+            console.log(data);
+            load();
+          }) 
+       }
+       function search(e,table_id) {
+    var input, filter, found, table, tr, td, i, j;
+    input = e;
+    filter = input.value.toUpperCase();
+    table = document.getElementById(table_id);
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td");
+        for (j = 0; j < td.length; j++) {
+            if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                found = true;
+            }
+        }
+        if (found) {
+            tr[i].style.display = "";
+            found = false;
+        } else {
+            tr[i].style.display = "none";
+        }
+    }
+}
+    </script>
 </body>
+
 </html>
