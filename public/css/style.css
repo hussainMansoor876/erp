@@ -1,0 +1,135 @@
+/* sidebar */
+body {
+    margin: 0;
+    /* font-family: "Lato", sans-serif; */
+  }
+  
+  .sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+  }
+  
+  .sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+   
+  .sidebar a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+  }
+  
+  div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+  }
+  
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+
+    .sidebar a.active {
+        background-color: #4CAF50;
+        color: white;
+      }
+      
+      .sidebar a:hover:not(.active) {
+        background-color: #555;
+        color: white;
+      }
+
+      .hr-forms{
+          padding-left: 2em;
+          padding-right: 2em;
+      }
+  }
+  
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+
+    .sidebar a.active {
+        background-color: #4CAF50;
+        color: white;
+      }
+      
+      .sidebar a:hover:not(.active) {
+        background-color: #555;
+        color: white;
+      }
+      .hr-forms{
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+  }
+/* sidebar end */
+  /* file upload */
+  .image-preview-input {
+    position: relative;
+	overflow: hidden;
+	margin: 0px;    
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;    
+}
+.image-preview-input input[type=file] {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+.image-preview-input-title {
+    margin-left:2px;
+}
+
+.hr-head{
+    margin-top: 2em;
+}
+.hr-head > h1 {
+    font-size: 3em;
+    color: #4CAF50;
+    text-transform: uppercase;
+}
+.hr-forms{
+    margin-top: 3em;
+    padding-left: 3em;
+    padding-right: 3em;
+}
+.hr-btn{
+    margin-top: 2em;
+    width: 100%
+}
+.logo{
+    margin-top: 3em;
+}
+.td-cells{
+	/* height: 34px !important; */
+	padding: 0px !important;
+	overflow-wrap: break-word;
+}
