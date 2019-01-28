@@ -83,25 +83,51 @@ ep.post('/apply_for_leave',(req, res) => {
         }
         obj.file = db_path;
         obj.el = obj.days - obj.sl - obj.cl
+        var cl, sl;
         // console.log('num',num)
         console.log('num',obj)      
         Employee.findById(employee._id, {cl: 1,sl: 1,el: 1})
         .then((res)=>{
             console.log('emp',res)
-            Employee.findOneAndUpdate({_id: employee._id},{cl: res.cl - obj.cl,sl: res.sl - obj.sl,el: res.el - obj.el})
-            .then((respo)=>{
-                console.log('Hello',respo)
-            })
-            .catch(error => {
-                console.log(error)
-            })
-            Employee.findByIdAndUpdate(employee._id,{cl: res.cl - obj.cl,sl: res.sl - obj.sl,el: res.el - obj.el})
-            .then((respo)=>{
-                console.log('Hello',respo)
-            })
-            .catch(error => {
-                console.log(error)
-            })
+            if(res.el > obj.el){
+                Employee.findOneAndUpdate({_id: employee._id},{cl: res.cl - obj.cl,sl: res.sl - obj.sl,el: res.el - obj.el})
+                .then((respo)=>{
+                    console.log('Hello',respo)
+                })
+                .catch(error => {
+                    console.log(error)
+                })
+            }
+            else{
+                cl = obj.el - res.el
+                if(res.cl > cl){
+                    Employee.findOneAndUpdate({_id: employee._id},{cl: res.cl - obj.cl - cl,sl: res.sl - obj.sl,el: 0})
+                    .then((respo)=>{
+                        console.log('Hello',respo)
+                    })
+                    .catch(error => {
+                        console.log(error)
+                    })
+                }
+                else{
+                    sl = cl - res.cl + obj.cl
+                    cl = cl - sl
+                    Employee.findOneAndUpdate({_id: employee._id},{cl: res.cl - obj.cl - cl,sl: res.sl - obj.sl - sl,el: 0})
+                    .then((respo)=>{
+                        console.log('Hello',respo)
+                    })
+                    .catch(error => {
+                        console.log(error)
+                    })
+                }
+            }
+            // Employee.findByIdAndUpdate(employee._id,{cl: res.cl - obj.cl,sl: res.sl - obj.sl,el: res.el - obj.el})
+            // .then((respo)=>{
+            //     console.log('Hello',respo)
+            // })
+            // .catch(error => {
+            //     console.log(error)
+            // })
         })
         .catch(err=>{
             console.log(err)
