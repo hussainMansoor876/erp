@@ -252,7 +252,7 @@ crossorigin="anonymous"></script>
             labours.forEach((p) => {
                 console.log(p.name)
                 if (p.name.toLowerCase().indexOf(e.value.toLowerCase()) !== -1) {
-                    str += `<li ><button onClick="fetch('` + p._id + `')">` + p.name + `</button></li>`
+                    str += `<li ><button class="btn btn-primary" onClick="fetch('` + p._id + `')">` + p.name + `</button></li>`
                 }
             });
             str += '</ul></div>'
