@@ -27,67 +27,35 @@
                 <div class="col-md-8">
                     <div class="card">
                         <div class="card-header">
-                            <h4 style='display:inline;float:left;margin-right:1em'>Add Employee</h4>
-                            <div class='form-control-inline' style='display:inline;'>
-                            <input type='text' class='form-control' style='width:15em' onKeyUp="search_result(this)">
-                            <div id='search_list'></div>
-                            </div>
+                            <h4>Add Applicant</h4>
                         </div>
                         <div class="card-body">
-                            <form class='form' action='./add_employee' method="POST" enctype="multipart/form-data">
+                            <form class='form' action='./add_applicant' method="POST" >
 
                                 <div class="row">
                                     <div class="col-md-4"><label class='form-control-label'>
                                             Full Name
                                         </label></div>
                                     <div class="col-md-8">
-                                        <input type='text' class='form-control' name='name' required id='p_name'>
+                                        <input type='text' class='form-control' name='name' required>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-4"><label class='form-control-label'>
-                                        S/O,D/O,W/O
-                                    </label></div>
+                                            S/O,D/O,W/O
+                                        </label></div>
                                     <div class="col-md-8">
-                                        <input type='text' class='form-control' name='father_name' required id='p_f_name'>
+                                        <input type='text' class='form-control' name='father_name' required>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                       Gender
-                                    </label></div>
-                                    <div class="col-md-8">
-                                        <select  class='form-control' name='gender' required >
-                                            <option value='male'>Male</option>
-                                            <option value='female'>Female</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                       D.O.B
-                                    </label></div>
-                                    <div class="col-md-8">
-                                        <input type='date' class='form-control' name='dob'>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                        <div class="col-md-4"><label class='form-control-label'>
-                                                Picture
-                                            </label></div>
-                                        <div class="col-md-8">
-                                            <input type='file' name='picture' class='form-control' required>
-                                        </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-4"><label class='form-control-label'>
                                             CNIC
                                         </label></div>
                                     <div class="col-md-8">
-                                        <input type='text' class='form-control' name='cnic' required id='p_cnic'>
+                                        <input type='text' class='form-control' name='cnic' required>
                                     </div>
                                 </div>
-                               
                                 <div class="row">
                                     <div class="col-md-4"><label class='form-control-label'>
                                             Address
@@ -98,10 +66,10 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-4"><label class='form-control-label'>
-                                            City
+                                            Permanent Address
                                         </label></div>
                                     <div class="col-md-8">
-                                        <input type='text' class='form-control' name='city' required>
+                                        <input type='text' class='form-control' name='p_address' required>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -114,7 +82,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-4"><label class='form-control-label'>
-                                            Emergency Contact#
+                                            Emergency Contact #
                                         </label></div>
                                     <div class="col-md-8">
                                         <input type='text' class='form-control' name='telephone'>
@@ -127,71 +95,15 @@
                                     <div class="col-md-8">
                                         <input type='text' class='form-control' name='mobile' required>
                                     </div>
-                                </div>  
-                                <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            Religion
-                                        </label></div>
-                                    <div class="col-md-8">
-                                        <select class='form-control' name='religion' required>
-                                            <option value='muslim'>Muslim</option>
-                                            <option value='non muslim'>Non Muslim</option>
-                                        </select>
-                                    </div>
                                 </div>
+                               
                                 <div class="row">
                                     <div class="col-md-4"><label class='form-control-label'>
-                                            Age
+                                            Date of Birth
                                         </label></div>
                                     <div class="col-md-8">
-                                        <input type='number' min='16' max='150' class='form-control' name='age'
+                                        <input type='date'  class='form-control' name='dob'
                                             required>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            Marital Status
-                                        </label></div>
-                                    <div class="col-md-8">
-                                        <select type='text' class='form-control' name='marital_status' required>
-                                            <option>Non Married</option>
-                                            <option>Married</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            Department
-                                        </label></div>
-                                    <div class="col-md-8">
-                                        <select type='text' class='form-control' name='dept' >
-                                        <option value='HR'>HR</option>
-                                        <option value='Admin'>Admin</option>
-                                        <option value='Marketing'>Marketing</option>
-                                        <option value='Engineering'>Engineering</option>
-                                        <option value='Procurement'>Procurement</option>
-                                        <option value='Store'>Store</option>
-                                        <option value='Production'>Production</option>
-                                        <option value='Quality Control'>Quality Control</option>
-                                        <option value='Services'>Services</option>
-                                        <option value='Accounts'>Accounts</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            Designation
-                                        </label></div>
-                                    <div class="col-md-8">
-                                        <select type='text' class='form-control' name='designation'>
-                                            <option value='Internee'>Internee</option>
-                                            <option value='Trainee'>Trainee</option>
-                                            <option value='Employee'>Employee</option>
-                                            <option value='Senior Employee'>Senior Employee</option>
-                                            <option value='Super Visor'>Super Visor</option>
-                                            <option value='Manager'>Manager</option>
-                                            <option value='Asst. Manager'>Asst. Manager</option>
-                                        </select>
                                     </div>
                                 </div>
                                 
@@ -263,23 +175,7 @@
                                             </div>
                                         </div>
                                 </div>
-                                <div class="row">
-                                        <div class="col-md-4"><label class='form-control-label'>
-                                                Basic Salary
-                                            </label></div>
-                                        <div class="col-md-8">
-                                            <input type='number' class='form-control' name='basic_salary'>
-                                        </div>
-                                    </div>
-                                <hr>
-                                <div class="row">
-                                        <div class="col-md-2">&nbsp;</div>
-                                        <div class="col-md-8">
-
-                                            <button class='btn btn-primary text-center' style='width: inherit'>Add Employee</button>
-                                        </div>
-                                        
-                                </div>
+                               
 
                             </form>
                         </div>
@@ -290,25 +186,8 @@
             </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-    crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-    crossorigin="anonymous"></script>
-    <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
     <script>
-    var peoples  =[];
-       function load(){
-            $.get('/modules/get_employees',function(data){
-                peoples = data.employees;
-                console.log(data);
-            })
-       }
-       load();
+       
         function add_experience(){
             let x_input = document.getElementById('experience_input');
             let x_output = document.getElementById('experience_output');
@@ -413,44 +292,13 @@
             }
            
         }
-        function search_result(e){
-            if (e.value.length==0) {
-                document.getElementById('search_list').innerHTML ="";
-                document.getElementById("search_list").style.border="0px";
-                return
-            }
-            let str ='<div style="max-height:8em;overflow:scroll"><ul>';
-            peoples.forEach((p)=>{
-                console.log(p.name)
-                if(p.name.toLowerCase().indexOf(e.value.toLowerCase())!== -1){
-                    str += `<li ><button onClick="fetch('`+p._id+`')">`+p.name+`</button></li>`
-                }
-            });
-            str += '</ul></div>'
-            console.log(str);
-            document.getElementById('search_list').innerHTML ='';
-            document.getElementById('search_list').innerHTML =str;
-            document.getElementById("search_list").style.border="1px";
-            console.log(e.value); 
-           
-        }
-        function fetch(id){
-          //      alert(id);
-            peoples.forEach((p)=>{
-                if(p._id===id){
-                    document.getElementById('p_name').value = p.name;
-                    document.getElementById('p_f_name').value = p.father_name;
-                    document.getElementById('p_cnic').value = p.cnic;
-                    document.getElementById('p_f_cnic').value = p.father_cnic;
-                    // document.getElementById('p_name').value = p.name;
-                    // document.getElementById('p_name').value = p.name;
-                    // document.getElementById('p_name').value = p.name;
-
-                }
-            })
-        }
     </script>
-   
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

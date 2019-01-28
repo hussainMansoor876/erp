@@ -38,6 +38,7 @@ mongoose.connect("mongodb://rapshek:natsikap1@ds026898.mlab.com:26898/greeshams"
     }
 });
 // mongoose connection //
+
 app.use('/',routes);
 // get routes //
 // app.get('/',(req,res)=>{

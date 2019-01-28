@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>H.R Panel</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="../../public/css/style.css">
+</head>
+
+<body>
+
+
+    <div class="sidebar">
+        <a class="active" href="#home">Employee Data</a>
+        <a href="#news">PayRoll</a>
+        <a href="#contact">Attendence</a>
+        <a href="#about">Working Hours</a>
+        <a href="#about">Leaves</a>
+        <a href="#about">Advance Loans</a>
+        <a href="#about">KPIS</a>
+    </div>
+
+    <div class="content">
+        <div class="container ">
+            <div class="logo">
+                <div class="row">
+                    <div class="col-md-4 mx-auto">
+                        <img class="img-fluid" src="../../public/Images/Greeshams Logo.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="hr-head text-center">
+                <h1>Employee Data</h1>
+            </div>
+            <div class="hr-forms">
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <input class="form-control" type="text" name="name" placeholder="Enter Name">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <input class="form-control" type="text" name="f_name" placeholder="Enter Son of / Daughter of">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <select class="custom-select mr-sm-2" id="gender" name="gender">
+                          <option selected>Choose Your Gender</option>
+                          <option value="male">Male</option>
+                          <option value="female">Female</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <input class="form-control" type="text" name="b_date" placeholder="Enter Date of Birth">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <input class="form-control" type="text" name="contact" placeholder="Enter Contact Number">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <input class="form-control" type="text" name="e_contact" placeholder="Enter Emergency Contact Number">
+                    </div>
+                </div>
+
+                <div class="row">
+                        <div class="col-md-12 form-group">
+                            <select class="custom-select mr-sm-2" id="m_status" name="m_status">
+                              <option selected>Enter Maritial Status</option>
+                              <option value="male">Single</option>
+                              <option value="female">Married</option>
+                            </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <input class="form-control" type="text" name="n_dependent" placeholder="Enter No. of Dependent">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <input class="form-control" type="text" name="address" placeholder="Enter Current Address">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <input class="form-control" type="text" name="p_address" placeholder="Enter Permanent Address">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <input class="form-control" type="text" name="cnic" placeholder="Enter CNIC Number">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <input class="form-control" type="text" name="e_cnic" placeholder="Enter CNIC Expire Date">
+                    </div>
+                </div>
+
+                <!-- <div class="row">
+                    <div class="col-xs-12 col-md-12 col-md-offset-3 col-sm-12 col-sm-offset-2">
+
+                        <div class="input-group image-preview">
+                            <input type="text" class="form-control image-preview-filename" disabled="disabled">
+
+                            <span class="input-group-btn">
+
+                                <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                                    <span class="glyphicon glyphicon-remove"></span> Clear
+                                </button>
+
+                                <div class="btn btn-default image-preview-input">
+                                    <span class="glyphicon glyphicon-folder-open"></span>
+                                    <span class="image-preview-input-title">Browse</span>
+                                    <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview" />
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                </div> -->
+
+                <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead class="thead-light">
+                      <tr class="d-flex text-center">
+                        <th scope="col" class="col-2">Qualification</th>
+                        <th scope="col" class="col-2">Do you have Work</th>
+                        <th scope="col" class="col-4">Company Name</th>
+                        <th scope="col" class="col-2">No. of Working Years</th>
+                        <th scope="col" class="col-2">Relevant Working Experience (years)</th>
+                        <th scope="col" class="col-2">Reason to left previous job</th>
+                        <th scope="col" class="col-2">DOA (Date of Appointment)</th>
+                        <th scope="col" class="col-2">Employee Code</th>
+                        <th scope="col" class="col-2">Division</th>
+                        <th scope="col" class="col-2">Department</th>
+                        <th scope="col" class="col-2">Section</th>
+                        <th scope="col" class="col-2">Designation</th>
+                        <th scope="col" class="col-2">Basic Salary (Rs.)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="d-flex">
+                        <td scope="col" class="col-2 td-cells"><input type="text" class="form-control"></td>
+                        <td class="col-2 td-cells"><input type="text" class="form-control"></td>
+                        <td class="col-4 td-cells"><input type="text" class="form-control"></td>
+                        <td class="col-2 td-cells"><input type="text" class="form-control"></td>
+                        <td class="col-2 td-cells"><input type="text" class="form-control"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="row">
+                    <div class="col-sd-12 col-md-12 col-sm-12 col-md-offset-3">
+                        <div class="btn btn-success btn-lg hr-btn">
+                            Submit
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+<script>
+    $(document).on('click', '#close-preview', function () {
+        $('.image-preview').popover('hide');
+        // Hover befor close the preview
+        $('.image-preview').hover(
+            function () {
+                $('.image-preview').popover('show');
+            },
+            function () {
+                $('.image-preview').popover('hide');
+            }
+        );
+    });
+
+    $(function () {
+        // Create the close button
+        var closebtn = $('<button/>', {
+            type: "button",
+            text: 'x',
+            id: 'close-preview',
+            style: 'font-size: initial;',
+        });
+        closebtn.attr("class", "close pull-right");
+        // Set the popover default content
+        $('.image-preview').popover({
+            trigger: 'manual',
+            html: true,
+            title: "<strong>Preview</strong>" + $(closebtn)[0].outerHTML,
+            content: "There's no image",
+            placement: 'bottom'
+        });
+        // Clear event
+        $('.image-preview-clear').click(function () {
+            $('.image-preview').attr("data-content", "").popover('hide');
+            $('.image-preview-filename').val("");
+            $('.image-preview-clear').hide();
+            $('.image-preview-input input:file').val("");
+            $(".image-preview-input-title").text("Browse");
+        });
+        // Create the preview image
+        $(".image-preview-input input:file").change(function () {
+            var img = $('<img/>', {
+                id: 'dynamic',
+                width: 250,
+                height: 200
+            });
+            var file = this.files[0];
+            var reader = new FileReader();
+            // Set preview image into the popover data-content
+            reader.onload = function (e) {
+                $(".image-preview-input-title").text("Change");
+                $(".image-preview-clear").show();
+                $(".image-preview-filename").val(file.name);
+                img.attr('src', e.target.result);
+                $(".image-preview").attr("data-content", $(img)[0].outerHTML).popover("show");
+            }
+            reader.readAsDataURL(file);
+        });
+    });
+</script>
+
+</html>

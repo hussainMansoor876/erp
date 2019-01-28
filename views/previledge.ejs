@@ -53,8 +53,9 @@
     <script>
         let users=[];
        function get_users(){
-        $.get('/get_users',function(data){
-            users = JSON.parse(data);
+        $.get('../../../modules/get_employees',function(data){
+            users = data.employees;
+            console.log(data)
             update_table();
        })
        }
