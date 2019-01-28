@@ -13,6 +13,8 @@ const Employees = require('../../models/employee');
 const Leaves = require('../../models/leaves_applications');
 
 //const all = require('./all');
+
+//modules.use(auth)
 modules.get('/get_notifications',(req,res)=>{
    let employee = JSON.parse(req.cookies.employee);
    console.log(employee.dept)
@@ -39,6 +41,7 @@ modules.get('/get_leaves_applications',(req,res)=>{
 modules.get('/',(req,res)=>{
    res.redirect('/');
 });
+
 modules.use('/cot',cot);
 modules.use('/ep',ep);
 modules.use('/fam',fam);

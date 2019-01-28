@@ -6,14 +6,33 @@ const Employee = require('../../../models/employee');
 const Leaves = require('../../../models/leaves_applications');
 const Resignations = require('../../../models/resignation');
 const Notifications = require('../../../models/notifications');
-
-hrm.get('/',(req,res)=>{
+var auth = function(req,res,next){
+   
+       console.log("Get METHOD");
+       if(req.cookies.employee){
+          console.log("employee data",req.cookies.employee)
+          next();
+       }
+       else{
+          res.redirect('/');
+       }
+     
+    // console.log(req.cookies);
+     
+  }
+hrm.get('/',auth,(req,res)=>{
     res.render('modules/hrm/index');
 });
 
 hrm.get('/add_employee',(req,res)=>{
     res.render('modules/hrm/add_employee');
 });
+hrm.get('/add_labour',(req,res)=>{
+    res.render('modules/hrm/add_labour');
+});
+hrm.get('/add_applicant',(req,res)=>{
+    res.render('modules/hrm/add_applicant');
+})
 
 hrm.get('/add_resignation',(req,res)=>{
     new Resignations({
