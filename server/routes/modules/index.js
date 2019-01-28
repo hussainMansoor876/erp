@@ -11,6 +11,7 @@ const tm = require("./all/tm");
 const Applicants = require('../../models/applicants');
 const Notifications = require('../../models/notifications');
 const Employees = require('../../models/employee');
+const Labours = require('../../models/labour');
 const Leaves = require('../../models/leaves_applications');
 
 //const all = require('./all');
@@ -28,6 +29,14 @@ modules.get('/get_applicants',(req,res)=>{
     console.log('all_applicants');
     Applicants.find({},(err,applicants)=>{
         res.json({applicants:applicants});
+        res.end();
+    })
+   // res.render('modules/hrm/add_employee');
+ });
+ modules.get('/get_labours',(req,res)=>{
+    console.log('all_labours');
+    Labours.find({},(err,labours)=>{
+        res.json({labours:labours});
         res.end();
     })
    // res.render('modules/hrm/add_employee');

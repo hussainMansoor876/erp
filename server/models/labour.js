@@ -11,8 +11,10 @@ const LabourSchema = new mongoose.Schema({
     mobile:{type:String},
     dob:{type:String},
     marital_status:{type:String},
-    education:{type:Object,default:{}},
-    experiences:{type:Object,default:{}},
+    picture:{type:String},
+    reference:{type:String},
+    ntn:{type:String},
+    basic_salary:{type:Object,default:{}},
 
 });
 module.exports = mongoose.model('labours',LabourSchema);

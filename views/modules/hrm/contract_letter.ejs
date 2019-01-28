@@ -5,188 +5,227 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+    crossorigin="anonymous">
+    <title>Contract Letter - Human Resource Management</title>
+    <style type="text/css" media="print">
+        @page {
+            size: auto;   /* auto is the initial value */
+            margin: 0;  /* this affects the margin in the printer settings */
+            margin-left:20px;
+            margin-right:20px;
+            margin-bottom:20px;
+
+        }
+        </style>
 </head>
 
 <body onload="foot(footer)">
-    <h1>Contract letter</h1>
-    <div id="printableArea" style="text-align: center;">
-        <div>
-            <!-- header -->
-            <div style="display: flex; padding: 5px">
-                <div style="flex: 1; text-align: left">
-                    <img src="../../images/Greeshams Logo.png" alt="" width="60%">
+<div class="container-fluid">
+    <div class="container">
+            <h1>Contract letter</h1>
+            <div class='form-control-inline' style='display:inline;'>
+                    <input type='text' class='form-control' style='width:15em' onKeyUp="search_result(this)">
+                    <div id='search_list'></div>
                 </div>
-                <div style="flex: 1;text-align: right;">
-                    <h4 style="font-weight: 500; margin: 0%; padding: 0px">GRESHAM'S EASTERN [PRIVATE] LIMITED</h4>
-                    <p style="font-weight: 500; padding: 0%; margin: 0%">Business Center
-                        <span style="color: red">|</span>
-                        P.E.C.H.S, Block-6</p>
-                    <p style="font-weight: 500; padding: 0%; margin: 0%">Plot 19/1-A
-                        <span style="color: red">|</span>
-                        Suite 702, 7th Floor</p>
-                    <p style="font-weight: 500; padding: 0%; margin: 0%">Main Shahrah-e-Faisal</p>
-                    <p style="font-weight: 500; padding: 0%; margin: 0%">Karachi 75400
-                        <span style="color: red">|</span>
-                        Pakistan</p>
-                    <br />
-                    <p style="font-weight: 500; padding: 0%; margin: 0%">Tel: +92 21 343 24530 [06 Lines]</p>
-                    <p style="font-weight: 500; padding: 0%; margin: 0%">Mobile: +92 300 24080</p>
-                    <p style="font-weight: 500; padding: 0%; margin: 0%">Fax: +92 21 343 24080</p>
-                    <p style="font-weight: 500; padding: 0%; margin: 0%">Sales@gel1947.com</p>
-                </div>
-            </div>
-            <!-- end of header -->
-
-            <!-- body -->
-            <div style="display: flex; padding: 5px">
-                <div style="flex: 1; text-align: left">
-                    <p style="font-weight: 700; margin: 0; text-align: left; font-size: 14px">
-                        Date:
-                        <span style="font-weight: 400; margin: 10px 0px; text-align: left;  text-decoration: underline">
-                            3 - 02 - 2019 .
-                        </span>
-                    </p>
-                    <p style="font-weight: 500; padding: 0%; margin: 5px 1px">To,</p>
-                    <p style="font-weight: 500; padding: 0%; margin: 5px 1px; text-decoration: underline">3 - 02 - 2019 .</p>
-                </div>
-                <div style="flex: 1; text-align-last: right">
-                    <img src="https://avatars3.githubusercontent.com/u/35415573?s=400&u=e4522ec0b3e7566b61f78362871d2af454605c37&v=4" width="100px" height="100px" alt="" style="border: 1px solid black; padding: 1px">
-                </div>
-            </div>
-            <div style="display: flex; text-align: center">
-                <div style="flex: 1">
-                    <p style="font-weight: 700; margin: 0; text-align: left; font-size: 16px">
-                        Post:
-                        <span style="font-weight: 400; margin: 10px 0px; text-align: left;  text-decoration: underline">
-                            Assumenda at error Assumenda at error Assumenda at error Assumenda at error
-                        </span>
-                    </p>
-                </div>
-            </div>
-
-            <div style="text-align: left">
-                <h3 style="font-weight: bold; margin: 5px 0px">Respected Sir,</h3>
-                <p style="font-size: 14px; margin: 3px 2px">Having come to know through reliable sources that subject vacancy in lying under your kind control and I
-                    beg to offer any services for the same.</p>
-                <p style="font-size: 14px; margin: 3px 2px">I am attaching my Bio, Data, Educational / Technical Documents with copy of NIC for your consideration.</p>
-                <p style="font-size: 14px; margin: 3px 2px">In the light of above mention facts I home that my appointment for the above post would be considered and
-                    give a change to serve your esteemed organization.</p>
-                <p style="font-size: 14px; margin: 3px 2px">I assure you, that I shall prove my self honest, hardworking & capable for the duties assigned to me.</p>
-            </div>
-            <!-- end of body -->
-            <div style="display: flex">
-                <div style="flex: 1">
-                    <h3 style="font-weight: bold; text-align: left">Thanking you in anticipation.</h3>
-                </div>
-                <div style="flex: 1">
-                    <h3 style="font-weight: bold; text-align: right">Yours Faithfully.</h3>
-                </div>
-            </div>
-            <!-- office -->
-            <div style="display: flex">
-                <div style="flex: 1">
-                    <h2 style="font-weight: bold; color: white; background-color: black">For Department use only.</h2>
-                </div>
-            </div>
-            <div style="display: flex; text-align: center">
-                <div style="flex: 1">
-                    <p style="font-weight: 700; margin: 10px 0px; text-align: left; font-size: 16px">
-                        Employee Name:
-                        <span style="font-weight: 400; margin: 10px 0px; text-align: left;  text-decoration: underline">
-                            Assumenda at error
-                        </span>
-                    </p>
-                </div>
-                <div style="flex: 1">
-                    <p style="font-weight: 700; margin: 10px 0px; text-align: left; font-size: 16px">
-                        Contact No.:
-                        <span style="font-weight: 400; margin: 10px 0px; text-align: left;  text-decoration: underline">
-                            Assumenda at error
-                        </span>
-                    </p>
-                </div>
-            </div>
-            <div style="display: flex; text-align: center">
-                <div style="flex: 1">
-                    <p style="font-weight: 700; margin: 10px 0px; text-align: left; font-size: 16px">
-                        Date of Appointment:
-                        <span style="font-weight: 400; margin: 10px 0px; text-align: left;  text-decoration: underline">
-                            Assumenda at error
-                        </span>
-                    </p>
-                </div>
-                <div style="flex: 1">
-                    <p style="font-weight: 700; margin: 10px 0px; text-align: left; font-size: 16px">
-                        Salary / Wages:
-                        <span style="font-weight: 400; margin: 10px 0px; text-align: left;  text-decoration: underline">
-                            Assumenda at error
-                        </span>
-                    </p>
-                </div>
-            </div>
-
-            <div style="display: flex; text-align: center">
-                <div style="flex: 1">
-                    <p style="font-weight: 700; margin: 0; text-align: left; font-size: 16px">
-                        References:
-                        <span style="font-weight: 400; margin: 10px 0px; text-align: left;  text-decoration: underline">
-                            Assumenda at error Assumenda at error Assumenda at error Assumenda at error
-                        </span>
-                    </p>
-                </div>
-            </div>
-            <div style="display: flex; text-align: center">
-                <div style="flex: 1">
-                    <p style="font-weight: 700; margin: 10px 0px; text-align: left; font-size: 16px">
-                        Present Address:
-                        <span style="font-weight: 400; margin: 0%; text-align: left;  text-decoration: underline">
-                            Assumenda at error Assumenda at error Assumenda at error Assumenda at error
-                        </span>
-                    </p>
-                </div>
-            </div>
-            <br />
-            <br />
-            <div style="display: flex; text-align: left">
-                <div style="flex: 1">
-                    <p style="font-weight: 700; padding: 5px; border-top: 1px solid black; text-align: center; font-size: 18px; display: inline-block;">
-                        Manager Signature
-                    </p>
-                </div>
-            </div>
-
-            <!-- end of office -->
-            <!-- footer -->
-            <div id="footer">
-            <div style="position: fixed; bottom: 20px; width: 85%">
-                <span style="font-weight: 700;width: inherit; display: block; margin: 5px 0px; text-align: left; font-size: 16px; border-bottom: 1px solid black; padding: 2px; color: red">
-                    www.gel1947.com
-                </span>
-                <span style="text-align: left">
-                    <p style="font-weight: 500; padding: 0%; margin: 0%">Registered Office F-302 Sindh Industrial Trading Estate - site
-                        <span style="color: red">|</span>
-                        Karachi
-                        <span style="color: red">|</span> Pakistan</p>
-                    <p style="font-weight: 500; padding: 0%; margin: 0%">Regional Offices: lahore
-                        <span style="color: red">|</span>
-                        Rawalpindi</p>
-                    <p style="font-weight: 500; padding: 0%; margin: 0%">Liasion: USA
-                        <span style="color: red">|</span>
-                        European Union
-                        <span style="color: red">|</span> ROC</p>
-                </span>
-            </div>
-            <div style="position: fixed; bottom: 0px; right: 70px; width: 15%">
-                <img src="../../images/Greeshams Logo.png" width="170px" height="100px" alt="" style="border: 1px solid black; padding: 1px">
-            </div>
-        </div>
-            <!-- end of footer -->
-        </div>
+            <input type="button" onclick="printDiv(printableArea)" value="print a div!" />
     </div>
-    <input type="button" onclick="printDiv(printableArea)" value="print a div!" />
+    <div class="container">
+            <div id="printableArea" style="text-align: center;margin: 50px">
+                    <div>
+                        <!-- header -->
+                        <div style="display: flex; padding: 5px">
+                            <div style="flex: 1; text-align: left">
+                                <img src="../../images/Greeshams Logo.png" alt="" width="60%">
+                            </div>
+                            <div style="flex: 1;text-align: right;">
+                                <h4 style="font-weight: 500; margin: 0%; padding: 0px">GRESHAM'S EASTERN [PRIVATE] LIMITED</h4>
+                                <p style="font-weight: 500; padding: 0%; margin: 0%">Business Center
+                                    <span style="color: red">|</span>
+                                    P.E.C.H.S, Block-6</p>
+                                <p style="font-weight: 500; padding: 0%; margin: 0%">Plot 19/1-A
+                                    <span style="color: red">|</span>
+                                    Suite 702, 7th Floor</p>
+                                <p style="font-weight: 500; padding: 0%; margin: 0%">Main Shahrah-e-Faisal</p>
+                                <p style="font-weight: 500; padding: 0%; margin: 0%">Karachi 75400
+                                    <span style="color: red">|</span>
+                                    Pakistan</p>
+                                <br />
+                                <p style="font-weight: 500; padding: 0%; margin: 0%">Tel: +92 21 343 24530 [06 Lines]</p>
+                                <p style="font-weight: 500; padding: 0%; margin: 0%">Mobile: +92 300 24080</p>
+                                <p style="font-weight: 500; padding: 0%; margin: 0%">Fax: +92 21 343 24080</p>
+                                <p style="font-weight: 500; padding: 0%; margin: 0%">Sales@gel1947.com</p>
+                            </div>
+                        </div>
+                        <!-- end of header -->
+            
+                        <!-- body -->
+                        <div style="display: flex; padding: 5px">
+                            <div style="flex: 1; text-align: left">
+                                <p style="font-weight: 700; margin: 0; text-align: left; font-size: 14px">
+                                    Date:
+                                    <span style="font-weight: 400; margin: 10px 0px; text-align: left;  text-decoration: underline">
+                                        3 - 02 - 2019 .
+                                    </span>
+                                </p>
+                                <p style="font-weight: 500; padding: 0%; margin: 5px 1px">To,</p>
+                                <p style="font-weight: 500; padding: 0%; margin: 5px 1px; text-decoration: underline">3 - 02 - 2019 .</p>
+                            </div>
+                            <div style="flex: 1; text-align-last: right">
+                                <img src="" id='picture' width="100px" height="100px" alt="" style="border: 1px solid black; padding: 1px">
+                            </div>
+                        </div>
+                        <div style="display: flex; text-align: center">
+                            <div style="flex: 1">
+                                <p style="font-weight: 700; margin: 0; text-align: left; font-size: 16px">
+                                    Post:
+                                    <span style="font-weight: 400; margin: 10px 0px; text-align: left;  text-decoration: underline">
+                                        Assumenda at error Assumenda at error Assumenda at error Assumenda at error
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+            
+                        <div style="text-align: left">
+                            <h3 style="font-weight: bold; margin: 5px 0px">Respected Sir,</h3>
+                            <p style="font-size: 14px; margin: 3px 2px">Having come to know through reliable sources that subject vacancy in lying under your kind control and I
+                                beg to offer any services for the same.</p>
+                            <p style="font-size: 14px; margin: 3px 2px">I am attaching my Bio, Data, Educational / Technical Documents with copy of NIC for your consideration.</p>
+                            <p style="font-size: 14px; margin: 3px 2px">In the light of above mention facts I home that my appointment for the above post would be considered and
+                                give a change to serve your esteemed organization.</p>
+                            <p style="font-size: 14px; margin: 3px 2px">I assure you, that I shall prove my self honest, hardworking & capable for the duties assigned to me.</p>
+                        </div>
+                        <!-- end of body -->
+                        <div style="display: flex">
+                            <div style="flex: 1">
+                                <h3 style="font-weight: bold; text-align: left">Thanking you in anticipation.</h3>
+                            </div>
+                            <div style="flex: 1">
+                                <h3 style="font-weight: bold; text-align: right">Yours Faithfully.</h3>
+                            </div>
+                        </div>
+                        <!-- office -->
+                        <div style="display: flex">
+                            <div style="flex: 1">
+                                <h2 style="font-weight: bold; color: white; background-color: black">For Department use only.</h2>
+                            </div>
+                        </div>
+                        <div style="display: flex; text-align: center">
+                            <div style="flex: 1">
+                                <p style="font-weight: 700; margin: 10px 0px; text-align: left; font-size: 16px">
+                                    Employee Name:
+                                    <span style="font-weight: 400; margin: 10px 0px; text-align: left;  text-decoration: underline" id='name'>
+                                        
+                                    </span>
+                                </p>
+                            </div>
+                            <div style="flex: 1">
+                                <p style="font-weight: 700; margin: 10px 0px; text-align: left; font-size: 16px">
+                                    Contact No.:
+                                    <span style="font-weight: 400; margin: 10px 0px; text-align: left;  text-decoration: underline" id='mobile'>
+                                       
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                        <div style="display: flex; text-align: center">
+                            <div style="flex: 1">
+                                <p style="font-weight: 700; margin: 10px 0px; text-align: left; font-size: 16px">
+                                    Date of Appointment:
+                                    <span style="font-weight: 400; margin: 10px 0px; text-align: left;  text-decoration: underline">
+                                        Assumenda at error
+                                    </span>
+                                </p>
+                            </div>
+                            <div style="flex: 1">
+                                <p style="font-weight: 700; margin: 10px 0px; text-align: left; font-size: 16px">
+                                    Salary / Wages:
+                                    <span style="font-weight: 400; margin: 10px 0px; text-align: left;  text-decoration: underline" id='basic_salary'>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+            
+                        <div style="display: flex; text-align: center">
+                            <div style="flex: 1">
+                                <p style="font-weight: 700; margin: 0; text-align: left; font-size: 16px">
+                                    References:
+                                    <span style="font-weight: 400; margin: 10px 0px; text-align: left;  text-decoration: underline" id='reference'>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                        <div style="display: flex; text-align: center">
+                            <div style="flex: 1">
+                                <p style="font-weight: 700; margin: 10px 0px; text-align: left; font-size: 16px">
+                                    Present Address:
+                                    <span style="font-weight: 400; margin: 0%; text-align: left;  text-decoration: underline" id='address'>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                        <br />
+                        <br />
+                        <div style="display: flex; text-align: left">
+                            <div style="flex: 1">
+                                <p style="font-weight: 700; padding: 5px; border-top: 1px solid black; text-align: center; font-size: 18px; display: inline-block;">
+                                    Manager Signature
+                                </p>
+                            </div>
+                        </div>
+            
+                        <!-- end of office -->
+                        <!-- footer -->
+                        <div id="footer">
+                        <div style="position: fixed; bottom: 20px; width: 85%">
+                            <span style="font-weight: 700;width: inherit; display: block; margin: 5px 0px; text-align: left; font-size: 16px; border-bottom: 1px solid black; padding: 2px; color: red">
+                                www.gel1947.com
+                            </span>
+                            <span style="text-align: left">
+                                <p style="font-weight: 500; padding: 0%; margin: 0%">Registered Office F-302 Sindh Industrial Trading Estate - site
+                                    <span style="color: red">|</span>
+                                    Karachi
+                                    <span style="color: red">|</span> Pakistan</p>
+                                <p style="font-weight: 500; padding: 0%; margin: 0%">Regional Offices: lahore
+                                    <span style="color: red">|</span>
+                                    Rawalpindi</p>
+                                <p style="font-weight: 500; padding: 0%; margin: 0%">Liasion: USA
+                                    <span style="color: red">|</span>
+                                    European Union
+                                    <span style="color: red">|</span> ROC</p>
+                            </span>
+                        </div>
+                        <div style="position: fixed; bottom: 0px; right: 70px; width: 15%">
+                            <img src="../../images/Greeshams Logo.png" width="170px" height="100px" alt="" style="border: 1px solid black; padding: 1px">
+                        </div>
+                    </div>
+                        <!-- end of footer -->
+                    </div>
+                </div>
+    </div>
+</div>
+
+    
+    
 </body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+crossorigin="anonymous"></script>
 <script>
+     var labours = [];
+        function load() {
+            $.get('/modules/get_labours', function (data) {
+                labours = data.labours;
+                console.log(data);
+            })
+        }
+        load();
+       
     function printDiv(divName) {
         var printContents = divName.innerHTML;
         var originalContents = document.body.innerHTML;
@@ -203,6 +242,45 @@
     function foot(footer){
         footer.style.display = "none"
     }
+    function search_result(e) {
+            if (e.value.length == 0) {
+                document.getElementById('search_list').innerHTML = "";
+                document.getElementById("search_list").style.border = "0px";
+                return
+            }
+            let str = '<div style="max-height:8em;overflow:scroll"><ul>';
+            labours.forEach((p) => {
+                console.log(p.name)
+                if (p.name.toLowerCase().indexOf(e.value.toLowerCase()) !== -1) {
+                    str += `<li ><button onClick="fetch('` + p._id + `')">` + p.name + `</button></li>`
+                }
+            });
+            str += '</ul></div>'
+            console.log(str);
+            document.getElementById('search_list').innerHTML = '';
+            document.getElementById('search_list').innerHTML = str;
+            document.getElementById("search_list").style.border = "1px";
+            console.log(e.value);
+
+        }
+        function fetch(id) {
+            //      alert(id);
+            labours.forEach((p) => {
+                if (p._id === id) {
+                    document.getElementById('name').innerHTML = p.name;
+                    document.getElementById('reference').innerHTML = p.reference;
+                    document.getElementById('address').innerHTML = p.address;
+                    document.getElementById('basic_salary').innerHTML = p.basic_salary;
+                    document.getElementById('mobile').innerHTML = p.mobile;
+                    document.getElementById('picture').src = '../../assets/pictures/'+p.picture;
+
+                    // document.getElementById('p_name').value = p.name;
+                    // document.getElementById('p_name').value = p.name;
+                    // document.getElementById('p_name').value = p.name;
+
+                }
+            })
+        }
 </script>
 
 </html>

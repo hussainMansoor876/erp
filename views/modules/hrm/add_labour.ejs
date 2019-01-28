@@ -27,7 +27,11 @@
                 <div class="col-md-8">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Add Labour</h4>
+                            <h4 style='display:inline;float:left;margin-right:1em'>Add Employee</h4>
+                            <div class='form-control-inline' style='display:inline;'>
+                                <input type='text' class='form-control' style='width:15em' onKeyUp="search_result(this)">
+                                <div id='search_list'></div>
+                            </div>
                         </div>
                         <div class="card-body">
                             <form class='form' action='./add_labour' method="POST" enctype="multipart/form-data">
@@ -37,39 +41,82 @@
                                             Full Name
                                         </label></div>
                                     <div class="col-md-8">
-                                        <input type='text' class='form-control' name='name' required>
+                                        <input type='text' class='form-control' name='name' required id='p_name'>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-4"><label class='form-control-label'>
-                                            Father Name
+                                            S/O,D/O,W/O
                                         </label></div>
                                     <div class="col-md-8">
-                                        <input type='text' class='form-control' name='father_name' required>
+                                        <input type='text' class='form-control' name='father_name' required id='p_f_name'>
                                     </div>
                                 </div>
                                 <div class="row">
-                                        <div class="col-md-4"><label class='form-control-label'>
-                                                Picture
-                                            </label></div>
-                                        <div class="col-md-8">
-                                            <input type='file' name='picture' class='form-control' required>
-                                        </div>
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            Gender
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <select class='form-control' name='gender' required>
+                                            <option value='male'>Male</option>
+                                            <option value='female'>Female</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            D.O.B
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='date' class='form-control' id='p_dob' name='dob'>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            Picture
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='file' name='picture' class='form-control' required>
+                                    </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-4"><label class='form-control-label'>
                                             CNIC
                                         </label></div>
                                     <div class="col-md-8">
-                                        <input type='text' class='form-control' name='cnic' required>
+                                        <input type='text' class='form-control' name='cnic' required id='p_cnic'>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-4"><label class='form-control-label'>
-                                            Father CNIC
+                                            CNIC Expiry
                                         </label></div>
                                     <div class="col-md-8">
-                                        <input type='text' class='form-control' name='father_cnic' required>
+                                        <input type='date' class='form-control' name='cnic_expiry'>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            NTN#
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='text' class='form-control' name='ntn' required id='ntn'>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            Driving License#
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='text' class='form-control' name='dl_number' id='dl_number' required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            Driving License Expiry
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='date' class='form-control' name='dl_expiry' id='dl_expiry'>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -77,15 +124,7 @@
                                             Address
                                         </label></div>
                                     <div class="col-md-8">
-                                        <input type='text' class='form-control' name='address' required>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            City
-                                        </label></div>
-                                    <div class="col-md-8">
-                                        <input type='text' class='form-control' name='city' required>
+                                        <input type='text' class='form-control' name='address' id='p_address' required>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -93,23 +132,23 @@
                                             Email
                                         </label></div>
                                     <div class="col-md-8">
-                                        <input type='text' class='form-control' name='email' required>
+                                        <input type='text' class='form-control' name='email' required id='p_email'>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-4"><label class='form-control-label'>
-                                            Telephone
+                                            Emergency Contact#
                                         </label></div>
                                     <div class="col-md-8">
-                                        <input type='text' class='form-control' name='telephone'>
+                                        <input type='text' class='form-control' name='telephone' id='p_telephone'>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-4"><label class='form-control-label'>
-                                            Mobile
+                                            Contact #
                                         </label></div>
                                     <div class="col-md-8">
-                                        <input type='text' class='form-control' name='mobile' required>
+                                        <input type='text' class='form-control' name='mobile' required id='p_mobile'>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -117,7 +156,7 @@
                                             Religion
                                         </label></div>
                                     <div class="col-md-8">
-                                        <select class='form-control' name='religion' required>
+                                        <select class='form-control' name='religion' required id='religion'>
                                             <option value='muslim'>Muslim</option>
                                             <option value='non muslim'>Non Muslim</option>
                                         </select>
@@ -125,109 +164,48 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-4"><label class='form-control-label'>
-                                            Age
-                                        </label></div>
-                                    <div class="col-md-8">
-                                        <input type='number' min='16' max='150' class='form-control' name='age'
-                                            required>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
                                             Marital Status
                                         </label></div>
                                     <div class="col-md-8">
-                                        <select type='text' class='form-control' name='marital_status' required>
+                                        <select type='text' class='form-control' name='marital_status' required id='marital_status'>
                                             <option>Non Married</option>
                                             <option>Married</option>
                                         </select>
                                     </div>
                                 </div>
-                                
                                 <div class="row">
                                     <div class="col-md-4"><label class='form-control-label'>
-                                            Education
-                                        </label>
-                                        <input id='education_input' type="hidden" name='education'>
-                                    </div>
+                                            Date Of Appointment
+                                        </label></div>
                                     <div class="col-md-8">
-                                        <div class="row">
-                                            <div class="col-md-8">
-                                                <input type='text' class='form-control' id='e_title' placeholder='Title (Matric/Intermediate/bachelors)'>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <input type='text' class='form-control' id='e_year' placeholder='Passing Year'>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-8">
-                                                <input type='text' class='form-control' id='e_name' placeholder='Institute Name'>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <input type='text' class='form-control' id='e_grade' placeholder='Passing Grade'>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12"><button type="button" class='btn btn-primary' style="width:inherit"
-                                                    onclick="add_education()">Add</button></div>
-                                        </div>
-
-                                        <div class="container-fluid" id='education_output'>
-
-
-                                        </div>
+                                        <input type='date' class='form-control' name='doi' id='doi'>
                                     </div>
                                 </div>
-
                                 <div class="row">
-                                        <div class="col-md-4"><label class='form-control-label'>
-                                                Experiences
-                                            </label>
-                                            <input id='experience_input' type="hidden" name='experience'>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <input type='text' class='form-control' id='x_org' placeholder='Organization Name'>
-                                                </div>
-                                                
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <input type='text' class='form-control' id='x_post' placeholder='Designation'>
-                                                </div>
-                                                <div class="col-md-6">
-                                                        <input type='text' class='form-control' id='x_year' placeholder='Working Period'>
-                                                </div>
-                        
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-12"><button type="button" class='btn btn-primary' style="width:inherit"
-                                                        onclick="add_experience()">Add</button></div>
-                                            </div>
-    
-                                            <div class="container-fluid" id='experience_output'>
-    
-    
-                                            </div>
-                                        </div>
-                                </div>
-                                <div class="row">
-                                        <div class="col-md-4"><label class='form-control-label'>
-                                                Basic Salary
-                                            </label></div>
-                                        <div class="col-md-8">
-                                            <input type='number' class='form-control' name='basic_salary'>
-                                        </div>
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            Basic Salary
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='number' class='form-control' name='basic_salary' id='basic_salary'>
                                     </div>
+                                </div>
+                                                    <div class="row">
+                                                            <div class="col-md-4"><label class='form-control-label'>
+                                                                    Reference
+                                                                </label></div>
+                                                            <div class="col-md-8">
+                                                                <input type='text' class='form-control' name='reference' id='reference'>
+                                                            </div>
+                                                        </div>      
+                                   
                                 <hr>
                                 <div class="row">
-                                        <div class="col-md-2">&nbsp;</div>
-                                        <div class="col-md-8">
+                                    <div class="col-md-2">&nbsp;</div>
+                                    <div class="col-md-8">
 
-                                            <button class='btn btn-primary text-center' style='width: inherit'>Add Employee</button>
-                                        </div>
-                                        
+                                        <button class='btn btn-primary text-center' style='width: inherit'>Add Labour</button>
+                                    </div>
+
                                 </div>
 
                             </form>
@@ -239,119 +217,96 @@
             </div>
         </div>
     </div>
-    <script>
-       
-        function add_experience(){
-            let x_input = document.getElementById('experience_input');
-            let x_output = document.getElementById('experience_output');
-            let x_org = document.getElementById('x_org');
-            let x_year = document.getElementById('x_year');
-            let x_post = document.getElementById('x_post');
-            if(x_org.value==='' || x_year.value==='' || x_post.value==='')
-            {
-                alert('please fill all fields');
-            }
-            else{
-                let obj;
-            if (x_input.value === '') {
-                obj = [{ org: x_org.value, period: x_year.value, post: x_post.value }];
-
-            }
-            else {
-                obj = JSON.parse(x_input.value);
-                obj.push({ org: x_org.value, period: x_year.value, post: x_post.value});
-            }
-            x_input.value = JSON.stringify(obj);
-            x_output.innerHTML += `<div class="row" style='margin-bottom: 0px;'>
-                    <div class="col-md-8">
-                        <span>
-                            `+ x_org.value + `
-                        </span>
-                    </div>
-                    <div class="col-md-4">
-                        <span>
-                                `+ x_year.value + `
-
-                        </span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-8">
-                        <span>
-                                `+ x_post.value + `
-                        </span>
-                    </div>
-                </div>`;
-                x_org.value ='';
-                x_year.value ='';
-                x_post.value ='';
-            }
-            
-        }
-        function add_education() {
-
-            let education_input = document.getElementById('education_input');
-            let education_output = document.getElementById('education_output');
-            let e_title = document.getElementById('e_title');
-            let e_year = document.getElementById('e_year');
-            let e_name = document.getElementById('e_name');
-            let e_grade = document.getElementById('e_grade');
-            let obj;
-            if(e_name.value==='' || e_title.value==='' || e_year.value==='' || e_grade.value==='' )
-            {
-                alert('please fill all fields');
-            }
-         else{
-            if (education_input.value === '') {
-                obj = [{ title: e_title.value, institute: e_name.value, year: e_year.value, grade: e_grade.value }];
-
-            }
-            else {
-                obj = JSON.parse(education_input.value);
-                obj.push({ title: e_title.value, institute: e_name.value, year: e_year.value, grade: e_grade.value });
-            }
-            education_input.value = JSON.stringify(obj);
-            education_output.innerHTML += `<div class="row" style='margin-bottom: 0px;'>
-                    <div class="col-md-8">
-                        <span>
-                            `+ e_title.value + `
-                        </span>
-                    </div>
-                    <div class="col-md-4">
-                        <span>
-                                `+ e_year.value + `
-
-                        </span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-8">
-                        <span>
-                                `+ e_name.value + `
-                        </span>
-                    </div>
-                    <div class="col-md-4">
-                        <span>
-                                `+ e_grade.value + `
-
-                        </span>
-                    </div>
-                </div>`
-                e_title.value ='';
-                e_year.value ='';
-                e_name.value='';
-                e_grade.value='';
-
-            }
-           
-        }
-    </script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script>
+        var peoples = [];
+        function load() {
+            $.get('/modules/get_applicants', function (data) {
+                peoples = data.applicants;
+                console.log(data);
+            })
+        }
+        load();
+      
+        function search_result(e) {
+            if (e.value.length == 0) {
+                document.getElementById('search_list').innerHTML = "";
+                document.getElementById("search_list").style.border = "0px";
+                return
+            }
+            let str = '<div style="max-height:8em;overflow:scroll"><ul>';
+            peoples.forEach((p) => {
+                console.log(p.name)
+                if (p.name.toLowerCase().indexOf(e.value.toLowerCase()) !== -1) {
+                    str += `<li ><button onClick="fetch('` + p._id + `')">` + p.name + `</button></li>`
+                }
+            });
+            str += '</ul></div>'
+            console.log(str);
+            document.getElementById('search_list').innerHTML = '';
+            document.getElementById('search_list').innerHTML = str;
+            document.getElementById("search_list").style.border = "1px";
+            console.log(e.value);
+
+        }
+        function fetch(id) {
+            //      alert(id);
+            peoples.forEach((p) => {
+                if (p._id === id) {
+                    document.getElementById('p_name').value = p.name;
+                    document.getElementById('p_f_name').value = p.father_name;
+                    document.getElementById('p_cnic').value = p.cnic;
+                    document.getElementById('p_address').value = p.address;
+                    document.getElementById('p_dob').value = p.dob;
+                    document.getElementById('p_email').value = p.email;
+                    document.getElementById('p_mobile').value = p.mobile;
+                    document.getElementById('p_telephone').value = p.telephone;
+                    document.getElementById('p_p_address').value = p.p_address;
+                    document.getElementById('ntn').value = p.ntn;
+                    document.getElementById('basic_salary').value = p.basic_salary;
+                    document.getElementById('reference').value = p.reference;
+                    document.getElementById('p_p_address').value = p.p_address;
+
+
+
+                    // document.getElementById('p_name').value = p.name;
+                    // document.getElementById('p_name').value = p.name;
+                    // document.getElementById('p_name').value = p.name;
+
+                }
+            })
+        }
+        // function add_labour(){
+        //     let labour = {
+        //         name: document.getElementById('name').value,
+        //         father_name: document.getElementById('father_name').value,
+        //         cnic: document.getElementById('cnic').value,
+        //         dob: document.getElementById('dob').value,
+        //         mobile: document.getElementById('mobile').value,
+        //         address: document.getElementById('address').value,
+        //         p_address: document.getElementById('p_address').value,
+        //         email: document.getElementById('email').value,
+        //         telephone: document.getElementById('telephone').value
+        //     };
+        //     var xhttp = new XMLHttpRequest();
+        //     xhttp.onreadystatechange = function () {
+        //         if (this.readyState == 4 && this.status == 200) {
+        //             alert(this.responseText);
+        //         }
+        //     };
+        //     xhttp.open("POST", "/modules/hrm/add_labour", true);
+        //     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        //     xhttp.send("labour="+JSON.stringify(labour));
+        // }
+    </script>
+
 </body>
 
 </html>

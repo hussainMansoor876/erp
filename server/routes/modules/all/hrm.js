@@ -3,6 +3,7 @@ const path = require('path');
 const fs = require('fs');
 const hrm = require('express').Router();
 const Employee = require('../../../models/employee');
+const Labour = require('../../../models/labour');
 const Leaves = require('../../../models/leaves_applications');
 const Applicants = require('../../../models/applicants');
 const Resignations = require('../../../models/resignation');
@@ -19,7 +20,8 @@ var auth = function (req, res, next) {
 
     // console.log(req.cookies);
 
-}
+};
+
 hrm.post('/add_applicant', (req, res) => {
     console.log("check");
     let applicant = JSON.parse(req.body.applicant);
@@ -132,6 +134,53 @@ hrm.post('/resignations_action', (req, res) => {
     })
 })
 
+hrm.post('/add_labour', (req, res) => {
+    let form = new formidable.IncomingForm();
+
+    form.parse(req, (err, fields, files) => {
+        let obj = {};
+        obj.name = fields.name;
+        obj.father_name = fields.father_name;
+        obj.cnic = fields.cnic;
+        obj.address = fields.address;
+        obj.email = fields.email;
+        obj.telephone = fields.telephone;
+        obj.mobile = fields.mobile;
+        obj.age = fields.age;
+        obj.marital_status = fields.marital_status;
+        obj.basic_salary = fields.basic_salary;
+        obj.reference = fields.reference;
+        // new Notifications({
+        //     title: 'Orientation and training',
+        //     detail: 'New employee named ' + obj.name + ' joined in ' + obj.dept + ' department , please take his orientation',
+        //     from: 'HR',
+        //     to: obj.dept
+        // }).save();
+        console.log(obj);
+        let unique = Math.floor((Math.random() * 100000) + (Math.random() * 100000));
+        var oldpath = files.picture.path;
+        var path_new = path.join("./public/assets/pictures/labours/picture_" + unique + "_" + files.picture.name);
+        var db_path = path.join("./labours/picture_" + unique + "_" + files.picture.name);
+        obj.picture = db_path;
+        new Labour(obj).save(() => {
+            fs.copyFile(oldpath, path_new, (err) => {
+                if (err) {
+                    throw err
+                }
+                fs.unlink(oldpath, (err_4) => {
+                    if (err_4) {
+                        throw err_4
+                    }
+                    console.log(obj);
+                    res.redirect('./add_labour')
+
+                })
+            })
+
+         });
+    });
+
+});
 
 
 hrm.post('/add_employee', (req, res) => {
