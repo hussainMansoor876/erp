@@ -9,9 +9,9 @@
         crossorigin="anonymous">
     <title>Employee Portal</title>
     <style>
-        .row{
-        margin-bottom: 10px;
-    }
+        .row {
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 
@@ -27,23 +27,28 @@
                 <div class="col-md-8">
                     <div class="card">
                         <div class="card-header">
+                            <h1 id="date"></h1>
                             <h4>Apply for a Leave</h4>
                         </div>
                         <div class="card-body">
                             <form class='form' action='./apply_for_leave' method="POST" enctype="multipart/form-data">
 
                                 <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
+                                    <div class="col-md-4">
+                                        <label class='form-control-label'>
                                             Title
-                                        </label></div>
+                                        </label>
+                                    </div>
                                     <div class="col-md-8">
                                         <input type='text' class='form-control' name='title' required>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
+                                    <div class="col-md-4">
+                                        <label class='form-control-label'>
                                             Detail
-                                        </label></div>
+                                        </label>
+                                    </div>
                                     <div class="col-md-8">
                                         <textarea type='text' class='form-control' name='detail' required rows="4">
                                         </textarea>
@@ -51,36 +56,65 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <label>Date/s</label>
+                                        <label>Date</label>
                                     </div>
                                     <div class="col-md-5">
-                                            <input type='hidden' class="form-control" id='dates_input' name='dates' >
-                                        <input type='date' class='form-control' id='dates_select'>
+                                        <input type='hidden' class="form-control" id='dates_input' >
+                                        <input type='date' class='form-control' id='dates_select' name='dates'>
                                         <br>
-                                        <buton class='btn btn-primary' style="width:inherit" onClick='add_dates()'>Add Date/s</button>
                                     </div>
                                     <div class="col-md-3">
-                                                    <div class="container-fluid" id='dates_output'></div>
+                                        <div class="container-fluid" id='dates_output'></div>
                                     </div>
-                                    
-                                </div>
-                                <div class="row">
-                                        <div class="col-md-4"><label class='form-control-label'>
-                                                File/Document
-                                            </label></div>
-                                        <div class="col-md-8">
-                                            <input type='file' name='file' class='form-control' required>
-                                        </div>
-                                </div>
-                               
-                               
-                                <div class="row">
-                                        <div class="col-md-2">&nbsp;</div>
-                                        <div class="col-md-8">
 
-                                            <button class='btn btn-primary text-center' style='width: inherit'>Apply for a leave</button>
-                                        </div>
-                                        
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label>Days</label>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <input type="number" value="1" oninput="checkinput(this)" class="form-control" name='days' min="1">
+                                        <br>
+                                    </div>
+                                    <!-- <div class="col-md-3">
+                                        <div class="container-fluid" id='dates_output'></div>
+                                    </div> -->
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label>Reason</label>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <label style="width: 50%">
+                                            <input type="checkbox" name='sl' value='sl' id="sl" onclick="checkBoxed(this)" />
+                                            <span className="checkmark">Sick</span>
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name='cl' value='cl' id="cl" onclick="checkBoxed(this)" />
+                                            <span className="checkmark">Casual</span>
+                                        </label>
+                                        <br>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label class='form-control-label'>
+                                            File/Document
+                                        </label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input type='file' name='file' class='form-control' required>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-md-2">&nbsp;</div>
+                                    <div class="col-md-8">
+
+                                        <button class='btn btn-primary text-center' style='width: inherit'>Apply for a leave</button>
+                                    </div>
+
                                 </div>
 
                             </form>
@@ -93,36 +127,46 @@
         </div>
     </div>
     <script>
-        function add_experience(){
+        function add_experience() {
             let x_input = document.getElementById('experience_input');
             let x_output = document.getElementById('experience_output');
             let x_org = document.getElementById('x_org');
             let x_year = document.getElementById('x_year');
             let x_post = document.getElementById('x_post');
-            if(x_org.value==='' || x_year.value==='' || x_post.value==='')
-            {
+            if (x_org.value === '' || x_year.value === '' || x_post.value === '') {
                 alert('please fill all fields');
-            }
-            else{
+            } else {
                 let obj;
-            if (x_input.value === '') {
-                obj = [{ org: x_org.value, period: x_year.value, post: x_post.value }];
+                if (x_input.value === '') {
+                    obj = [{
+                        org: x_org.value,
+                        period: x_year.value,
+                        post: x_post.value
+                    }];
 
-            }
-            else {
-                obj = JSON.parse(x_input.value);
-                obj.push({ org: x_org.value, period: x_year.value, post: x_post.value});
-            }
-            x_input.value = JSON.stringify(obj);
-            x_output.innerHTML += `<div class="row" style='margin-bottom: 0px;'>
+                } else {
+                    obj = JSON.parse(x_input.value);
+                    obj.push({
+                        org: x_org.value,
+                        period: x_year.value,
+                        post: x_post.value
+                    });
+                }
+                x_input.value = JSON.stringify(obj);
+                x_output.innerHTML +=
+                    `<div class="row" style='margin-bottom: 0px;'>
                     <div class="col-md-8">
                         <span>
-                            `+ x_org.value + `
+                            ` +
+                    x_org.value +
+                    `
                         </span>
                     </div>
                     <div class="col-md-4">
                         <span>
-                                `+ x_year.value + `
+                                ` +
+                    x_year.value +
+                    `
 
                         </span>
                     </div>
@@ -130,16 +174,18 @@
                 <div class="row">
                     <div class="col-md-8">
                         <span>
-                                `+ x_post.value + `
+                                ` +
+                    x_post.value + `
                         </span>
                     </div>
                 </div>`;
-                x_org.value ='';
-                x_year.value ='';
-                x_post.value ='';
+                x_org.value = '';
+                x_year.value = '';
+                x_post.value = '';
             }
-            
+
         }
+
         function add_education() {
 
             let education_input = document.getElementById('education_input');
@@ -149,29 +195,41 @@
             let e_name = document.getElementById('e_name');
             let e_grade = document.getElementById('e_grade');
             let obj;
-            if(e_name.value==='' || e_title.value==='' || e_year.value==='' || e_grade.value==='' )
-            {
+            if (e_name.value === '' || e_title.value === '' || e_year.value === '' || e_grade.value === '') {
                 alert('please fill all fields');
-            }
-         else{
-            if (education_input.value === '') {
-                obj = [{ title: e_title.value, institute: e_name.value, year: e_year.value, grade: e_grade.value }];
+            } else {
+                if (education_input.value === '') {
+                    obj = [{
+                        title: e_title.value,
+                        institute: e_name.value,
+                        year: e_year.value,
+                        grade: e_grade.value
+                    }];
 
-            }
-            else {
-                obj = JSON.parse(education_input.value);
-                obj.push({ title: e_title.value, institute: e_name.value, year: e_year.value, grade: e_grade.value });
-            }
-            education_input.value = JSON.stringify(obj);
-            education_output.innerHTML += `<div class="row" style='margin-bottom: 0px;'>
+                } else {
+                    obj = JSON.parse(education_input.value);
+                    obj.push({
+                        title: e_title.value,
+                        institute: e_name.value,
+                        year: e_year.value,
+                        grade: e_grade.value
+                    });
+                }
+                education_input.value = JSON.stringify(obj);
+                education_output.innerHTML +=
+                    `<div class="row" style='margin-bottom: 0px;'>
                     <div class="col-md-8">
                         <span>
-                            `+ e_title.value + `
+                            ` +
+                    e_title.value +
+                    `
                         </span>
                     </div>
                     <div class="col-md-4">
                         <span>
-                                `+ e_year.value + `
+                                ` +
+                    e_year.value +
+                    `
 
                         </span>
                     </div>
@@ -179,48 +237,78 @@
                 <div class="row">
                     <div class="col-md-8">
                         <span>
-                                `+ e_name.value + `
+                                ` +
+                    e_name.value +
+                    `
                         </span>
                     </div>
                     <div class="col-md-4">
                         <span>
-                                `+ e_grade.value + `
+                                ` +
+                    e_grade.value +
+                    `
 
                         </span>
                     </div>
                 </div>`
-                e_title.value ='';
-                e_year.value ='';
-                e_name.value='';
-                e_grade.value='';
+                e_title.value = '';
+                e_year.value = '';
+                e_name.value = '';
+                e_grade.value = '';
 
             }
-           
+
         }
+
         function add_dates() {
 
-let d_i = document.getElementById('dates_input');
-let d_o = document.getElementById('dates_output');
-let d_s = document.getElementById('dates_select');
-let obj = [];
-if(d_s.value==='' )
-{
-    alert('please select a date first');
-}
-else{
-if (d_i.value === '') {
-    obj = [d_s.value];
+            let d_i = document.getElementById('dates_input');
+            let d_o = document.getElementById('dates_output');
+            let d_s = document.getElementById('dates_select');
+            let obj = [];
+            if (d_s.value === '') {
+                alert('please select a date first');
+            } else {
+                if (d_i.value === '') {
+                    obj = [d_s.value];
 
-}
-else {
-    obj = JSON.parse(d_i.value);
-    obj.push(d_s.value);
-}
-d_i.value = JSON.stringify(obj);
-d_o.innerHTML += `<p>`+d_s.value+`</p>`
-}
+                } else {
+                    obj = JSON.parse(d_i.value);
+                    obj.push(d_s.value);
+                }
+                d_i.value = JSON.stringify(obj);
+                d_o.innerHTML += `<p>` + d_s.value + `</p>`
+            }
 
-}
+        }
+
+        var days = 1
+
+        function checkinput(val) {
+            console.log('==>', val.value)
+            document.getElementById('cl').checked = false
+            document.getElementById('sl').checked = false
+            days = val.value
+            if (val.value > 24) {
+                val.value = 24
+                days = 24
+            }
+        }
+
+        function checkBoxed(val) {
+            // console.log('==>',val.checked)
+            // val.disabled = true
+            if (days == 1 && val.checked) {
+                if (val.id == 'sl') {
+                    document.getElementById('cl').disabled = true
+                } else {
+                    document.getElementById('sl').disabled = true
+                }
+            } else {
+                document.getElementById('cl').disabled = false
+                document.getElementById('sl').disabled = false
+            }
+        }
     </script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
