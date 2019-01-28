@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const Applicants = new mongoose.Schema({
+const LabourSchema = new mongoose.Schema({
     name:{type:String},
     father_name:{type:String},
     cnic:{type:String},
@@ -10,7 +10,9 @@ const Applicants = new mongoose.Schema({
     telephone:{type:String},
     mobile:{type:String},
     dob:{type:String},
-    active:{type:Boolean,default:true},
-    applied_date:{type:Number}
+    marital_status:{type:String},
+    education:{type:Object,default:{}},
+    experiences:{type:Object,default:{}},
+
 });
-module.exports = mongoose.model('applicants',Applicants);
+module.exports = mongoose.model('labours',LabourSchema);

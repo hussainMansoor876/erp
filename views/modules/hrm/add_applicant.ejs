@@ -106,7 +106,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <button class='btn btn-primary' onClick='add_applicant()'>Add Applicant</button>
+                                        <button class='btn btn-primary' onclick="add_applicant()">Add Applicant</button>
                                     </div>
                                 </div>
 
@@ -139,12 +139,12 @@
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
-                
+                alert(this.responseText);
             }
         };
-        xhttp.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
-        xhttp.open("POST", "./add_applicant", true);
-        xhttp.send("name="+applicant.name);
+        xhttp.open("POST", "/modules/hrm/add_applicant", true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("applicant="+JSON.stringify(applicant));
     }
       
      </script>

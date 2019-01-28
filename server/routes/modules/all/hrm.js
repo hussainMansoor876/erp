@@ -4,6 +4,7 @@ const fs = require('fs');
 const hrm = require('express').Router();
 const Employee = require('../../../models/employee');
 const Leaves = require('../../../models/leaves_applications');
+const Applicants = require('../../../models/applicants');
 const Resignations = require('../../../models/resignation');
 const Notifications = require('../../../models/notifications');
 var auth = function (req, res, next) {
@@ -21,7 +22,12 @@ var auth = function (req, res, next) {
 }
 hrm.post('/add_applicant', (req, res) => {
     console.log("check");
-    console.log(req.body)
+    let applicant = JSON.parse(req.body.applicant);
+    console.log(applicant);
+    new Applicants(applicant).save(()=>{
+        res.json({success:true});
+        res.end();
+    });
 })
 hrm.post('/', (req, res) => {
     let username = req.body.username;

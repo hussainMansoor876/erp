@@ -8,6 +8,7 @@ const opm = require("./all/opm");
 const otd = require("./all/otd");
 const pmc = require("./all/pmc");
 const tm = require("./all/tm");
+const Applicants = require('../../models/applicants');
 const Notifications = require('../../models/notifications');
 const Employees = require('../../models/employee');
 const Leaves = require('../../models/leaves_applications');
@@ -23,6 +24,14 @@ modules.get('/get_notifications',(req,res)=>{
        res.end();
    })
 });
+modules.get('/get_applicants',(req,res)=>{
+    console.log('all_applicants');
+    Applicants.find({},(err,applicants)=>{
+        res.json({applicants:applicants});
+        res.end();
+    })
+   // res.render('modules/hrm/add_employee');
+ });
 modules.get('/get_employees',(req,res)=>{
    console.log('all_employees');
    Employees.find({},(err,employees)=>{
