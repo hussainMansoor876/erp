@@ -7,8 +7,7 @@ const Leaves = require('../../../models/leaves_applications');
 const Resignations = require('../../../models/resignation');
 const Notifications = require('../../../models/notifications');
 var auth = function(req,res,next){
-   
-       console.log("Get METHOD");
+
        if(req.cookies.employee){
           console.log("employee data",req.cookies.employee)
           next();
@@ -20,7 +19,38 @@ var auth = function(req,res,next){
     // console.log(req.cookies);
      
   }
-hrm.get('/',auth,(req,res)=>{
+  hrm.post('/add_applicant',(req,res)=>{
+      console.log("check");
+      console.log(req.body)
+  })
+  hrm.post('/',(req,res)=>{
+    let username = req.body.username;
+    let password = req.body.password;
+    Employee.findOne({name:username},(err,user)=>{
+        if(user===null)
+        {
+            res.end('employee does not exist')
+        }
+        else{
+            if(user.password===password)
+            {
+                if(user.previledge.indexOf('hrm')!== -1 ||  true)
+                {   res.cookie('employee',JSON.stringify(user),{maxAge:1000*60*60*24});
+                    res.redirect('/modules/hrm');
+                }
+                else{
+                    res.end('employee does not have previledge to access this module');
+ 
+                }
+            }
+            else{
+                res.end("password does not match with user");
+            }
+        }
+    })
+})  
+hrm.use(auth);  
+hrm.get('/',(req,res)=>{
     res.render('modules/hrm/index');
 });
 
@@ -90,32 +120,7 @@ hrm.post('/resignations_action',(req,res)=>{
     })
 })
 
-hrm.post('/',(req,res)=>{
-    let username = req.body.username;
-    let password = req.body.password;
-    Employee.findOne({name:username},(err,user)=>{
-        if(user===null)
-        {
-            res.end('employee does not exist')
-        }
-        else{
-            if(user.password===password)
-            {
-                if(user.previledge.indexOf('hrm')!== -1 ||  true)
-                {   res.cookie('employee',JSON.stringify(user),{maxAge:1000*60*60*24});
-                    res.redirect('/modules/hrm');
-                }
-                else{
-                    res.end('employee does not have previledge to access this module');
- 
-                }
-            }
-            else{
-                res.end("password does not match with user");
-            }
-        }
-    })
-})
+
 
 hrm.post('/add_employee',(req,res)=>{
     let form = new formidable.IncomingForm();

@@ -30,14 +30,13 @@
                             <h4>Add Applicant</h4>
                         </div>
                         <div class="card-body">
-                            <form class='form' action='./add_applicant' method="POST" >
 
                                 <div class="row">
                                     <div class="col-md-4"><label class='form-control-label'>
                                             Full Name
                                         </label></div>
                                     <div class="col-md-8">
-                                        <input type='text' class='form-control' name='name' required>
+                                        <input type='text' class='form-control' id='name' required>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -45,7 +44,7 @@
                                             S/O,D/O,W/O
                                         </label></div>
                                     <div class="col-md-8">
-                                        <input type='text' class='form-control' name='father_name' required>
+                                        <input type='text' class='form-control' id='father_name' required>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -53,7 +52,7 @@
                                             CNIC
                                         </label></div>
                                     <div class="col-md-8">
-                                        <input type='text' class='form-control' name='cnic' required>
+                                        <input type='text' class='form-control' id='cnic' required>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -61,7 +60,7 @@
                                             Address
                                         </label></div>
                                     <div class="col-md-8">
-                                        <input type='text' class='form-control' name='address' required>
+                                        <input type='text' class='form-control' id='address' required>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -69,7 +68,7 @@
                                             Permanent Address
                                         </label></div>
                                     <div class="col-md-8">
-                                        <input type='text' class='form-control' name='p_address' required>
+                                        <input type='text' class='form-control' id='p_address' required>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -77,15 +76,7 @@
                                             Email
                                         </label></div>
                                     <div class="col-md-8">
-                                        <input type='text' class='form-control' name='email' required>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            Emergency Contact #
-                                        </label></div>
-                                    <div class="col-md-8">
-                                        <input type='text' class='form-control' name='telephone'>
+                                        <input type='text' class='form-control' id='email' required>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -93,91 +84,32 @@
                                             Contact #
                                         </label></div>
                                     <div class="col-md-8">
-                                        <input type='text' class='form-control' name='mobile' required>
+                                        <input type='text' class='form-control' id='mobile' required>
                                     </div>
                                 </div>
-                               
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            Emergency Contact #
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='text' class='form-control' id='telephone'>
+                                    </div>
+                                </div>
                                 <div class="row">
                                     <div class="col-md-4"><label class='form-control-label'>
                                             Date of Birth
                                         </label></div>
                                     <div class="col-md-8">
-                                        <input type='date'  class='form-control' name='dob'
+                                        <input type='date'  class='form-control' id='dob'
                                             required>
                                     </div>
                                 </div>
-                                
                                 <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            Education
-                                        </label>
-                                        <input id='education_input' type="hidden" name='education'>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="row">
-                                            <div class="col-md-8">
-                                                <input type='text' class='form-control' id='e_title' placeholder='Title (Matric/Intermediate/bachelors)'>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <input type='text' class='form-control' id='e_year' placeholder='Passing Year'>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-8">
-                                                <input type='text' class='form-control' id='e_name' placeholder='Institute Name'>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <input type='text' class='form-control' id='e_grade' placeholder='Passing Grade'>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12"><button type="button" class='btn btn-primary' style="width:inherit"
-                                                    onclick="add_education()">Add</button></div>
-                                        </div>
-
-                                        <div class="container-fluid" id='education_output'>
-
-
-                                        </div>
+                                    <div class="col-md-4">
+                                        <button class='btn btn-primary' onClick='add_applicant()'>Add Applicant</button>
                                     </div>
                                 </div>
 
-                                <div class="row">
-                                        <div class="col-md-4"><label class='form-control-label'>
-                                                Experiences
-                                            </label>
-                                            <input id='experience_input' type="hidden" name='experience'>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <input type='text' class='form-control' id='x_org' placeholder='Organization Name'>
-                                                </div>
-                                                
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <input type='text' class='form-control' id='x_post' placeholder='Designation'>
-                                                </div>
-                                                <div class="col-md-6">
-                                                        <input type='text' class='form-control' id='x_year' placeholder='Working Period'>
-                                                </div>
-                        
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-12"><button type="button" class='btn btn-primary' style="width:inherit"
-                                                        onclick="add_experience()">Add</button></div>
-                                            </div>
-    
-                                            <div class="container-fluid" id='experience_output'>
-    
-    
-                                            </div>
-                                        </div>
-                                </div>
-                               
-
-                            </form>
                         </div>
                     </div>
 
@@ -186,113 +118,36 @@
             </div>
         </div>
     </div>
+    <script src='/js/jquery-3.2.1.min.js'></script>
+    <script src='/js/popper.min.js'></script>
+    <script src='/js/bootstrap.min.js'></script>
+    <script src='/js/tooltip.js'></script>
     <script>
-       
-        function add_experience(){
-            let x_input = document.getElementById('experience_input');
-            let x_output = document.getElementById('experience_output');
-            let x_org = document.getElementById('x_org');
-            let x_year = document.getElementById('x_year');
-            let x_post = document.getElementById('x_post');
-            if(x_org.value==='' || x_year.value==='' || x_post.value==='')
-            {
-                alert('please fill all fields');
-            }
-            else{
-                let obj;
-            if (x_input.value === '') {
-                obj = [{ org: x_org.value, period: x_year.value, post: x_post.value }];
 
+       function add_applicant(){
+        let applicant = {
+            name: document.getElementById('name').value,
+            father_name: document.getElementById('father_name').value,
+            cnic: document.getElementById('cnic').value,
+            dob: document.getElementById('dob').value,
+            mobile: document.getElementById('mobile').value,
+            address: document.getElementById('address').value,
+            p_address: document.getElementById('p_address').value,
+            email: document.getElementById('email').value,
+            telephone: document.getElementById('telephone').value
+        };
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                
             }
-            else {
-                obj = JSON.parse(x_input.value);
-                obj.push({ org: x_org.value, period: x_year.value, post: x_post.value});
-            }
-            x_input.value = JSON.stringify(obj);
-            x_output.innerHTML += `<div class="row" style='margin-bottom: 0px;'>
-                    <div class="col-md-8">
-                        <span>
-                            `+ x_org.value + `
-                        </span>
-                    </div>
-                    <div class="col-md-4">
-                        <span>
-                                `+ x_year.value + `
-
-                        </span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-8">
-                        <span>
-                                `+ x_post.value + `
-                        </span>
-                    </div>
-                </div>`;
-                x_org.value ='';
-                x_year.value ='';
-                x_post.value ='';
-            }
-            
-        }
-        function add_education() {
-
-            let education_input = document.getElementById('education_input');
-            let education_output = document.getElementById('education_output');
-            let e_title = document.getElementById('e_title');
-            let e_year = document.getElementById('e_year');
-            let e_name = document.getElementById('e_name');
-            let e_grade = document.getElementById('e_grade');
-            let obj;
-            if(e_name.value==='' || e_title.value==='' || e_year.value==='' || e_grade.value==='' )
-            {
-                alert('please fill all fields');
-            }
-         else{
-            if (education_input.value === '') {
-                obj = [{ title: e_title.value, institute: e_name.value, year: e_year.value, grade: e_grade.value }];
-
-            }
-            else {
-                obj = JSON.parse(education_input.value);
-                obj.push({ title: e_title.value, institute: e_name.value, year: e_year.value, grade: e_grade.value });
-            }
-            education_input.value = JSON.stringify(obj);
-            education_output.innerHTML += `<div class="row" style='margin-bottom: 0px;'>
-                    <div class="col-md-8">
-                        <span>
-                            `+ e_title.value + `
-                        </span>
-                    </div>
-                    <div class="col-md-4">
-                        <span>
-                                `+ e_year.value + `
-
-                        </span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-8">
-                        <span>
-                                `+ e_name.value + `
-                        </span>
-                    </div>
-                    <div class="col-md-4">
-                        <span>
-                                `+ e_grade.value + `
-
-                        </span>
-                    </div>
-                </div>`
-                e_title.value ='';
-                e_year.value ='';
-                e_name.value='';
-                e_grade.value='';
-
-            }
-           
-        }
-    </script>
+        };
+        xhttp.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+        xhttp.open("POST", "./add_applicant", true);
+        xhttp.send("name="+applicant.name);
+    }
+      
+     </script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
