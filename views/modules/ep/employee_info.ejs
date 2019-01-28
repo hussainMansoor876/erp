@@ -67,7 +67,19 @@
                                     <div class="col-md-4">Designation</div>
                                     <div class="col-md-6" id='e_designation'></div>
                                 </div>
-                                
+                                <div class="row">
+                                    <div class="col-md-4">Sick Leave</div>
+                                    <div class="col-md-6" id='e_sl'></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">Casual Leave</div>
+                                    <div class="col-md-6" id='e_cl'></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">Earned Leaves</div>
+                                    <div class="col-md-6" id='e_el'></div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -78,29 +90,32 @@
     </div>
     <script>
         var employee;
+
         function load() {
             console.log('happening..');
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
-                     employee = JSON.parse(this.responseText).employee;
-                     console.log(employee);
-                   document.getElementById('e_name').innerHTML = employee.name;
-                   document.getElementById('e_father_name').innerHTML = employee.father_name;
-                   document.getElementById('e_cnic').innerHTML = employee.cnic;
-                   document.getElementById('e_father_cnic').innerHTML = employee.father_cnic;
-                   document.getElementById('e_address').innerHTML = employee.address;
-                   document.getElementById('e_city').innerHTML = employee.city;
-                   document.getElementById('e_mobile').innerHTML = employee.mobile;
-                   document.getElementById('e_dept').innerHTML = employee.dept;
-                   document.getElementById('e_designation').innerHTML = employee.designation;
-
-
+                    employee = JSON.parse(this.responseText).employee;
+                    console.log(employee);
+                    document.getElementById('e_name').innerHTML = employee.name;
+                    document.getElementById('e_father_name').innerHTML = employee.father_name;
+                    document.getElementById('e_cnic').innerHTML = employee.cnic;
+                    document.getElementById('e_father_cnic').innerHTML = employee.father_cnic;
+                    document.getElementById('e_address').innerHTML = employee.address;
+                    document.getElementById('e_city').innerHTML = employee.city;
+                    document.getElementById('e_mobile').innerHTML = employee.mobile;
+                    document.getElementById('e_dept').innerHTML = employee.dept;
+                    document.getElementById('e_designation').innerHTML = employee.designation;
+                    document.getElementById('e_sl').innerHTML = employee.sl;
+                    document.getElementById('e_cl').innerHTML = employee.cl;
+                    document.getElementById('e_el').innerHTML = employee.el;
                 }
             };
             xhttp.open("GET", "./get_loggedin_employee", true);
             xhttp.send();
         }
+
         function search(e, table_id) {
             var input, filter, found, table, tr, td, i, j;
             input = e;
