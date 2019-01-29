@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Confirmation Letter - Human Resource Management</title>
+    <style>
+    @media only screen and (min-width: 993px) {
+            nav a.button-collapse {
+                display: block;
+            }
+        }
+        @page {
+            size: auto;
+            /* auto is the initial value */
+            margin: 0;
+            /* this affects the margin in the printer settings */
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+
+        }
+    </style>
+</head>
+<div>
+    <nav>
+        <a data-target="slide-out" class="button-collapse sidenav-trigger btn-flat btn-large waves-effect waves-light"
+            style="background: #EE6E73"><i class="material-icons">dehaze</i></a>
+
+        <h3 style="color: white; text-align: center; padding: 15px 0px">Human Resource Management</h3>
+    </nav>
+
+
+    <ul id="slide-out" class="sidenav">
+        <li>
+            <div class="user-view">
+                <div class="background">
+                    <img src="https://images.freeimages.com/images/small-previews/4f7/blank-sign-bullet-holes-1447150.jpg">
+                </div>
+                <a href="#user"><img class="circle" src="https://images.freeimages.com/images/small-previews/4f7/blank-sign-bullet-holes-1447150.jpg"></a>
+                <a href="#name"><span class="white-text name">John Doe</span></a>
+                <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+            </div>
+        </li>
+        <li class="no-padding">
+            <ul class="collapsible">
+                    <li>
+                            <div class="collapsible-header">
+                                <a href="employees_list" style="display: block; color: black">Employees Details</a>
+                            </div>
+                        </li>
+                    <li>
+                            <div class="collapsible-header">
+                                <a href="add_applicant" style="display: block; color: black">Add Applicant</a>
+                            </div>
+                        </li>
+                <li>
+                    <div class="collapsible-header">Add Employees</div>
+                    <div class="collapsible-body">
+                        <a href="add_employee" style="display: block; padding-left: 20px; color: black">Add Staff</a>
+                        <a href="add_labour" style="display: block;  padding-left: 20px; color: black">Add Labour</a>
+                    </div>
+
+
+                </li>
+                <li>
+                    <div class="collapsible-header">Letters</div>
+                    <div class="collapsible-body">
+                        <a href="appointment_letter" style="display: block; padding-left: 20px;color: black">Appointment Letter</a>
+                        <a href="contract_letter" style="display: block; padding-left: 20px;color: black">Contract Letter</a>
+                        <a href="confirmation_letter" style="display: block; padding-left: 20px;color: black">Conformation Letter</a>
+                        <a href="supported_docs" style="display: block; padding-left: 20px;color: black">Supported Docs</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header">
+                        <a href="leaves_applications" style="display: block; color: black">Leaves Application</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header">
+                        <a href="resignations_info" style="display: block;color: black">Resignation info</a>
+                    </div>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+</div>
+<!-- end of nav -->
+
+<body onload="foot(footer)">
+    <div class="container-fluid">
+        <div class="container">
+            <h1>Confirmation letter</h1>
+            <div class='form-control-inline' style='display:inline;'>
+                <input type='text' class='form-control' style='width:15em' onKeyUp="search_result(this)">
+                <div id='search_list'></div>
+            </div>
+            <input type="button" onclick="printDiv(printableArea)" value="print a div!" />
+        </div>
+        <div class="container">
+            <div id="printableArea" style="text-align: center;margin: 50px">
+                <div>
+                    <!-- header -->
+                    <div style="display: flex; padding: 5px">
+                        <div style="flex: 1; text-align: left">
+                            <img src="../../images/Greeshams Logo.png" alt="" width="60%">
+
+                        </div>
+
+                        <div style="flex: 1;text-align: right;">
+                            <h4 style="font-weight:bolder; margin: 0%; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; padding: 0px; ">GRESHAM'S EASTERN [PRIVATE] LIMITED</h4>
+                            <p style="font: weight 500; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; padding: 0%; margin: 0%; font-size: 14px;  ">Business Center
+                                <span style="color: red">|</span>
+                                P.E.C.H.S, Block-6</p>
+                            <p style="font-weight:bolder; padding: 0%; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin: 0%; font-size: 14px; ">Plot 19/1-A
+                                <span style="color: red">|</span>
+                                Suite 702, 7th Floor</p>
+                            <p style="font-weight:500; padding: 0%; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin: 0%; font-size: 14px; ">Main Shahrah-e-Faisal</p>
+                            <p style="font-weight:500; padding: 0%; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin: 0%; font-size: 14px; ">Karachi 75400
+                                <span style="color: red">|</span>
+                                Pakistan</p>
+                            <br />
+                            <p style="font-weight: 500; padding: 0%; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin: 0%; font-size: 14px; ">Tel: +92 21 343 24530 [06 Lines]</p>
+                            <p style="font-weight: 500; padding: 0%; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin: 0%; font-size: 14px; ">Mobile: +92 300 24080</p>
+                            <p style="font-weight: 500; padding: 0%; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin: 0%; font-size: 14px; ">Fax: +92 21 343 24080</p>
+                            <p style="font-weight: 500; padding: 0%; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin: 0%; font-size: 14px; ">Sales@gel1947.com</p>
+                        </div>
+                    </div>
+
+                    <!-- end of header -->
+
+                    <div style="margin-top: 20px;">
+                        <h2 style="text-align:left; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin-left: 10px; margin-top: 20px; font-size: 18px;  ">
+                            <span>__________________</span>, 201_</h2>
+                    </div>
+
+                    <div style="margin-top: 30px;">
+                        <h2 style=" font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-decoration:underline; text-align:center;  ">CONFIRMATION LETTER</h2>
+                    </div>
+
+
+                    <div>
+                        <h2 style=" font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;  text-align:left; font-size: 16px;  ">Dear Mr. / Ms.
+                            <span style="text-decoration:underline;" id="name">(NAME)</span>
+                        </h2>
+                    </div>
+
+                    <br>
+                    <div>
+                        <h2 style=" font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: 100;  text-align:left; font-size: 16px;  ">Consequent to the review of your performance during your probation, we have the pleasure in informing
+                            you that, your services are being confirmed as
+                            <span id="designation">(Designation)</span> in
+                            <span id="department">(Department)</span> with effect from
+                            <span id="date">(Date)</span>.</h2>
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <h2 style=" font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: 100;  text-align:left; font-size: 16px;   ">All the other terms and conditions as detailed in your appointment letter remain unchanged.</h2>
+                    </div>
+
+
+                    <br>
+
+                    <div>
+                        <h2 style=" font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: 100;  text-align:left; font-size: 16px;   ">We look forward to your valuable contributions and wish you all the very best for a rewarding career
+                            with the organization.</h2>
+                    </div>
+                    <br>
+                    <div>
+                        <h2 style=" font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: 300;  text-align:left;  margin-top: -5px; font-size: 16px;  ">From Gresham's Eastern (Pvt.) Ltd.</h2>
+                    </div>
+
+                    <div style="margin-top: 120px;">
+                        <h2 style=" font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: 100; font-size: 20px;  text-align:center; margin-right: 400px; margin-left: 10px; margin-top: 150px; border-top: 1px solid black ;  width: 200px; ">Mian Idris Husain</h2>
+                        <h2 style=" font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight:bolder;  text-align:center; font-size: 18px; margin-right: 480px; margin-left: 10px; margin-top: -10px;  ">DIRECTOR OPERATIONS</h2>
+                    </div>
+
+                    <div>
+                        <h2 style=" font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: 100; font-size: 20px;  text-align:center; margin-left: 400px; margin-top:-70px;   border-top: 1px solid black ;  width: 200px; ">Mian Suhail Husain</h2>
+                        <h2 style=" font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight:bolder;  text-align:center; font-size: 18px;  margin-left: 300px; margin-top: -10px;  ">C.E.O/ DIRECTOR</h2>
+                    </div>
+
+
+
+
+
+                    <br>
+                    <br>
+                    <br>
+
+                    <!-- footer -->
+                    <div id="footer">
+                        <div style="position: fixed; bottom: 20px; width: 85%">
+                            <span style="font-weight: 700;width: inherit; display: block; margin: 5px 0px; text-align: left; font-size: 16px; border-bottom: 1px solid black; padding: 2px; color: red">
+                                www.gel1947.com
+                            </span>
+                            <span style="text-align: left">
+                                <p style="font-weight: 500; padding: 0%; margin: 0%">Registered Office F-302 Sindh Industrial Trading Estate - site
+                                    <span style="color: red">|</span>
+                                    Karachi
+                                    <span style="color: red">|</span> Pakistan</p>
+                                <p style="font-weight: 500; padding: 0%; margin: 0%">Regional Offices: lahore
+                                    <span style="color: red">|</span>
+                                    Rawalpindi</p>
+                                <p style="font-weight: 500; padding: 0%; margin: 0%">Liasion: USA
+                                    <span style="color: red">|</span>
+                                    European Union
+                                    <span style="color: red">|</span> ROC</p>
+                            </span>
+                        </div>
+                        <div style="position: fixed; bottom: 0px; right: 70px; width: 15%">
+                            <img src="../../images/Greeshams Logo.png" width="170px" height="100px" alt="" style="border: 1px solid black; padding: 1px">
+                        </div>
+                    </div>
+                    <!-- end of footer -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.collapsible').collapsible();
+    });
+
+    $(document).ready(function () {
+        $('.sidenav').sidenav();
+    });
+</script>
+<script>
+    var employees = [];
+
+    function load() {
+        $.get('/modules/get_employees', function (data) {
+            employees = data.employees;
+            console.log(data);
+        })
+    }
+    load();
+
+    function printDiv(divName) {
+        var printContents = divName.innerHTML;
+        var originalContents = document.body.innerHTML;
+
+        document.body.innerHTML = printContents;
+        footer.style.display = "block"
+
+        window.print();
+
+        document.body.innerHTML = originalContents;
+        footer.style.display = "none"
+    }
+
+    function foot(footer) {
+        footer.style.display = "none"
+    }
+
+    function search_result(e) {
+        if (e.value.length == 0) {
+            document.getElementById('search_list').innerHTML = "";
+            document.getElementById("search_list").style.border = "0px";
+            return
+        }
+        let str = '<div style="max-height:8em;overflow:scroll"><ul>';
+        employees.forEach((p) => {
+            console.log(p.name)
+            if (p.name.toLowerCase().indexOf(e.value.toLowerCase()) !== -1) {
+                str += `<li ><button class="btn btn-primary" onClick="fetch('` + p._id + `')">` + p.name + `</button></li>`
+            }
+        });
+        str += '</ul></div>'
+        console.log(str);
+        document.getElementById('search_list').innerHTML = '';
+        document.getElementById('search_list').innerHTML = str;
+        document.getElementById("search_list").style.border = "1px";
+        console.log(e.value);
+
+    }
+
+    function fetch(id) {
+        //      alert(id);
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1; //January is 0!
+        var yyyy = today.getFullYear();
+
+        if (dd < 10) {
+            dd = '0' + dd
+        }
+
+        if (mm < 10) {
+            mm = '0' + mm
+        }
+
+        today = mm + '/' + dd + '/' + yyyy;
+        employees.forEach((p) => {
+            if (p._id === id) {
+                document.getElementById('name').innerHTML = p.name;
+                document.getElementById('designation').innerHTML = p.designation;
+                document.getElementById('department').innerHTML = p.dept;
+                document.getElementById('date').innerHTML = today;
+                // document.getElementById('mobile').innerHTML = p.mobile;
+                // document.getElementById('picture').src = '../../assets/pictures/' + p.picture;
+                // document.getElementById('p_name').value = p.name;
+                // document.getElementById('p_name').value = p.name;
+                // document.getElementById('p_name').value = p.name;
+
+            }
+        })
+    }
+</script>
+
+</html>

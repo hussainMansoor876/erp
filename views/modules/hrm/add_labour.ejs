@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Human Resource Management</title>
+    <style>
+        .row{
+        margin-bottom: 10px;
+    }
+    @media only screen and (min-width: 993px) {
+            nav a.button-collapse {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <nav>
+            <a data-target="slide-out" class="button-collapse sidenav-trigger btn-flat btn-large waves-effect waves-light"
+                style="background: #EE6E73"><i class="material-icons">dehaze</i></a>
+
+            <h3 style="color: white; text-align: center; padding: 15px 0px">Human Resource Management</h3>
+        </nav>
+
+
+        <ul id="slide-out" class="sidenav">
+            <li>
+                <div class="user-view">
+                    <div class="background">
+                        <img src="https://images.freeimages.com/images/small-previews/4f7/blank-sign-bullet-holes-1447150.jpg">
+                    </div>
+                    <a href="#user"><img class="circle" src="https://images.freeimages.com/images/small-previews/4f7/blank-sign-bullet-holes-1447150.jpg"></a>
+                    <a href="#name"><span class="white-text name">John Doe</span></a>
+                    <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+                </div>
+            </li>
+            <li class="no-padding">
+                <ul class="collapsible">
+                        <li>
+                                <div class="collapsible-header">
+                                    <a href="employees_list" style="display: block; color: black">Employees Details</a>
+                                </div>
+                            </li>
+                        <li>
+                                <div class="collapsible-header">
+                                    <a href="add_applicant" style="display: block; color: black">Add Applicant</a>
+                                </div>
+                            </li>
+                    <li>
+                        <div class="collapsible-header">Add Employees</div>
+                        <div class="collapsible-body">
+                            <a href="add_employee" style="display: block; padding-left: 20px; color: black">Add Staff</a>
+                            <a href="add_labour" style="display: block;  padding-left: 20px; color: black">Add Labour</a>
+                        </div>
+
+
+                    </li>
+                    <li>
+                        <div class="collapsible-header">Letters</div>
+                        <div class="collapsible-body">
+                            <a href="appointment_letter" style="display: block; padding-left: 20px;color: black">Appointment Letter</a>
+                            <a href="contract_letter" style="display: block; padding-left: 20px;color: black">Contract Letter</a>
+                            <a href="confirmation_letter" style="display: block; padding-left: 20px;color: black">Conformation Letter</a>
+                            <a href="supported_docs" style="display: block; padding-left: 20px;color: black">Supported Docs</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header">
+                            <a href="leaves_applications" style="display: block; color: black">Leaves Application</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header">
+                            <a href="resignations_info" style="display: block;color: black">Resignation info</a>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+<!-- end of nav -->
+    <div class="container">
+        <div class="jumbotron" style='padding:2em'>
+            <h2 class='text-center'>Human Resource Management</h2>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 style='display:inline;float:left;margin-right:1em'>Add Employee</h4>
+                            <div class='form-control-inline' style='display:inline;'>
+                                <input type='text' class='form-control' style='width:15em' onKeyUp="search_result(this)">
+                                <div id='search_list'></div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <form class='form' action='./add_labour' method="POST" enctype="multipart/form-data">
+
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            Full Name
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='text' class='form-control' name='name' required id='p_name'>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            S/O,D/O,W/O
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='text' class='form-control' name='father_name' required id='p_f_name'>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            Gender
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <select class='form-control' name='gender' required>
+                                            <option value='male'>Male</option>
+                                            <option value='female'>Female</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            D.O.B
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='date' class='form-control' id='p_dob' name='dob'>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            Picture
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='file' name='picture' class='form-control' required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            CNIC
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='text' class='form-control' name='cnic' required id='p_cnic'>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            CNIC Expiry
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='date' class='form-control' name='cnic_expiry'>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            NTN#
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='text' class='form-control' name='ntn' required id='ntn'>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            Driving License#
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='text' class='form-control' name='dl_number' id='dl_number' required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            Driving License Expiry
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='date' class='form-control' name='dl_expiry' id='dl_expiry'>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            Address
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='text' class='form-control' name='address' id='p_address' required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            Email
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='text' class='form-control' name='email' required id='p_email'>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            Emergency Contact#
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='text' class='form-control' name='telephone' id='p_telephone'>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            Contact #
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='text' class='form-control' name='mobile' required id='p_mobile'>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            Religion
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <select class='form-control' name='religion' required id='religion'>
+                                            <option value='muslim'>Muslim</option>
+                                            <option value='non muslim'>Non Muslim</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            Marital Status
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <select type='text' class='form-control' name='marital_status' required id='marital_status'>
+                                            <option>Non Married</option>
+                                            <option>Married</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            Date Of Appointment
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='date' class='form-control' name='doi' id='doi'>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            Basic Salary
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='number' class='form-control' name='basic_salary' id='basic_salary'>
+                                    </div>
+                                </div>
+                                                    <div class="row">
+                                                            <div class="col-md-4"><label class='form-control-label'>
+                                                                    Reference
+                                                                </label></div>
+                                                            <div class="col-md-8">
+                                                                <input type='text' class='form-control' name='reference' id='reference'>
+                                                            </div>
+                                                        </div>      
+                                   
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-2">&nbsp;</div>
+                                    <div class="col-md-8">
+
+                                        <button class='btn btn-primary text-center' style='width: inherit'>Add Labour</button>
+                                    </div>
+
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+ <script>
+        var peoples = [];
+        function load() {
+            $.get('/modules/get_applicants', function (data) {
+                peoples = data.applicants;
+                console.log(data);
+            })
+        }
+        load();
+      
+        function search_result(e) {
+            if (e.value.length == 0) {
+                document.getElementById('search_list').innerHTML = "";
+                document.getElementById("search_list").style.border = "0px";
+                return
+            }
+            let str = '<div style="max-height:8em;overflow:scroll"><ul>';
+            peoples.forEach((p) => {
+                console.log(p.name)
+                if (p.name.toLowerCase().indexOf(e.value.toLowerCase()) !== -1) {
+                    str += `<li ><button onClick="fetch('` + p._id + `')">` + p.name + `</button></li>`
+                }
+            });
+            str += '</ul></div>'
+            console.log(str);
+            document.getElementById('search_list').innerHTML = '';
+            document.getElementById('search_list').innerHTML = str;
+            document.getElementById("search_list").style.border = "1px";
+            console.log(e.value);
+
+        }
+        function fetch(id) {
+            //      alert(id);
+            peoples.forEach((p) => {
+                if (p._id === id) {
+                    document.getElementById('p_name').value = p.name;
+                    document.getElementById('p_f_name').value = p.father_name;
+                    document.getElementById('p_cnic').value = p.cnic;
+                    document.getElementById('p_address').value = p.address;
+                    document.getElementById('p_dob').value = p.dob;
+                    document.getElementById('p_email').value = p.email;
+                    document.getElementById('p_mobile').value = p.mobile;
+                    document.getElementById('p_telephone').value = p.telephone;
+                    document.getElementById('p_p_address').value = p.p_address;
+                    document.getElementById('ntn').value = p.ntn;
+                    document.getElementById('basic_salary').value = p.basic_salary;
+                    document.getElementById('reference').value = p.reference;
+                    document.getElementById('p_p_address').value = p.p_address;
+
+
+
+                    // document.getElementById('p_name').value = p.name;
+                    // document.getElementById('p_name').value = p.name;
+                    // document.getElementById('p_name').value = p.name;
+
+                }
+            })
+        }
+        // function add_labour(){
+        //     let labour = {
+        //         name: document.getElementById('name').value,
+        //         father_name: document.getElementById('father_name').value,
+        //         cnic: document.getElementById('cnic').value,
+        //         dob: document.getElementById('dob').value,
+        //         mobile: document.getElementById('mobile').value,
+        //         address: document.getElementById('address').value,
+        //         p_address: document.getElementById('p_address').value,
+        //         email: document.getElementById('email').value,
+        //         telephone: document.getElementById('telephone').value
+        //     };
+        //     var xhttp = new XMLHttpRequest();
+        //     xhttp.onreadystatechange = function () {
+        //         if (this.readyState == 4 && this.status == 200) {
+        //             alert(this.responseText);
+        //         }
+        //     };
+        //     xhttp.open("POST", "/modules/hrm/add_labour", true);
+        //     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        //     xhttp.send("labour="+JSON.stringify(labour));
+        // }
+    </script>
+<script>
+    $(document).ready(function () {
+        $('.collapsible').collapsible();
+    });
+
+    $(document).ready(function () {
+        $('.sidenav').sidenav();
+    });
+</script>
+</body>
+
+</html>

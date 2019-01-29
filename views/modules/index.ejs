@@ -95,7 +95,7 @@
             width: inherit;
             background-size: cover !important;
             background-position: center !important;
-            /* height: 220px; */
+            height: 180px;
             padding: 1.5em .5em;
             border-radius: 5px;
             background-color: #F7F7F7;
@@ -104,7 +104,7 @@
         .flip>.front p,
         .flip>.back p {
             font-size: 0.9125rem;
-            line-height: 120%;
+            /* line-height: 120%; */
             /* color: #999; */
         }
 
@@ -139,110 +139,110 @@
                 <!-- horizontal -->
                 <div class="flip">
                     <div class="front">
-                        <img src="../../public/icons/rotation.png" alt="" width="70" style="margin-bottom: 10px">
-                        <h5 class="text-card">human resource management</h5>
+                        <img src="icons/rotation.png" alt="" width="70" style="margin-bottom: 10px">
+                        <h5 class="text-card" id='hrm'>human resource management</h5>
                     </div>
                     <div class="back">
                         <p>Good tools make application development quicker and easier to maintain than if you did
                             everything by
                             hand..</p>
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#login_modal">Proceed</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#login_modal" onclick="fetchingData(hrm)">Proceed</button>
                     </div>
                 </div>
                 <div class="flip">
                     <div class="front">
-                        <img src="../../public/icons/diagram.png" alt="" width="70" style="margin-bottom: 10px">
-                        <h5 class="text-card">order process management</h5>
+                        <img src="icons/diagram.png" alt="" width="70" style="margin-bottom: 10px">
+                        <h5 class="text-card" id='opm'>Order Process Management</h5>
                     </div>
                     <div class="back">
                         <p>Good tools make application development quicker and easier to maintain than if you did
                             everything by
                             hand..</p>
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#login_modal">Proceed</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#login_modal" onclick="fetchingData(opm)">Proceed</button>
                     </div>
                 </div>
                 <div class="flip">
                     <div class="front">
-                        <img src="../../public/icons/organization.png" alt="" width="70" style="margin-bottom: 10px">
-                        <h5 class="text-card">customer order tracking</h5>
+                        <img src="icons/organization.png" alt="" width="70" style="margin-bottom: 10px">
+                        <h5 class="text-card" id='cot' style="padding: 0px 5px">Costumer Order Tracking</h5>
                     </div>
                     <div class="back">
                         <p>Good tools make application development quicker and easier to maintain than if you did
                             everything by
                             hand..</p>
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#login_modal">Proceed</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#login_modal" onclick="fetchingData(cot)">Proceed</button>
                     </div>
                 </div>
                 <div class="flip">
                     <div class="front">
-                        <img src="../../public/icons/owner.png" alt="" width="70" style="margin-bottom: 10px">
-                        <h5 class="text-card">finance and accounts managements</h5>
+                        <img src="icons/owner.png" alt="" width="70" style="margin-bottom: 10px">
+                        <h5 class="text-card" id='fam'>Finance & Accounts Managements</h5>
                     </div>
                     <div class="back">
                         <p>Good tools make application development quicker and easier to maintain than if you did
                             everything by
                             hand..</p>
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#login_modal">Proceed</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#login_modal" onclick="fetchingData(fam)">Proceed</button>
                     </div>
                 </div>
                 <div class="flip">
                     <div class="front">
-                        <img src="../../public/icons/lecture.png" alt="" width="70" style="margin-bottom: 10px">
-                        <h5 class="text-card">orientation, training and development</h5>
+                        <img src="icons/lecture.png" alt="" width="70" style="margin-bottom: 10px">
+                        <h5 class="text-card" id='otd'>Orientation, Training & Development</h5>
                     </div>
                     <div class="back">
                         <p>Good tools make application development quicker and easier to maintain than if you did
                             everything by
                             hand..</p>
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#login_modal">Proceed</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#login_modal" onclick="fetchingData(otd)">Proceed</button>
                     </div>
                 </div>
                 <div class="flip">
                     <div class="front">
-                        <img src="../../public/icons/tasks.png" alt="" width="70" style="margin-bottom: 10px">
-                        <h5 class="text-card">task management</h5>
+                        <img src="icons/tasks.png" alt="" width="70" style="margin-bottom: 10px">
+                        <h5 class="text-card" id='tm' style="padding: 20px">Task Management</h5>
                     </div>
                     <div class="back">
                         <p>Good tools make application development quicker and easier to maintain than if you did
                             everything by
                             hand..</p>
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#login_modal">Proceed</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#login_modal" onclick="fetchingData(tm)">Proceed</button>
                     </div>
                 </div>
                 <div class="flip">
                     <div class="front">
-                        <img src="../../public/icons/tools.png" alt="" width="70" style="margin-bottom: 10px">
-                        <h5 class="text-card">preventive , maintanence and calibration</h5>
+                        <img src="icons/tools.png" alt="" width="70" style="margin-bottom: 10px">
+                        <h5 class="text-card" id='pmc'>Preventive Maintanence & Calibration</h5>
                     </div>
                     <div class="back">
                         <p>Good tools make application development quicker and easier to maintain than if you did
                             everything by
                             hand..</p>
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#login_modal">Proceed</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#login_modal" onclick="fetchingData(pmc)">Proceed</button>
                     </div>
                 </div>
                 <div class="flip">
                     <div class="front">
-                        <img src="../../public/icons/man.png" alt="" width="70" style="margin-bottom: 10px">
-                        <h5 class="text-card">gel portal</h5>
+                        <img src="icons/man.png" alt="" width="70" style="margin-bottom: 10px">
+                        <h5 class="text-card" id='gp'  style="padding: 20px">Gel Portal</h5>
                     </div>
                     <div class="back">
                         <p>Good tools make application development quicker and easier to maintain than if you did
                             everything by
                             hand..</p>
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#login_modal">Proceed</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#login_modal" onclick="fetchingData(gp)">Proceed</button>
                     </div>
                 </div>
                 <div class="flip">
                     <div class="front">
-                        <img src="../../public/icons/man.png" alt="" width="70" style="margin-bottom: 10px">
-                        <h5 class="text-card">employ portal</h5>
+                        <img src="icons/man.png" alt="" width="70" style="margin-bottom: 10px">
+                        <h5 class="text-card" id='ep'  style="padding: 20px">Employee Portal</h5>
                     </div>
                     <div class="back">
                         <p>Good tools make application development quicker and easier to maintain than if you did
                             everything by
                             hand..</p>
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#login_modal">Proceed</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#login_modal" onclick="fetchingData(ep)">Proceed</button>
                     </div>
                 </div>
 
@@ -349,26 +349,29 @@
         </div>
     </div>
     </div>
-    <!-- EP Modal -->
+    <!-- LOGIN Modal -->
     <div class="modal fade" id="login_modal" role="dialog">
-        <form action='/modules/ep' method='POST'>
+        <form action='/modules' method='POST' id="loginForm" onsubmit="return check_cred()">
             <div class="modal-dialog">
 
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title">EMPLOYEE PORTAL</h4>
+                        <h4 class="modal-title" id="portal"></h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
-                    <div class="modal-body" style="text-align: left">
+                    <div class="modal-body">
                         <div class="container">
                             <div class="form-group">
                                 <label for="usr">Name:</label>
-                                <input type="text" class="form-control" name='username'>
+                                <input type="text" class="form-control" name='username' id='username'>
                             </div>
                             <div class="form-group">
                                 <label for="pwd">Password:</label>
-                                <input type="password" class="form-control" name='password'>
+                                <input type="password" class="form-control" name='password' id='password'>
+                            </div>
+                            <div class="form-group" id='alert_info'>
+
                             </div>
                         </div>
 
@@ -383,7 +386,8 @@
             <!-- Modal content-->
         </form>
     </div>
-    <!-- EP Modal -->
+    <!-- LOGIN Modal -->
+    </div>
 
     </div>
     <!-- proceed modal end --->
@@ -391,6 +395,61 @@
     <script src='/js/popper.min.js'></script>
     <script src='/js/bootstrap.min.js'></script>
     <script src='/js/tooltip.js'></script>
+    <script>
+        function check_cred(e) {
+            document.getElementById('alert_info');
+            str =
+                `<div class="alert alert-danger alert-dismissible">
+                                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                <strong>Failed!</strong> <span></span>
+                             </div>`;
+            let username = document.getElementById('username');
+            let password = document.getElementById('password');
+            $.post('/check_cred', {
+                username,
+                password
+            }, function (data) {
+                console.log(data);
+            })
+            console.log(username.value, password.value);
+            return false;
+
+        }
+
+        function fetchingData(e) {
+            console.log(getCookie('employee'));
+            let employee = getCookie('employee');
+            if (employee) {
+                //  let employee = JSON.parse(employee);
+                //if(employee.previledge.indexOf(e.id)!==-1){
+                window.location.assign('/modules/' + e.id);
+                // }
+            }
+            // var num = document.getElementById('loginForm');
+            document.getElementById('portal').innerHTML = e.innerHTML
+            // console.log('==>',num.action)
+            document.getElementById('loginForm').action = '/modules/' + e.id;
+            var num = document.getElementById('loginForm');
+            console.log('==>', num.action)
+        }
+
+        function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+    </script>
+
 
 </body>
 

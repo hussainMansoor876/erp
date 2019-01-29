@@ -5,18 +5,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
         crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Human Resource Management</title>
     <style>
         .row{
         margin-bottom: 10px;
     }
+    @media only screen and (min-width: 993px) {
+            nav a.button-collapse {
+                display: block;
+            }
+        }
     </style>
 </head>
 
 <body >
+    <div>
+        <nav>
+            <a data-target="slide-out" class="button-collapse sidenav-trigger btn-flat btn-large waves-effect waves-light"
+                style="background: #EE6E73"><i class="material-icons">dehaze</i></a>
 
+            <h3 style="color: white; text-align: center; padding: 15px 0px">Human Resource Management</h3>
+        </nav>
+
+
+        <ul id="slide-out" class="sidenav">
+            <li>
+                <div class="user-view">
+                    <div class="background">
+                        <img src="https://images.freeimages.com/images/small-previews/4f7/blank-sign-bullet-holes-1447150.jpg">
+                    </div>
+                    <a href="#user"><img class="circle" src="https://images.freeimages.com/images/small-previews/4f7/blank-sign-bullet-holes-1447150.jpg"></a>
+                    <a href="#name"><span class="white-text name">John Doe</span></a>
+                    <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+                </div>
+            </li>
+            <li class="no-padding">
+                <ul class="collapsible">
+                        <li>
+                                <div class="collapsible-header">
+                                    <a href="employees_list" style="display: block; color: black">Employees Details</a>
+                                </div>
+                            </li>
+                        <li>
+                                <div class="collapsible-header">
+                                    <a href="add_applicant" style="display: block; color: black">Add Applicant</a>
+                                </div>
+                            </li>
+                    <li>
+                        <div class="collapsible-header">Add Employees</div>
+                        <div class="collapsible-body">
+                            <a href="add_employee" style="display: block; padding-left: 20px; color: black">Add Staff</a>
+                            <a href="add_labour" style="display: block;  padding-left: 20px; color: black">Add Labour</a>
+                        </div>
+
+
+                    </li>
+                    <li>
+                        <div class="collapsible-header">Letters</div>
+                        <div class="collapsible-body">
+                            <a href="appointment_letter" style="display: block; padding-left: 20px;color: black">Appointment Letter</a>
+                            <a href="contract_letter" style="display: block; padding-left: 20px;color: black">Contract Letter</a>
+                            <a href="confirmation_letter" style="display: block; padding-left: 20px;color: black">Conformation Letter</a>
+                            <a href="supported_docs" style="display: block; padding-left: 20px;color: black">Supported Docs</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header">
+                            <a href="leaves_applications" style="display: block; color: black">Leaves Application</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header">
+                            <a href="resignations_info" style="display: block;color: black">Resignation info</a>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+<!-- end of nav -->
     <div class="container">
         <div class="jumbotron" style='padding:2em'>
             <h2 class='text-center'>Human Resource Management</h2>
@@ -58,16 +130,26 @@
             </div>
         </div>
     </div>
-    
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-        crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
 
-        <script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.collapsible').collapsible();
+        });
+    
+        $(document).ready(function () {
+            $('.sidenav').sidenav();
+        });
+    </script>
+         <script>
     var leaves;
        function load(){
            console.log('happening..');
@@ -90,7 +172,7 @@
       table.innerHTML = str;
     }
   };
-  xhttp.open("GET", "./get_leaves_applications", true);
+  xhttp.open("GET", "/modules/get_leaves_applications", true);
   xhttp.send(); 
        }
        load();

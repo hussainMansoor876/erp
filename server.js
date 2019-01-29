@@ -35,10 +35,10 @@ mongoose.connect("mongodb://rapshek:natsikap1@ds026898.mlab.com:26898/greeshams"
     }
     else {
         console.log("connection with mongodb is successfull");
-
     }
 });
 // mongoose connection //
+
 app.use('/',routes);
 // get routes //
 // app.get('/',(req,res)=>{
