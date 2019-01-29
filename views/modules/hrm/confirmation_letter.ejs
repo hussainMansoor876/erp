@@ -11,24 +11,26 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Confirmation Letter - Human Resource Management</title>
     <style>
-    @media only screen and (min-width: 993px) {
-            nav a.button-collapse {
-                display: block;
-            }
-        }
-        @page {
-            size: auto;
-            /* auto is the initial value */
-            margin: 0;
-            /* this affects the margin in the printer settings */
-            margin-left: 20px;
-            margin-right: 20px;
-            margin-bottom: 20px;
-
-        }
-    </style>
+        @media only screen and (min-width: 993px) {
+               nav a.button-collapse {
+                   display: block;
+               }
+           }
+       </style>
+       <style type="text/css" media="print">
+       
+           @page {
+               size: auto;   /* auto is the initial value */
+               margin: 0;  /* this affects the margin in the printer settings */
+               margin-left:20px;
+               margin-right:20px;
+               margin-bottom:20px;
+   
+           }
+           </style>
 </head>
-<div>
+<body onload="foot(footer)">
+    <div>
     <nav>
         <a data-target="slide-out" class="button-collapse sidenav-trigger btn-flat btn-large waves-effect waves-light"
             style="background: #EE6E73"><i class="material-icons">dehaze</i></a>
@@ -95,7 +97,6 @@
 </div>
 <!-- end of nav -->
 
-<body onload="foot(footer)">
     <div class="container-fluid">
         <div class="container">
             <h1>Confirmation letter</h1>
