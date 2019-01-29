@@ -65,6 +65,12 @@ hrm.get('/appointment_letter', (req, res) => {
 hrm.get('/contract_letter', (req, res) => {
     res.render('modules/hrm/contract_letter');
 });
+hrm.get('/nda_letter', (req, res) => {
+    res.render('modules/hrm/nda_letter');
+});
+hrm.get('/ec_letter', (req, res) => {
+    res.render('modules/hrm/emergency_contact_letter');
+});
 hrm.get('/confirmation_letter', (req, res) => {
     res.render('modules/hrm/confirmation_letter');
 })
