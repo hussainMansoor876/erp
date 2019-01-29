@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
         crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/hrm.css">
     <title>Human Resource Management</title>
     <style>
         .row{
@@ -45,16 +46,16 @@
             </li>
             <li class="no-padding">
                 <ul class="collapsible">
-                        <li>
-                                <div class="collapsible-header">
-                                    <a href="employees_list" style="display: block; color: black">Employees Details</a>
-                                </div>
-                            </li>
-                        <li>
-                                <div class="collapsible-header">
-                                    <a href="add_applicant" style="display: block; color: black">Add Applicant</a>
-                                </div>
-                            </li>
+                    <li>
+                        <div class="collapsible-header">
+                            <a href="employees_list" style="display: block; color: black">Employees Details</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header">
+                            <a href="add_applicant" style="display: block; color: black">Add Applicant</a>
+                        </div>
+                    </li>
                     <li>
                         <div class="collapsible-header">Add Employees</div>
                         <div class="collapsible-body">
@@ -67,10 +68,14 @@
                     <li>
                         <div class="collapsible-header">Letters</div>
                         <div class="collapsible-body">
-                            <a href="appointment_letter" style="display: block; padding-left: 20px;color: black">Appointment Letter</a>
-                            <a href="contract_letter" style="display: block; padding-left: 20px;color: black">Contract Letter</a>
-                            <a href="confirmation_letter" style="display: block; padding-left: 20px;color: black">Conformation Letter</a>
-                            <a href="supported_docs" style="display: block; padding-left: 20px;color: black">Supported Docs</a>
+                            <a href="appointment_letter" style="display: block; padding-left: 20px;color: black">Appointment
+                                Letter</a>
+                            <a href="contract_letter" style="display: block; padding-left: 20px;color: black">Contract
+                                Letter</a>
+                            <a href="confirmation_letter" style="display: block; padding-left: 20px;color: black">Conformation
+                                Letter</a>
+                            <a href="supported_docs" style="display: block; padding-left: 20px;color: black">Supported
+                                Docs</a>
                         </div>
                     </li>
                     <li>
@@ -88,170 +93,173 @@
         </ul>
 
     </div>
-<!-- end of nav -->
-    <div class="container">
-        <div class="jumbotron" style='padding:2em'>
-            <h2 class='text-center'>Human Resource Management</h2>
-        </div>
+    <!-- end of nav -->
+    <div class="container-fluid">
         <div class="container">
+
             <div class="row">
                 <div class="col-md-12">
-                    <div class="card">
+                    <div class="card emp-list-search-panel">
                         <div class="card-header">
-                            <h4 style='display: inline;'>Employees List</h4>
+                            <h4 style='display: inline; font-size: 1.8em'>Employees List</h4>
                             <div style='float:right'>
                                 <button class='btn btn-primary' onclick="print_employees()">Print</button></div>
                         </div>
                         <div class="card-body">
-                        <div class="input-group mb-3">
-   <!-- <div class="input-group-prepend">
+                            <div class="input-group mb-3">
+                                <!-- <div class="input-group-prepend">
      <span class="input-group-text ">Search By Name , Dept ,email,ext,phone etc</span>
    </div> -->
-   <input type="text" class="form-control " placeholder="Search By Name , Dept ,email,ext,phone etc"  onkeyup="search(this,'employees_table')">
- </div>
-                            <table class="table table-light" id='printable_table'>
-                                <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Dept.</th>
-                                        <th>Designation</th>
-                                        <th>Email</th>
-                                        <th>Mobile</th>
-                                        <th>Ext</th>
-                                        <th>Address</th>
-                                        <th>Permanant Address</th>
-                                        <th>City</th>
-                                        <th>Employee Code</th>
-                                        <th>NTN#</th>
-                                        <th>Driving Licence#</th>
-                                        <th>Driving License Expiry</th>
-                                        <th>Passport#</th>
-                                        <th>Passport Expiry</th>
-                                        <th>Blood Group</th>
-                                        <th>Basic Salary</th>
-                                        <th>Allowances</th>
-                                        <th>Deduction</th>
-                                        <th>Additional Package</th>
-                                        <th>Net Salary</th>
-                    
-
-                                    </tr>
-                                </thead>
-                                <tbody id='employees_table'>
-
-                                </tbody>
-                            </table>
+                                <input type="text" class="form-control " placeholder="Search By Name , Dept ,email,ext,phone etc"
+                                    onkeyup="search(this,'employees_table')">
+                            </div>
                         </div>
                     </div>
-
                 </div>
             </div>
+
+            <div class="table-responsive">
+
+                <table class="table table-bordered" id='printable_table'>
+                    <thead class="thead-light text-center">
+                        <tr class="d-flex">
+                            <th class="col-2">Name</th>
+                            <th class="col-2">Dept.</th>
+                            <th class="col-2">Designation</th>
+                            <th class="col-2">Email</th>
+                            <th class="col-2">Mobile</th>
+                            <th class="col-2">Ext</th>
+                            <th class="col-2">Address</th>
+                            <th class="col-2">Permanant Address</th>
+                            <th class="col-2">City</th>
+                            <th class="col-2">Employee Code</th>
+                            <th class="col-2">NTN#</th>
+                            <th class="col-2">Driving Licence#</th>
+                            <th class="col-2">Driving License Expiry</th>
+                            <th class="col-2">Passport#</th>
+                            <th class="col-2">Passport Expiry</th>
+                            <th class="col-2">Blood Group</th>
+                            <th class="col-2">Basic Salary</th>
+                            <th class="col-2">Allowances</th>
+                            <th class="col-2">Deduction</th>
+                            <th class="col-2">Additional Package</th>
+                            <th class="col-2">Net Salary</th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody id='employees_table'>
+
+                    </tbody>
+                </table>
+            </div>
+
+
         </div>
     </div>
     <script>
-       function load(){
-           console.log('happening..');
-        var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      let employees = JSON.parse(this.responseText).employees;
-      let table=document.getElementById('employees_table');
-      let str='';
-      employees.forEach((e)=>{
-       
-       str += `<tr><td>`+e.name+`</td><td>`+e.dept+
-        `</td><td>`+e.designation+`</td><td>`+e.email+
-        `</td><td>`+e.mobile+`</td><td>`+e.ext+
-        `</td><td>`+e.address+`</td><td>`+e.p_address+
-        `</td><td>`+e.city+`</td><td>`+e.e_code+
-        `</td><td>`+e.ntn+`</td><td>`+e.dl_number+
-        `</td><td>`+e.dl_expiry+`</td><td>`+e.pp_number+    
-        `</td><td>`+e.pp_expiry+`</td><td>`+e.bg+
-        `</td><td>`+e.basic_salary+`</td><td>`+(e.a_hr+e.a_mobile+e.a_lunch+e.a_transport)+
-        `</td><td>`+(e.d_tax+e.d_retention+e.d_sales)+`</td><td>`+e.a_package+
-        `</td><td>`+((e.basic_salary+e.a_hr+e.a_mobile+e.a_lunch+e.a_transport)-(e.d_tax+e.d_retention+e.d_sales))+`</td></tr>`
-      });
-      table.innerHTML = str;
-    }
-  };
-  xhttp.open("GET", "/modules/get_employees", true);
-  xhttp.send(); 
-       }
-       function search(e,table_id) {
-    var input, filter, found, table, tr, td, i, j;
-    input = e;
-    filter = input.value.toUpperCase();
-    table = document.getElementById(table_id);
-    tr = table.getElementsByTagName("tr");
-    for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td");
-        for (j = 0; j < td.length; j++) {
-            if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
-                found = true;
+        function load() {
+            console.log('happening..');
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    let employees = JSON.parse(this.responseText).employees;
+                    let table = document.getElementById('employees_table');
+                    let str = '';
+                    employees.forEach((e) => {
+
+                        str += `<tr><td>` + e.name + `</td><td>` + e.dept +
+                            `</td><td>` + e.designation + `</td><td>` + e.email +
+                            `</td><td>` + e.mobile + `</td><td>` + e.ext +
+                            `</td><td>` + e.address + `</td><td>` + e.p_address +
+                            `</td><td>` + e.city + `</td><td>` + e.e_code +
+                            `</td><td>` + e.ntn + `</td><td>` + e.dl_number +
+                            `</td><td>` + e.dl_expiry + `</td><td>` + e.pp_number +
+                            `</td><td>` + e.pp_expiry + `</td><td>` + e.bg +
+                            `</td><td>` + e.basic_salary + `</td><td>` + (e.a_hr + e.a_mobile + e.a_lunch + e.a_transport) +
+                            `</td><td>` + (e.d_tax + e.d_retention + e.d_sales) + `</td><td>` + e.a_package +
+                            `</td><td>` + ((e.basic_salary + e.a_hr + e.a_mobile + e.a_lunch + e.a_transport) - (e.d_tax + e.d_retention + e.d_sales)) + `</td></tr>`
+                    });
+                    table.innerHTML = str;
+                }
+            };
+            xhttp.open("GET", "/modules/get_employees", true);
+            xhttp.send();
+        }
+        function search(e, table_id) {
+            var input, filter, found, table, tr, td, i, j;
+            input = e;
+            filter = input.value.toUpperCase();
+            table = document.getElementById(table_id);
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td");
+                for (j = 0; j < td.length; j++) {
+                    if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        found = true;
+                    }
+                }
+                if (found) {
+                    tr[i].style.display = "";
+                    found = false;
+                } else {
+                    tr[i].style.display = "none";
+                }
             }
         }
-        if (found) {
-            tr[i].style.display = "";
-            found = false;
-        } else {
-            tr[i].style.display = "none";
+        function print_employees() {
+            var tab_text = "<table border='2px'><tr bgcolor='#87AFC6'>";
+            var textRange; var j = 0;
+            tab = document.getElementById('printable_table'); // id of table
+
+            for (j = 0; j < tab.rows.length; j++) {
+                tab_text = tab_text + tab.rows[j].innerHTML + "</tr>";
+                //tab_text=tab_text+"</tr>";
+            }
+
+            tab_text = tab_text + "</table>";
+            tab_text = tab_text.replace(/<A[^>]*>|<\/A>/g, "");//remove if u want links in your table
+            tab_text = tab_text.replace(/<img[^>]*>/gi, ""); // remove if u want images in your table
+            tab_text = tab_text.replace(/<input[^>]*>|<\/input>/gi, ""); // reomves input params
+
+            var ua = window.navigator.userAgent;
+            var msie = ua.indexOf("MSIE ");
+
+            if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))      // If Internet Explorer
+            {
+                txtArea1.document.open("txt/html", "replace");
+                txtArea1.document.write(tab_text);
+                txtArea1.document.close();
+                txtArea1.focus();
+                sa = txtArea1.document.execCommand("SaveAs", true, "employees list.xls");
+            }
+            else                 //other browser not tested on IE 11
+                sa = window.open('data:application/vnd.ms-excel,' + encodeURIComponent(tab_text));
+
+            return (sa);
+
         }
-    }
-}
-function print_employees(){
-var tab_text="<table border='2px'><tr bgcolor='#87AFC6'>";
-    var textRange; var j=0;
-    tab = document.getElementById('printable_table'); // id of table
-
-    for(j = 0 ; j < tab.rows.length ; j++) 
-    {     
-        tab_text=tab_text+tab.rows[j].innerHTML+"</tr>";
-        //tab_text=tab_text+"</tr>";
-    }
-
-    tab_text=tab_text+"</table>";
-    tab_text= tab_text.replace(/<A[^>]*>|<\/A>/g, "");//remove if u want links in your table
-    tab_text= tab_text.replace(/<img[^>]*>/gi,""); // remove if u want images in your table
-    tab_text= tab_text.replace(/<input[^>]*>|<\/input>/gi, ""); // reomves input params
-
-    var ua = window.navigator.userAgent;
-    var msie = ua.indexOf("MSIE "); 
-
-    if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))      // If Internet Explorer
-    {
-        txtArea1.document.open("txt/html","replace");
-        txtArea1.document.write(tab_text);
-        txtArea1.document.close();
-        txtArea1.focus(); 
-        sa=txtArea1.document.execCommand("SaveAs",true,"employees list.xls");
-    }  
-    else                 //other browser not tested on IE 11
-        sa = window.open('data:application/vnd.ms-excel,' + encodeURIComponent(tab_text));  
-
-    return (sa);
-
-}
     </script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-    crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
 
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-    crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
         $(document).ready(function () {
             $('.collapsible').collapsible();
         });
-    
+
         $(document).ready(function () {
             $('.sidenav').sidenav();
         });
     </script>
-    
+
 </body>
 
 </html>
