@@ -114,7 +114,7 @@
                                     <div class="col-md-2">&nbsp;</div>
                                     <div class="col-md-8">
 
-                                        <button class='btn btn-primary text-center' style='width: inherit'>Apply for a leave</button>
+                                        <button class='btn btn-primary text-center' style='width: inherit' onclick='return print_leave()'>Apply for a leave</button>
                                     </div>
 
                                 </div>
@@ -163,6 +163,14 @@
                 swal(`You Have ${days} Days Leaves Remaining!`)
                 val.value = days
             }
+        }
+        function print_leave(){
+            let str = `<h1>hello</h1>`;
+            let old_window = document;
+            document = str;
+            print();
+            
+            return false;
         }
 
         function checkBoxed(val) {
