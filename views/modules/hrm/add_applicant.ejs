@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
         crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/hrm.css">
     <title>Human Resource Management</title>
     <style>
         .row{
@@ -42,16 +43,16 @@
             </li>
             <li class="no-padding">
                 <ul class="collapsible">
-                        <li>
-                                <div class="collapsible-header">
-                                    <a href="employees_list" style="display: block; color: black">Employees Details</a>
-                                </div>
-                            </li>
-                        <li>
-                                <div class="collapsible-header">
-                                    <a href="add_applicant" style="display: block; color: black">Add Applicant</a>
-                                </div>
-                            </li>
+                    <li>
+                        <div class="collapsible-header">
+                            <a href="employees_list" style="display: block; color: black">Employees Details</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header">
+                            <a href="add_applicant" style="display: block; color: black">Add Applicant</a>
+                        </div>
+                    </li>
                     <li>
                         <div class="collapsible-header">Add Employees</div>
                         <div class="collapsible-body">
@@ -64,10 +65,14 @@
                     <li>
                         <div class="collapsible-header">Letters</div>
                         <div class="collapsible-body">
-                            <a href="appointment_letter" style="display: block; padding-left: 20px;color: black">Appointment Letter</a>
-                            <a href="contract_letter" style="display: block; padding-left: 20px;color: black">Contract Letter</a>
-                            <a href="confirmation_letter" style="display: block; padding-left: 20px;color: black">Conformation Letter</a>
-                            <a href="supported_docs" style="display: block; padding-left: 20px;color: black">Supported Docs</a>
+                            <a href="appointment_letter" style="display: block; padding-left: 20px;color: black">Appointment
+                                Letter</a>
+                            <a href="contract_letter" style="display: block; padding-left: 20px;color: black">Contract
+                                Letter</a>
+                            <a href="confirmation_letter" style="display: block; padding-left: 20px;color: black">Conformation
+                                Letter</a>
+                            <a href="supported_docs" style="display: block; padding-left: 20px;color: black">Supported
+                                Docs</a>
                         </div>
                     </li>
                     <li>
@@ -85,105 +90,100 @@
         </ul>
 
     </div>
-<!-- end of nav -->
-    <div class="container">
-        <div class="jumbotron" style='padding:2em'>
-            <h2 class='text-center'>Human Resource Management</h2>
-        </div>
+    <!-- end of nav -->
+    <div class="container-fluid">
+
         <div class="container">
             <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-8">
-                    <div class="card">
+                <div class="col-md-10 mx-auto">
+                    <div class="card add-aplicant-card">
                         <div class="card-header">
-                            <h4>Add Applicant</h4>
+                            <h4 class="text-center section-head">Add Applicant</h4>
                         </div>
                         <div class="card-body">
 
-                                <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            Full Name
-                                        </label></div>
-                                    <div class="col-md-8">
-                                        <input type='text' class='form-control' id='name' required>
-                                    </div>
+                            <div class="row">
+                                <div class="col-md-3"><label class='form-control-label field-info float-right'>
+                                        Full Name:
+                                    </label></div>
+                                <div class="col-md-9">
+                                    <input type='text' class='form-control' id='name' required>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            S/O,D/O,W/O
-                                        </label></div>
-                                    <div class="col-md-8">
-                                        <input type='text' class='form-control' id='father_name' required>
-                                    </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3"><label class='form-control-label field-info float-right'>
+                                        S/O,D/O,W/O:
+                                    </label></div>
+                                <div class="col-md-9">
+                                    <input type='text' class='form-control' id='father_name' required>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            CNIC
-                                        </label></div>
-                                    <div class="col-md-8">
-                                        <input type='text' class='form-control' id='cnic' required>
-                                    </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3"><label class='form-control-label field-info float-right'>
+                                        CNIC:
+                                    </label></div>
+                                <div class="col-md-9">
+                                    <input type='text' class='form-control' id='cnic' required>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            Address
-                                        </label></div>
-                                    <div class="col-md-8">
-                                        <input type='text' class='form-control' id='address' required>
-                                    </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3"><label class='form-control-label field-info float-right'>
+                                        Address:
+                                    </label></div>
+                                <div class="col-md-9">
+                                    <input type='text' class='form-control' id='address' required>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            Permanent Address
-                                        </label></div>
-                                    <div class="col-md-8">
-                                        <input type='text' class='form-control' id='p_address' required>
-                                    </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3"><label class='form-control-label field-info float-right'>
+                                        Permanent Address:
+                                    </label></div>
+                                <div class="col-md-9">
+                                    <input type='text' class='form-control' id='p_address' required>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            Email
-                                        </label></div>
-                                    <div class="col-md-8">
-                                        <input type='text' class='form-control' id='email' required>
-                                    </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3"><label class='form-control-label field-info float-right'>
+                                        Email:
+                                    </label></div>
+                                <div class="col-md-9">
+                                    <input type='text' class='form-control' id='email' required>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            Contact #
-                                        </label></div>
-                                    <div class="col-md-8">
-                                        <input type='text' class='form-control' id='mobile' required>
-                                    </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3"><label class='form-control-label field-info float-right'>
+                                        Contact #:
+                                    </label></div>
+                                <div class="col-md-9">
+                                    <input type='text' class='form-control' id='mobile' required>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            Emergency Contact #
-                                        </label></div>
-                                    <div class="col-md-8">
-                                        <input type='text' class='form-control' id='telephone'>
-                                    </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3"><label class='form-control-label field-info float-right'>
+                                        Emergency Contact #:
+                                    </label></div>
+                                <div class="col-md-9">
+                                    <input type='text' class='form-control' id='telephone'>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            Date of Birth
-                                        </label></div>
-                                    <div class="col-md-8">
-                                        <input type='date'  class='form-control' id='dob'
-                                            required>
-                                    </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3"><label class='form-control-label field-info float-right'>
+                                        Date of Birth:
+                                    </label></div>
+                                <div class="col-md-9">
+                                    <input type='date' class='form-control' id='dob' required>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <button class='btn btn-primary' onclick="add_applicant()">Add Applicant</button>
-                                    </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 text-center">
+                                    <button class='btn btn-primary' onclick="add_applicant()">Add Applicant</button>
                                 </div>
+                            </div>
 
                         </div>
                     </div>
 
                 </div>
-                <div class="col-md-2"></div>
             </div>
         </div>
     </div>
@@ -193,49 +193,49 @@
     <script src='/js/tooltip.js'></script>
     <script>
 
-       function add_applicant(){
-        let applicant = {
-            name: document.getElementById('name').value,
-            father_name: document.getElementById('father_name').value,
-            cnic: document.getElementById('cnic').value,
-            dob: document.getElementById('dob').value,
-            mobile: document.getElementById('mobile').value,
-            address: document.getElementById('address').value,
-            p_address: document.getElementById('p_address').value,
-            email: document.getElementById('email').value,
-            telephone: document.getElementById('telephone').value
-        };
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                alert(this.responseText);
-            }
-        };
-        xhttp.open("POST", "/modules/hrm/add_applicant", true);
-        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send("applicant="+JSON.stringify(applicant));
-    }
-      
-     </script>
-   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-   crossorigin="anonymous"></script>
-   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-   crossorigin="anonymous"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-   crossorigin="anonymous"></script>
-   
-   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-   crossorigin="anonymous"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-   <script>
-       $(document).ready(function () {
-           $('.collapsible').collapsible();
-       });
-   
-       $(document).ready(function () {
-           $('.sidenav').sidenav();
-       });
-   </script>
+        function add_applicant() {
+            let applicant = {
+                name: document.getElementById('name').value,
+                father_name: document.getElementById('father_name').value,
+                cnic: document.getElementById('cnic').value,
+                dob: document.getElementById('dob').value,
+                mobile: document.getElementById('mobile').value,
+                address: document.getElementById('address').value,
+                p_address: document.getElementById('p_address').value,
+                email: document.getElementById('email').value,
+                telephone: document.getElementById('telephone').value
+            };
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    alert(this.responseText);
+                }
+            };
+            xhttp.open("POST", "/modules/hrm/add_applicant", true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send("applicant=" + JSON.stringify(applicant));
+        }
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.collapsible').collapsible();
+        });
+
+        $(document).ready(function () {
+            $('.sidenav').sidenav();
+        });
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,37 @@
+.emp-list-search-panel{
+    margin-top: 3em;
+    margin-bottom: 2em;
+}
+
+.hrm-content-card{
+    margin-top: 3em;
+    margin-bottom: 2em;
+}
+
+/* add applicant */
+.section-head{
+    text-transform: uppercase;
+    font-size: 2.2em;
+    font-weight: 400;
+
+}
+.field-info{
+    font-size: 1.3em;
+    color: rgb(99, 96, 96);
+}
+.add-aplicant-card{
+    margin-top: 3em;
+}
+
+@media only screen and (max-width:760px) {
+    .field-info{
+        font-size: 1.3em;
+        color: rgb(99, 96, 96);
+        float: left !important;
+    }
+}
+
+/* add employee */
+.add-employee-card{
+    margin-top: 3em;
+}
