@@ -892,7 +892,7 @@
                     <p style="font-weight: 500; text-align: left; font-size: 18px; margin: 0px 0px">
                         I have read and understood the terms and conditions stated in the appointment letter and hereby confirm my acceptance / rejection
                         of the offer of appointment as
-                        <span style="text-decoration: underline;" id="appointment">________________</span>.
+                        <span style="text-decoration: underline;" id="appointment1">________________</span>.
                     </p>
                 </div>
             </div>
@@ -1188,9 +1188,10 @@
                 document.getElementById('el').innerHTML = p.el
                 document.getElementById('sl').innerHTML = p.sl
                 document.getElementById('cl').innerHTML = p.cl
-                // document.getElementById('picture').src = '../../assets/pictures/' + p.picture;
-
-
+                document.getElementById('appointment1').innerHTML = p.designation
+                console.log('==>',p.designation)
+                document.getElementById('mrname').innerHTML = p.name;
+                document.getElementById('dated').innerHTML = today;
             }
         })
     }
