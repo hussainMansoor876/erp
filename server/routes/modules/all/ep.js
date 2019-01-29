@@ -56,9 +56,10 @@ ep.post('/apply_for_leave',(req, res) => {
         obj.employee_id = employee._id;
         obj.employee_name = employee.name
         obj.dept = employee.dept;
-        obj.sl = fields.sl ? 1 : 0
-        obj.cl = fields.cl ? 1 : 0
-        obj.days = fields.days
+        obj.sl = fields.sl ? 1 : 0;
+        obj.cl = fields.cl ? 1 : 0;
+        obj.date = fields.date;
+        obj.days = fields.days;
         obj.designation = employee.designation;
         //  obj.dates = JSON.parse(fields.dates);
         // console.log('fields', fields);
