@@ -4,4 +4,8 @@ using node.js,ejs
 //worked on friday 18th jan for 3 hours
 //tuesday 22 jan started at 2 pm
 //wednesday 23 jan started at 1:30 pm 
+<<<<<<< HEAD
+//saturday 26 jan started at 1: 45 pm (Abdul Haseeb) landing page
+=======
 //friday 25 jan started at 7:12
+>>>>>>> b27c0fbd044462360bbb8d06055fe4c3298d02db

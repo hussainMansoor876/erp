@@ -19,7 +19,7 @@ const LeavesSchema = new mongoose.Schema({
     detail: {
         type: String
     },
-    dates: {
+    date: {
         type: String
     },
     days: {
