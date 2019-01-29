@@ -24,7 +24,7 @@
 
 <body onload="divHide()">
     <br />
-    <div class='form-control-inline' style='display:inline;'>
+    <div class='form-control-inline' style='display:inline;' id="header1">
         <input type='text' placeholder="Search Employee Here...!" class='form-control' style='width:15em' onKeyUp="search_result(this)">
         <div id='search_list'></div>
     </div>
@@ -198,7 +198,7 @@
                     </p>
                     <p style="font-weight: 500; margin: 10px 0px; text-align: left; font-size: 16px">
                         Your starting salary is Rs. &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-                        <span style="text-decoration: underline;" id="basic_salary"> __________ </span> per month.
+                        <span style="text-decoration: underline;" id="basic_salary"> __________ </span> &nbsp; per month.
                     </p>
                 </div>
             </div>
@@ -206,27 +206,27 @@
             <!-- contract -->
             <!-- footer -->
             <div style="position: fixed; bottom: 20px; width: 85%" id="foot1">
-                    <span style="font-weight: 700;width: inherit; display: block; margin: 5px 0px; text-align: left; font-size: 16px; border-bottom: 1px solid black; padding: 2px; color: red">
-                        www.gel1947.com
-                    </span>
-                    <span style="text-align: left">
-                        <p style="font-weight: 500; padding: 0%; margin: 0%">Registered Office F-302 Sindh Industrial Trading Estaet - site
-                            <span style="color: red">|</span>
-                            Karachi
-                            <span style="color: red">|</span> Pakistan</p>
-                        <p style="font-weight: 500; padding: 0%; margin: 0%">Regional Offices: lahore
-                            <span style="color: red">|</span>
-                            Rawalpindi</p>
-                        <p style="font-weight: 500; padding: 0%; margin: 0%">Liasion: USA
-                            <span style="color: red">|</span>
-                            European Union
-                            <span style="color: red">|</span> ROC</p>
-                    </span>
-                    <div style="position: fixed; bottom: 0px; right: 70px; width: 15%">
-                        <img src="../../images/Greeshams Logo.png" width="170px" height="100px" alt="" style="border: 1px solid black; padding: 1px">
-                    </div>
+                <span style="font-weight: 700;width: inherit; display: block; margin: 5px 0px; text-align: left; font-size: 16px; border-bottom: 1px solid black; padding: 2px; color: red">
+                    www.gel1947.com
+                </span>
+                <span style="text-align: left">
+                    <p style="font-weight: 500; padding: 0%; margin: 0%">Registered Office F-302 Sindh Industrial Trading Estaet - site
+                        <span style="color: red">|</span>
+                        Karachi
+                        <span style="color: red">|</span> Pakistan</p>
+                    <p style="font-weight: 500; padding: 0%; margin: 0%">Regional Offices: lahore
+                        <span style="color: red">|</span>
+                        Rawalpindi</p>
+                    <p style="font-weight: 500; padding: 0%; margin: 0%">Liasion: USA
+                        <span style="color: red">|</span>
+                        European Union
+                        <span style="color: red">|</span> ROC</p>
+                </span>
+                <div style="position: fixed; bottom: 0px; right: 70px; width: 15%">
+                    <img src="../../images/Greeshams Logo.png" width="170px" height="100px" alt="" style="border: 1px solid black; padding: 1px">
                 </div>
-                <!-- end of footer -->
+            </div>
+            <!-- end of footer -->
         </div>
         <div id="pg2">
             <!-- header -->
@@ -1088,6 +1088,11 @@
             <!-- end of footer -->
         </div>
     </div>
+    <div>
+        <button style="float: right; margin: 10px; border: 1px black solid" class="btn btn-primary" onclick="paging(1)" id="next">Next</button>
+        <button style="float: right; margin: 10px; border: 1px black solid" class="btn btn-primary" onclick="paging(-1)" id="prev">Previous</button>
+        <button style="float: right; margin: 10px; border: 1px black solid" class="btn btn-primary" onclick="printDiv(mainDiv)">Print</button>
+    </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
@@ -1189,7 +1194,7 @@
                 document.getElementById('sl').innerHTML = p.sl
                 document.getElementById('cl').innerHTML = p.cl
                 document.getElementById('appointment1').innerHTML = p.designation
-                console.log('==>',p.designation)
+                console.log('==>', p.designation)
                 document.getElementById('mrname').innerHTML = p.name;
                 document.getElementById('dated').innerHTML = today;
             }
@@ -1197,16 +1202,59 @@
     }
 
     function divHide() {
-        document.getElementById('pg1').style.display = 'none'
+        // document.getElementById('pg1').style.display = 'none'
         document.getElementById('pg2').style.display = 'none'
         document.getElementById('pg3').style.display = 'none'
         document.getElementById('pg4').style.display = 'none'
-        // document.getElementById('pg5').style.display = 'none'
-        document.getElementById('foot1').style.display = 'none'              
+        document.getElementById('pg5').style.display = 'none'
+        document.getElementById('foot1').style.display = 'none'
         document.getElementById('foot2').style.display = 'none'
         document.getElementById('foot3').style.display = 'none'
         document.getElementById('foot4').style.display = 'none'
-        document.getElementById('foot5').style.display = 'none'        
+        document.getElementById('foot5').style.display = 'none'
+    }
+
+    var count = 0
+    if (!count) {
+        document.getElementById('prev').style.display = "none"
+    }
+
+    function paging(num) {
+        count = count + num
+        console.log(count)
+
+        if (count < 5 && num == 1) {
+            document.getElementById(`pg${count}`).style.display = 'none'
+            document.getElementById(`pg${count + num}`).style.display = 'block'
+        } else {
+            document.getElementById(`pg${count + 1}`).style.display = 'block'
+            document.getElementById(`pg${count + 2}`).style.display = 'none'
+        }
+
+        if (count == 4) {
+            document.getElementById('next').style.display = "none"
+        } else {
+            document.getElementById('next').style.display = "block"
+        }
+
+        if (count) {
+            document.getElementById('prev').style.display = "block"
+            document.getElementById('header1').style.display = "none"
+        } else {
+            document.getElementById('prev').style.display = "none"
+            document.getElementById('header1').style.display = "block"
+        }
+    }
+
+    function printDiv(divName) {
+        var printContents = divName.innerHTML;
+        var originalContents = document.body.innerHTML;
+        
+        document.body.innerHTML = printContents;
+
+        window.print();
+
+        document.body.innerHTML = originalContents;
     }
 </script>
 
