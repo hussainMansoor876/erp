@@ -191,15 +191,35 @@ hrm.post('/add_employee', (req, res) => {
         obj.name = fields.name;
         obj.father_name = fields.father_name;
         obj.cnic = fields.cnic;
-        obj.father_cnic = fields.father_cnic;
         obj.address = fields.address;
         obj.city = fields.city;
         obj.email = fields.email;
         obj.telephone = fields.telephone;
         obj.mobile = fields.mobile;
-        obj.ext = fields.ext;
-        obj.religion = fields.religion;
-        obj.age = fields.age;
+        obj.ext = fields.ext; //
+        obj.dob = fields.dob;
+        obj.ntn = fields.ntn;
+        obj.division = fields.division; //
+        obj.dl_number = fields.dl_number;
+        obj.dl_expiry = fields.dl_expiry;
+        obj.pp_number = fields.pp_number;
+        obj.pp_expiry = fields.pp_expiry;
+        obj.bg = fields.bg;
+        obj.doi = fields.doi;
+        obj.section = fields.section; //
+        obj.e_code = fields.e_code; //
+        obj.a_hr = fields.a_hr;
+        obj.a_lunch = fields.a_lunch;
+        obj.a_mobile = fields.a_mobile;
+        obj.a_transport = fields.a_transport;
+        obj.d_tax = fields.d_tax;
+        obj.d_retention = fields.d_retention;
+        obj.d_sales = fields.d_sales;
+        obj.a_package = fields.a_package;
+        obj.hpw = fields.hpw;
+        obj.w_b = fields.w_b;
+        obj.p_e = fields.p_e;
+        obj.reference = fields.reference;
         obj.marital_status = fields.marital_status;
         obj.education = fields.education;
         obj.experiences = fields.experience;
@@ -219,6 +239,12 @@ hrm.post('/add_employee', (req, res) => {
         var db_path = path.join("./employees/picture_" + unique + "_" + files.picture.name);
         obj.picture = db_path;
         new Employee(obj).save(() => {
+            Applicants.findOneAndDelete({name:obj.name,cnic:obj.cnic},(err)=>{
+                if(err){
+                    throw err;
+                }
+                console.log('applicant is deleted');
+            });
             fs.copyFile(oldpath, path_new, (err) => {
                 if (err) {
                     throw err
