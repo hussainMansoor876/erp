@@ -196,18 +196,18 @@ hrm.post('/add_employee', (req, res) => {
         obj.email = fields.email;
         obj.telephone = fields.telephone;
         obj.mobile = fields.mobile;
-        obj.ext = fields.ext; //
+        obj.ext = fields.ext; 
         obj.dob = fields.dob;
         obj.ntn = fields.ntn;
-        obj.division = fields.division; //
+        obj.division = fields.division; 
         obj.dl_number = fields.dl_number;
         obj.dl_expiry = fields.dl_expiry;
         obj.pp_number = fields.pp_number;
         obj.pp_expiry = fields.pp_expiry;
         obj.bg = fields.bg;
         obj.doi = fields.doi;
-        obj.section = fields.section; //
-        obj.e_code = fields.e_code; //
+        obj.section = fields.section; 
+        obj.e_code = fields.e_code; 
         obj.a_hr = fields.a_hr;
         obj.a_lunch = fields.a_lunch;
         obj.a_mobile = fields.a_mobile;
@@ -239,7 +239,7 @@ hrm.post('/add_employee', (req, res) => {
         var db_path = path.join("./employees/picture_" + unique + "_" + files.picture.name);
         obj.picture = db_path;
         new Employee(obj).save(() => {
-            Applicants.findOneAndDelete({name:obj.name,cnic:obj.cnic},(err)=>{
+            Applicants.findOneAndDelete({cnic:obj.cnic},(err)=>{
                 if(err){
                     throw err;
                 }

@@ -105,6 +105,30 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-4"><label class='form-control-label'>
+                                            EXT
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='text' class='form-control' name='ext' required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                            Division
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='text' class='form-control' name='division' required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                <div class="col-md-4"><label class='form-control-label'>
+                                        Section
+                                    </label></div>
+                                <div class="col-md-8">
+                                    <input type='text' class='form-control' name='section' required>
+                                </div>
+                            </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
                                             Driving License#
                                         </label></div>
                                     <div class="col-md-8">
@@ -159,7 +183,15 @@
                                             Address
                                         </label></div>
                                     <div class="col-md-8">
-                                        <input type='text' class='form-control' name='address' id='p_address' required>
+                                        <input type='text' class='form-control' name='address' id='address' required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label'>
+                                           Permanent Address
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='text' class='form-control' name='p_address' id='p_address' required>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -333,7 +365,7 @@
                                             Employee Code
                                         </label></div>
                                     <div class="col-md-8">
-                                        <input type='number' class='form-control' name='ecode'>
+                                        <input type='number' class='form-control' name='e_code'>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -613,7 +645,8 @@
                     document.getElementById('p_email').value = p.email;
                     document.getElementById('p_mobile').value = p.mobile;
                     document.getElementById('p_telephone').value = p.telephone;
-                    document.getElementById('p_p_address').value = p.p_address;
+                    document.getElementById('address').value = p.address;
+                    document.getElementById('p_address').value = p.p_address;
 
 
                     // document.getElementById('p_name').value = p.name;
