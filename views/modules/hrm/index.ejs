@@ -11,94 +11,134 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <title>Human Resources Management</title>
+    
     <style>
         @media only screen and (min-width: 993px) {
             nav a.button-collapse {
                 display: block;
             }
         }
+
+        i.icon-blue {
+            color: #004B92;
+        }
     </style>
 </head>
 
-<body>
+<body onload='load()'>
     <div>
-        <nav>
+        <nav style="background-color: #004b92;">
             <a data-target="slide-out" class="button-collapse sidenav-trigger btn-flat btn-large waves-effect waves-light"
-                style="background: #EE6E73"><i class="material-icons">dehaze</i></a>
+                style="background-color: #004b92;"><i class="material-icons">dehaze</i></a>
 
-            <h3 style="color: white; text-align: center; padding: 15px 0px">Human Resource Management</h3>
+            <h3 style="color: white; text-align: center; padding: 15px 0px;">Human Resource Management</h3>
+            
         </nav>
+
 
 
         <ul id="slide-out" class="sidenav">
             <li>
-                <div class="user-view">
-                    <div class="background">
-                        <img src="https://images.freeimages.com/images/small-previews/4f7/blank-sign-bullet-holes-1447150.jpg">
-                    </div>
-                    <a href="#user"><img class="circle" src="https://images.freeimages.com/images/small-previews/4f7/blank-sign-bullet-holes-1447150.jpg"></a>
-                    <a href="#name"><span class="white-text name">John Doe</span></a>
-                    <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+                <div class="user-view" style='background-color:cornsilk'>
+                    <!-- <div class="background">
+                         <img src="https://images.freeimages.com/images/small-previews/4f7/blank-sign-bullet-holes-1447150.jpg">
+                    </div> -->
+                    <a><img class="circle" id='e_picture' src="https://images.freeimages.com/images/small-previews/4f7/blank-sign-bullet-holes-1447150.jpg"></a>
+                    <a><span class="blue-text name" id='e_name'></span></a>
+                    <a><span class="blue-text email" id='e_email'></span></a>
                 </div>
             </li>
             <li class="no-padding">
                 <ul class="collapsible">
-                        <li>
-                                <div class="collapsible-header">
-                                    <a href="hrm/employees_list" style="display: block; color: black">Employees Details</a>
-                                </div>
-                            </li>
-                        <li>
-                                <div class="collapsible-header">
-                                    <a href="hrm/add_applicant" style="display: block; color: black">Add Applicant</a>
-                                </div>
-                            </li>
                     <li>
-                        <div class="collapsible-header">Add Employees</div>
-                        <div class="collapsible-body">
-                            <a href="hrm/add_employee" style="display: block; padding-left: 20px; color: black">Add Staff</a>
-                            <a href="hrm/add_labour" style="display: block;  padding-left: 20px; color: black">Add Labour</a>
-                        </div>
-
-
-                    </li>
-                    <li>
-                        <div class="collapsible-header">Letters</div>
-                        <div class="collapsible-body">
-                            <a href="hrm/appointment_letter" style="display: block; padding-left: 20px;color: black">Appointment Letter</a>
-                            <a href="hrm/contract_letter" style="display: block; padding-left: 20px;color: black">Contract Letter</a>
-                            <a href="hrm/confirmation_letter" style="display: block; padding-left: 20px;color: black">Conformation Letter</a>
-                            <a href="hrm/supported_docs" style="display: block; padding-left: 20px;color: black">Supported Docs</a>
+                        <div class="collapsible-header">
+                            <i class="material-icons icon-blue">supervised_user_circle</i>
+                            <a href="hrm/employees_list" style="display: block; color: black">Employees Details</a>
                         </div>
                     </li>
                     <li>
                         <div class="collapsible-header">
+                            <i class="material-icons icon-blue">person_add
+                            </i>
+                            <a href="hrm/add_applicant" style="display: block; color: black">Add Applicant</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header">
+                            <i class="material-icons icon-blue">group_add
+                            </i>
+                            Add Employees
+                        </div>
+                        <div class="collapsible-body">
+                            <a href="hrm/add_employee" style="display: block; padding-left: 20px; color: black">Add
+                                Staff</a>
+                            <a href="hrm/add_labour" style="display: block;  padding-left: 20px; color: black">Add
+                                Labour</a>
+                        </div>
+
+
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons icon-blue">email</i>Letters</div>
+                        <div class="collapsible-body">
+                            <a href="hrm/appointment_letter" style="display: block; padding-left: 20px;color: black">Appointment
+                                Letter</a>
+                            <a href="hrm/contract_letter" style="display: block; padding-left: 20px;color: black">Contract
+                                Letter</a>
+                            <a href="hrm/confirmation_letter" style="display: block; padding-left: 20px;color: black">Confirmation
+                                Letter</a>
+                                <a href="hrm/ec_letter" style="display: block; padding-left: 20px;color: black">Emergency Contact Letter</a>    
+                            <a href="hrm/nda_letter" style="display: block; padding-left: 20px;color: black">Employee Non Disclosure Agreement</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header">
+                            <i class="material-icons icon-blue">file_copy</i>
                             <a href="hrm/leaves_applications" style="display: block; color: black">Leaves Application</a>
                         </div>
                     </li>
                     <li>
                         <div class="collapsible-header">
+                            <i class="material-icons icon-blue">call_missed_outgoing</i>
                             <a href="hrm/resignations_info" style="display: block;color: black">Resignation info</a>
                         </div>
                     </li>
                 </ul>
             </li>
         </ul>
+        <!-- ?????????????????body -->
 
-    </div>
-
-<!-- ?????????????????body -->
-
-<div>
-    <h1>human resousrces</h1>
-</div>
+        <div>
+            <h1>human resousrces</h1>
+        </div>
 
 </body>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
     crossorigin="anonymous"></script>
+<script>
+    var employee;
+
+    function load() {
+
+        console.log('happening..');
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                employee = JSON.parse(this.responseText).employee;
+                console.log(employee);
+                document.getElementById('e_name').innerHTML = employee.name;
+                document.getElementById('e_email').innerHTML = employee.email;
+                document.getElementById('e_picture').src = '../../assets/pictures/' + employee.picture;
+
+            }
+        };
+        xhttp.open("GET", "./get_loggedin_employee", true);
+        xhttp.send();
+    }
+
+</script>
 <script>
     $(document).ready(function () {
         $('.collapsible').collapsible();

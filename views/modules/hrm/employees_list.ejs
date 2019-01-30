@@ -20,81 +20,94 @@
                 display: block;
             }
         }
+        
+        i.icon-blue {
+            color: #004B92;
+        }
+
     </style>
 </head>
 
 <body onLoad='load()'>
-    <div>
-        <nav>
-            <a data-target="slide-out" class="button-collapse sidenav-trigger btn-flat btn-large waves-effect waves-light"
-                style="background: #EE6E73"><i class="material-icons">dehaze</i></a>
-
-            <h3 style="color: white; text-align: center; padding: 15px 0px">Human Resource Management</h3>
-        </nav>
-
-
-        <ul id="slide-out" class="sidenav">
-            <li>
-                <div class="user-view">
-                    <div class="background">
-                        <img src="https://images.freeimages.com/images/small-previews/4f7/blank-sign-bullet-holes-1447150.jpg">
+        <div>
+                <nav style="background-color: #004b92;">
+                        <a data-target="slide-out" class="button-collapse sidenav-trigger btn-flat btn-large waves-effect waves-light"
+                            style="background-color: #004b92;"><i class="material-icons">dehaze</i></a>
+            
+                        <h3 style="color: white; text-align: center; padding: 15px 0px">Human Resource Management</h3>
+                    </nav>
+    
+            <ul id="slide-out" class="sidenav">
+                <li>
+                    <div class="user-view">
+                        <div class="background">
+                            <img src="https://images.freeimages.com/images/small-previews/4f7/blank-sign-bullet-holes-1447150.jpg">
+                        </div>
+                        <a href="#user"><img class="circle" src="https://images.freeimages.com/images/small-previews/4f7/blank-sign-bullet-holes-1447150.jpg"></a>
+                        <a href="#name"><span class="white-text name">John Doe</span></a>
+                        <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
                     </div>
-                    <a href="#user"><img class="circle" src="https://images.freeimages.com/images/small-previews/4f7/blank-sign-bullet-holes-1447150.jpg"></a>
-                    <a href="#name"><span class="white-text name">John Doe</span></a>
-                    <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
-                </div>
-            </li>
-            <li class="no-padding">
-                <ul class="collapsible">
-                    <li>
-                        <div class="collapsible-header">
-                            <a href="employees_list" style="display: block; color: black">Employees Details</a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="collapsible-header">
-                            <a href="add_applicant" style="display: block; color: black">Add Applicant</a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="collapsible-header">Add Employees</div>
-                        <div class="collapsible-body">
-                            <a href="add_employee" style="display: block; padding-left: 20px; color: black">Add Staff</a>
-                            <a href="add_labour" style="display: block;  padding-left: 20px; color: black">Add Labour</a>
-                        </div>
-
-
-                    </li>
-                    <li>
-                        <div class="collapsible-header">Letters</div>
-                        <div class="collapsible-body">
-                            <a href="appointment_letter" style="display: block; padding-left: 20px;color: black">Appointment
-                                Letter</a>
-                            <a href="contract_letter" style="display: block; padding-left: 20px;color: black">Contract
-                                Letter</a>
-                            <a href="confirmation_letter" style="display: block; padding-left: 20px;color: black">Conformation
-                                Letter</a>
-                            <a href="supported_docs" style="display: block; padding-left: 20px;color: black">Supported
-                                Docs</a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="collapsible-header">
-                            <a href="leaves_applications" style="display: block; color: black">Leaves Application</a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="collapsible-header">
-                            <a href="resignations_info" style="display: block;color: black">Resignation info</a>
-                        </div>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-
-    </div>
-    <!-- end of nav -->
-    <div class="container-fluid">
+                </li>
+                <li class="no-padding">
+                    <ul class="collapsible">
+                        <li>
+                            <div class="collapsible-header">
+                                    <i class="material-icons icon-blue">supervised_user_circle</i>
+                                <a href="employees_list" style="display: block; color: black">Employees Details</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header">
+                                    <i class="material-icons icon-blue">person_add
+                                        </i>
+                                <a href="add_applicant" style="display: block; color: black">Add Applicant</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header">
+                                <i class="material-icons icon-blue">group_add
+                                    </i>
+                                Add Employees
+                            </div>
+                            <div class="collapsible-body">
+                                 <a href="add_employee" style="display: block; padding-left: 20px; color: black">Add Staff</a>
+                                <a href="add_labour" style="display: block;  padding-left: 20px; color: black">Add Labour</a>
+                            </div>
+    
+    
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons icon-blue">email</i>Letters</div>
+                            <div class="collapsible-body">
+                                <a href="appointment_letter" style="display: block; padding-left: 20px;color: black">Appointment
+                                    Letter</a>
+                                <a href="contract_letter" style="display: block; padding-left: 20px;color: black">Contract
+                                    Letter</a>
+                                <a href="confirmation_letter" style="display: block; padding-left: 20px;color: black">Conformation
+                                    Letter</a>
+                                <a href="supported_docs" style="display: block; padding-left: 20px;color: black">Supported
+                                    Docs</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header">
+                                    <i class="material-icons icon-blue">file_copy</i>
+                                <a href="leaves_applications" style="display: block; color: black">Leaves Application</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header">
+                                    <i class="material-icons icon-blue">call_missed_outgoing</i>
+                                <a href="resignations_info" style="display: block;color: black">Resignation info</a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+    
+        </div>
+        <!-- end of nav -->
+                   <div class="container-fluid">
         <div class="container">
 
             <div class="row">

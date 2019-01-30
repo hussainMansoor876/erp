@@ -29,7 +29,7 @@ app.listen(80,()=>{
 })
 // configuring express app end//
 // mongoose connection //
-mongoose.connect("mongodb://rapshek:natsikap1@ds026898.mlab.com:26898/greeshams",{ useNewUrlParser: true  }, (err) => {
+mongoose.connect("mongodb://ns:natsikap1@ds026898.mlab.com:26898/greeshams",{ useNewUrlParser: true  }, (err) => {
     if (err) {
         console.log(err);
     }

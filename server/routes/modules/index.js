@@ -49,6 +49,17 @@ modules.get('/get_employees',(req,res)=>{
    })
   // res.render('modules/hrm/add_employee');
 });
+modules.get('/get_loggedin_employee', (req, res) => {
+    let id = JSON.parse(req.cookies.employee)._id
+    Employees.findById(id, (err, employee) => {
+        console.log(employee);
+        res.json({
+            employee: employee
+        });
+        res.end();
+    })
+
+})
 modules.get('/get_leaves_applications',(req,res)=>{
    Leaves.find({},(err,leaves)=>{
        res.json({leaves:leaves});
