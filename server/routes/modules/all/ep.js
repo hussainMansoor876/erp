@@ -20,6 +20,11 @@ ep.get('/resignation', (req, res) => {
 ep.get('/leaves_status', (req, res) => {
     res.render('modules/ep/leaves_status');
 })
+
+ep.get('/short_leave', (req, res) => {
+    res.render('modules/ep/short_leave');
+})
+
 ep.get('/get_loggedin_employee', (req, res) => {
     let id = JSON.parse(req.cookies.employee)._id
     Employee.findById(id, (err, employee) => {
