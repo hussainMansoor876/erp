@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
         crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/hrm.css">
     <title>Human Resource Management</title>
     <style>
         .row{
@@ -19,114 +20,136 @@
                 display: block;
             }
         }
+        
+        i.icon-blue {
+            color: #004B92;
+        }
+
     </style>
 </head>
 
 <body>
-    <div>
-        <nav>
-            <a data-target="slide-out" class="button-collapse sidenav-trigger btn-flat btn-large waves-effect waves-light"
-                style="background: #EE6E73"><i class="material-icons">dehaze</i></a>
-
-            <h3 style="color: white; text-align: center; padding: 15px 0px">Human Resource Management</h3>
-        </nav>
-
-
-        <ul id="slide-out" class="sidenav">
-            <li>
-                <div class="user-view">
-                    <div class="background">
-                        <img src="https://images.freeimages.com/images/small-previews/4f7/blank-sign-bullet-holes-1447150.jpg">
+        <div>
+                <nav style="background-color: #004b92;">
+                        <a data-target="slide-out" class="button-collapse sidenav-trigger btn-flat btn-large waves-effect waves-light"
+                            style="background-color: #004b92;"><i class="material-icons">dehaze</i></a>
+            
+                        <h3 style="color: white; text-align: center; padding: 15px 0px">Human Resource Management</h3>
+                    </nav>
+    
+            <ul id="slide-out" class="sidenav">
+                <li>
+                    <div class="user-view">
+                        <div class="background">
+                            <img src="https://images.freeimages.com/images/small-previews/4f7/blank-sign-bullet-holes-1447150.jpg">
+                        </div>
+                        <a href="#user"><img class="circle" src="https://images.freeimages.com/images/small-previews/4f7/blank-sign-bullet-holes-1447150.jpg"></a>
+                        <a href="#name"><span class="white-text name">John Doe</span></a>
+                        <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
                     </div>
-                    <a href="#user"><img class="circle" src="https://images.freeimages.com/images/small-previews/4f7/blank-sign-bullet-holes-1447150.jpg"></a>
-                    <a href="#name"><span class="white-text name">John Doe</span></a>
-                    <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
-                </div>
-            </li>
-            <li class="no-padding">
-                <ul class="collapsible">
+                </li>
+                <li class="no-padding">
+                    <ul class="collapsible">
                         <li>
-                                <div class="collapsible-header">
-                                    <a href="employees_list" style="display: block; color: black">Employees Details</a>
-                                </div>
-                            </li>
+                            <div class="collapsible-header">
+                                    <i class="material-icons icon-blue">supervised_user_circle</i>
+                                <a href="employees_list" style="display: block; color: black">Employees Details</a>
+                            </div>
+                        </li>
                         <li>
-                                <div class="collapsible-header">
-                                    <a href="add_applicant" style="display: block; color: black">Add Applicant</a>
-                                </div>
-                            </li>
-                    <li>
-                        <div class="collapsible-header">Add Employees</div>
-                        <div class="collapsible-body">
-                            <a href="add_employee" style="display: block; padding-left: 20px; color: black">Add Staff</a>
-                            <a href="add_labour" style="display: block;  padding-left: 20px; color: black">Add Labour</a>
-                        </div>
-
-
-                    </li>
-                    <li>
-                        <div class="collapsible-header">Letters</div>
-                        <div class="collapsible-body">
-                            <a href="appointment_letter" style="display: block; padding-left: 20px;color: black">Appointment Letter</a>
-                            <a href="contract_letter" style="display: block; padding-left: 20px;color: black">Contract Letter</a>
-                            <a href="confirmation_letter" style="display: block; padding-left: 20px;color: black">Conformation Letter</a>
-                            <a href="supported_docs" style="display: block; padding-left: 20px;color: black">Supported Docs</a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="collapsible-header">
-                            <a href="leaves_applications" style="display: block; color: black">Leaves Application</a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="collapsible-header">
-                            <a href="resignations_info" style="display: block;color: black">Resignation info</a>
-                        </div>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-
-    </div>
-<!-- end of nav -->
-    <div class="container">
-        <div class="jumbotron" style='padding:2em'>
-            <h2 class='text-center'>Human Resource Management</h2>
+                            <div class="collapsible-header">
+                                    <i class="material-icons icon-blue">person_add
+                                        </i>
+                                <a href="add_applicant" style="display: block; color: black">Add Applicant</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header">
+                                <i class="material-icons icon-blue">group_add
+                                    </i>
+                                Add Employees
+                            </div>
+                            <div class="collapsible-body">
+                                 <a href="add_employee" style="display: block; padding-left: 20px; color: black">Add Staff</a>
+                                <a href="add_labour" style="display: block;  padding-left: 20px; color: black">Add Labour</a>
+                            </div>
+    
+    
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons icon-blue">email</i>Letters</div>
+                            <div class="collapsible-body">
+                                <a href="appointment_letter" style="display: block; padding-left: 20px;color: black">Appointment
+                                    Letter</a>
+                                <a href="contract_letter" style="display: block; padding-left: 20px;color: black">Contract
+                                    Letter</a>
+                                <a href="confirmation_letter" style="display: block; padding-left: 20px;color: black">Conformation
+                                    Letter</a>
+                                <a href="supported_docs" style="display: block; padding-left: 20px;color: black">Supported
+                                    Docs</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header">
+                                    <i class="material-icons icon-blue">file_copy</i>
+                                <a href="leaves_applications" style="display: block; color: black">Leaves Application</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header">
+                                    <i class="material-icons icon-blue">call_missed_outgoing</i>
+                                <a href="resignations_info" style="display: block;color: black">Resignation info</a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+    
         </div>
+        <!-- end of nav -->
+        
+            <div class="container-fluid">
+
         <div class="container">
             <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-8">
-                    <div class="card">
+                <div class="col-md-10 mx-auto">
+                    <div class="card add-employee-card">
                         <div class="card-header">
-                            <h4 style='display:inline;float:left;margin-right:1em'>Add Employee</h4>
-                            <div class='form-control-inline' style='display:inline;'>
-                                <input type='text' class='form-control' style='width:15em' onKeyUp="search_result(this)">
-                                <div id='search_list'></div>
+                            <div class="row mx-auto">
+                                <div class="col-md-4">
+                                    <h2>Add Employee</h2>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class='form-control-inline'>
+                                        <input type='text' class='form-control' onKeyUp="search_result(this)">
+                                        <div id='search_list'></div>
+                                    </div>
+                                </div>
                             </div>
+
                         </div>
                         <div class="card-body">
                             <form class='form' action='./add_employee' method="POST" enctype="multipart/form-data">
 
                                 <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            Full Name
+                                    <div class="col-md-4"><label class='form-control-label field-info float-right'>
+                                            Full Name:
                                         </label></div>
                                     <div class="col-md-8">
                                         <input type='text' class='form-control' name='name' required id='p_name'>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            S/O,D/O,W/O
+                                    <div class="col-md-4"><label class='form-control-label field-info float-right'>
+                                            S/O,D/O,W/O:
                                         </label></div>
                                     <div class="col-md-8">
                                         <input type='text' class='form-control' name='father_name' required id='p_f_name'>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            Gender
+                                    <div class="col-md-4"><label class='form-control-label field-info float-right'>
+                                            Gender:
                                         </label></div>
                                     <div class="col-md-8">
                                         <select class='form-control' name='gender' required>
@@ -136,104 +159,104 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            D.O.B
+                                    <div class="col-md-4"><label class='form-control-label field-info float-right'>
+                                            D.O.B:
                                         </label></div>
                                     <div class="col-md-8">
                                         <input type='date' class='form-control' id='p_dob' name='dob'>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            Picture
+                                    <div class="col-md-4"><label class='form-control-label field-info float-right'>
+                                            Upload Picture:
                                         </label></div>
                                     <div class="col-md-8">
                                         <input type='file' name='picture' class='form-control' required>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            CNIC
+                                    <div class="col-md-4"><label class='form-control-label field-info float-right'>
+                                            CNIC:
                                         </label></div>
                                     <div class="col-md-8">
                                         <input type='text' class='form-control' name='cnic' required id='p_cnic'>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            CNIC Expiry
+                                    <div class="col-md-4"><label class='form-control-label field-info float-right'>
+                                            CNIC Expiry:
                                         </label></div>
                                     <div class="col-md-8">
                                         <input type='date' class='form-control' name='cnic_expiry'>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            NTN#
+                                    <div class="col-md-4"><label class='form-control-label field-info float-right'>
+                                            NTN#:
                                         </label></div>
                                     <div class="col-md-8">
                                         <input type='text' class='form-control' name='ntn' required>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            EXT
+                                    <div class="col-md-4"><label class='form-control-label field-info float-right'>
+                                            EXT:
                                         </label></div>
                                     <div class="col-md-8">
                                         <input type='text' class='form-control' name='ext' required>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            Division
+                                    <div class="col-md-4"><label class='form-control-label field-info float-right'>
+                                            Division:
                                         </label></div>
                                     <div class="col-md-8">
                                         <input type='text' class='form-control' name='division' required>
                                     </div>
                                 </div>
                                 <div class="row">
-                                <div class="col-md-4"><label class='form-control-label'>
-                                        Section
-                                    </label></div>
-                                <div class="col-md-8">
-                                    <input type='text' class='form-control' name='section' required>
+                                    <div class="col-md-4"><label class='form-control-label field-info float-right'>
+                                            Section:
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='text' class='form-control' name='section' required>
+                                    </div>
                                 </div>
-                            </div>
                                 <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            Driving License#
+                                    <div class="col-md-4"><label class='form-control-label field-info float-right'>
+                                            Driving License#:
                                         </label></div>
                                     <div class="col-md-8">
                                         <input type='text' class='form-control' name='dl_number' required>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            Driving License Expiry
+                                    <div class="col-md-4"><label class='form-control-label field-info float-right'>
+                                            Driving License Expiry:
                                         </label></div>
                                     <div class="col-md-8">
                                         <input type='date' class='form-control' name='dl_expiry'>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            Passport#
+                                    <div class="col-md-4"><label class='form-control-label field-info float-right'>
+                                            Passport#:
                                         </label></div>
                                     <div class="col-md-8">
                                         <input type='text' class='form-control' name='pp_number' required>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            Passport Expiry
+                                    <div class="col-md-4"><label class='form-control-label field-info float-right'>
+                                            Passport Expiry:
                                         </label></div>
                                     <div class="col-md-8">
                                         <input type='date' class='form-control' name='pp_expiry'>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            Blood Group
+                                    <div class="col-md-4"><label class='form-control-label field-info float-right'>
+                                            Blood Group:
                                         </label></div>
                                     <div class="col-md-8">
                                         <select class='form-control' name='bg'>
@@ -251,56 +274,57 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            Address
+                                    <div class="col-md-4"><label class='form-control-label field-info float-right'>
+                                            Address:
                                         </label></div>
                                     <div class="col-md-8">
                                         <input type='text' class='form-control' name='address' id='address' required>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                           Permanent Address
+                                    <div class="col-md-4"><label class='form-control-label field-info float-right'>
+                                            Permanent Address:
                                         </label></div>
                                     <div class="col-md-8">
-                                        <input type='text' class='form-control' name='p_address' id='p_address' required>
+                                        <input type='text' class='form-control' name='p_address' id='p_address'
+                                            required>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            City
+                                    <div class="col-md-4"><label class='form-control-label field-info float-right'>
+                                            City:
                                         </label></div>
                                     <div class="col-md-8">
                                         <input type='text' class='form-control' name='city' required>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            Email
+                                    <div class="col-md-4"><label class='form-control-label field-info float-right'>
+                                            Email:
                                         </label></div>
                                     <div class="col-md-8">
                                         <input type='text' class='form-control' name='email' required id='p_email'>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            Emergency Contact#
+                                    <div class="col-md-4"><label class='form-control-label field-info float-right'>
+                                            Emergency Contact#:
                                         </label></div>
                                     <div class="col-md-8">
                                         <input type='text' class='form-control' name='telephone' id='p_telephone'>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            Contact #
+                                    <div class="col-md-4"><label class='form-control-label field-info float-right'>
+                                            Contact #:
                                         </label></div>
                                     <div class="col-md-8">
                                         <input type='text' class='form-control' name='mobile' required id='p_mobile'>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            Religion
+                                    <div class="col-md-4"><label class='form-control-label field-info float-right'>
+                                            Religion:
                                         </label></div>
                                     <div class="col-md-8">
                                         <select class='form-control' name='religion' required>
@@ -310,8 +334,8 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            Marital Status
+                                    <div class="col-md-4"><label class='form-control-label field-info float-right'>
+                                            Marital Status:
                                         </label></div>
                                     <div class="col-md-8">
                                         <select type='text' class='form-control' name='marital_status' required>
@@ -321,16 +345,16 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            Date Of Appointment
+                                    <div class="col-md-4"><label class='form-control-label field-info float-right'>
+                                            Date Of Appointment:
                                         </label></div>
                                     <div class="col-md-8">
                                         <input type='date' class='form-control' name='doi'>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            Department
+                                    <div class="col-md-4"><label class='form-control-label field-info float-right'>
+                                            Department:
                                         </label></div>
                                     <div class="col-md-8">
                                         <select type='text' class='form-control' name='dept'>
@@ -348,8 +372,8 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            Designation
+                                    <div class="col-md-4"><label class='form-control-label field-info float-right'>
+                                            Designation:
                                         </label></div>
                                     <div class="col-md-8">
                                         <select type='text' class='form-control' name='designation'>
@@ -365,8 +389,8 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            Education
+                                    <div class="col-md-4"><label class='form-control-label field-info float-right'>
+                                            Education:
                                         </label>
                                         <input id='education_input' type="hidden" name='education'>
                                     </div>
@@ -400,8 +424,8 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            Experiences
+                                    <div class="col-md-4"><label class='form-control-label field-info float-right'>
+                                            Experiences:
                                         </label>
                                         <input id='experience_input' type="hidden" name='experience'>
                                     </div>
@@ -433,119 +457,129 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            Employee Code
+                                    <div class="col-md-4"><label class='form-control-label field-info float-right'>
+                                            Employee Code:
                                         </label></div>
                                     <div class="col-md-8">
                                         <input type='number' class='form-control' name='e_code'>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            Basic Salary
+                                    <div class="col-md-4"><label class='form-control-label field-info float-right'>
+                                            Basic Salary:
                                         </label></div>
                                     <div class="col-md-8">
                                         <input type='number' class='form-control' name='basic_salary'>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            Allowance(House Rent)
+                                    <div class="col-md-4"><label class='form-control-label field-info float-right'>
+                                            Allowance(House Rent):
                                         </label></div>
                                     <div class="col-md-8">
                                         <input type='number' class='form-control' name='a_hr'>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            Allowance(Lunch)
+                                    <div class="col-md-4"><label class='form-control-label field-info float-right'>
+                                            Allowance(Lunch):
                                         </label></div>
                                     <div class="col-md-8">
                                         <input type='number' class='form-control' name='a_lunch'>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            Allowance(Mobile Phone)
+                                    <div class="col-md-4"><label class='form-control-label field-info float-right'>
+                                            Allowance(Mobile Phone):
                                         </label></div>
                                     <div class="col-md-8">
                                         <input type='number' class='form-control' name='a_mobile'>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4"><label class='form-control-label'>
-                                            Allowance(Transport)
+                                    <div class="col-md-4"><label class='form-control-label field-info float-right'>
+                                            Allowance(Transport):
                                         </label></div>
                                     <div class="col-md-8">
                                         <input type='number' class='form-control' name='a_transport'>
                                     </div>
                                 </div>
                                 <div class="row">
-                                        <div class="col-md-4"><label class='form-control-label'>
-                                                Deduction(Income Tax)
-                                            </label></div>
-                                        <div class="col-md-8">
-                                            <input type='number' class='form-control' name='d_tax'>
-                                        </div>
+                                    <div class="col-md-4"><label class='form-control-label field-info float-right'>
+                                            Deduction(Income Tax):
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='number' class='form-control' name='d_tax'>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-4"><label class='form-control-label'>
-                                                Deduction(Retention Basic Salary)
-                                            </label></div>
-                                        <div class="col-md-8">
-                                            <input type='number' class='form-control' name='d_retention'>
-                                        </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label field-info float-right'>
+                                            Deduction(Retention Basic Salary):
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='number' class='form-control' name='d_retention'>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-4"><label class='form-control-label'>
-                                                Deduction(Sales)
-                                            </label></div>
-                                        <div class="col-md-8">
-                                            <input type='number' class='form-control' name='d_sales'>
-                                        </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label field-info float-right'>
+                                            Deduction(Sales):
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='number' class='form-control' name='d_sales'>
                                     </div>
-                                    <div class="row">
-                                            <div class="col-md-4"><label class='form-control-label'>
-                                                Additional Package
-                                                </label></div>
-                                            <div class="col-md-8">
-                                                <input type='text' class='form-control' name='a_package'>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                                <div class="col-md-4"><label class='form-control-label'>
-                                                        Hours/week
-                                                    </label></div>
-                                                <div class="col-md-8">
-                                                    <input type='number' class='form-control' name='hpw'>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                    <div class="col-md-4"><label class='form-control-label'>
-                                                            Worked in GEL before?
-                                                        </label></div>
-                                                    <div class="col-md-8">
-                                                        <input type='checkbox'  name='w_b'>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                        <div class="col-md-4"><label class='form-control-label'>
-                                                                Describe Previous Info
-                                                            </label></div>
-                                                        <div class="col-md-8">
-                                                            <textarea  class='form-control' placeholder="Last Appoint Year,Department,Tenure,Reason to left?" name='p_e' rows='4'>
-                                                            </textarea>   
-                                                        </div>
-                                                    </div>  
-                                                    <div class="row">
-                                                            <div class="col-md-4"><label class='form-control-label'>
-                                                                    Reference
-                                                                </label></div>
-                                                            <div class="col-md-8">
-                                                                <input type='text' class='form-control' name='reference'>
-                                                            </div>
-                                                        </div>      
-                                   
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label field-info float-right'>
+                                            Additional Package:
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='text' class='form-control' name='a_package'>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label field-info float-right'>
+                                            Hours/week:
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='number' class='form-control' name='hpw'>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label field-info float-right'>
+                                            Worked in GEL before?:
+                                        </label></div>
+                                    <div class="col-md-8">
+
+                                        <label>
+                                            <input name='w_b' class="with-gap" type="radio" value="Yes" />
+                                            <span>Yes</span>
+                                        </label>
+
+                                        <label>
+                                            <input name='w_b' class="with-gap" type="radio" value="No" />
+                                            <span>No</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label field-info float-right'>
+                                            Describe Previous Info:
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <textarea class='form-control' placeholder="Last Appoint Year,Department,Tenure,Reason to left?"
+                                            name='p_e' rows='4'>
+                                                            </textarea>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"><label class='form-control-label field-info float-right'>
+                                            Reference:
+                                        </label></div>
+                                    <div class="col-md-8">
+                                        <input type='text' class='form-control' name='reference'>
+                                    </div>
+                                </div>
+
                                 <hr>
                                 <div class="row">
                                     <div class="col-md-2">&nbsp;</div>
@@ -561,7 +595,6 @@
                     </div>
 
                 </div>
-                <div class="col-md-2"></div>
             </div>
         </div>
     </div>
@@ -574,7 +607,7 @@
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <script>
         var peoples = [];
@@ -732,15 +765,15 @@
             })
         }
     </script>
-<script>
-    $(document).ready(function () {
-        $('.collapsible').collapsible();
-    });
+    <script>
+        $(document).ready(function () {
+            $('.collapsible').collapsible();
+        });
 
-    $(document).ready(function () {
-        $('.sidenav').sidenav();
-    });
-</script>
+        $(document).ready(function () {
+            $('.sidenav').sidenav();
+        });
+    </script>
 </body>
 
 </html>

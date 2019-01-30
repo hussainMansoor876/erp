@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
         crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/hrm.css">
     <title>Human Resource Management</title>
     <style>
         .row{
@@ -19,117 +20,135 @@
                 display: block;
             }
         }
+        
+        i.icon-blue {
+            color: #004B92;
+        }
+
     </style>
 </head>
 
 <body>
-    <div>
-        <nav>
-            <a data-target="slide-out" class="button-collapse sidenav-trigger btn-flat btn-large waves-effect waves-light"
-                style="background: #EE6E73"><i class="material-icons">dehaze</i></a>
-
-            <h3 style="color: white; text-align: center; padding: 15px 0px">Human Resource Management</h3>
-        </nav>
-
-
-        <ul id="slide-out" class="sidenav">
-            <li>
-                <div class="user-view">
-                    <div class="background">
-                        <img src="https://images.freeimages.com/images/small-previews/4f7/blank-sign-bullet-holes-1447150.jpg">
+        <div>
+                <nav style="background-color: #004b92;">
+                        <a data-target="slide-out" class="button-collapse sidenav-trigger btn-flat btn-large waves-effect waves-light"
+                            style="background-color: #004b92;"><i class="material-icons">dehaze</i></a>
+            
+                        <h3 style="color: white; text-align: center; padding: 15px 0px">Human Resource Management</h3>
+                    </nav>
+    
+            <ul id="slide-out" class="sidenav">
+                <li>
+                    <div class="user-view">
+                        <div class="background">
+                            <img src="https://images.freeimages.com/images/small-previews/4f7/blank-sign-bullet-holes-1447150.jpg">
+                        </div>
+                        <a href="#user"><img class="circle" src="https://images.freeimages.com/images/small-previews/4f7/blank-sign-bullet-holes-1447150.jpg"></a>
+                        <a href="#name"><span class="white-text name">John Doe</span></a>
+                        <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
                     </div>
-                    <a href="#user"><img class="circle" src="https://images.freeimages.com/images/small-previews/4f7/blank-sign-bullet-holes-1447150.jpg"></a>
-                    <a href="#name"><span class="white-text name">John Doe</span></a>
-                    <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
-                </div>
-            </li>
-            <li class="no-padding">
-                <ul class="collapsible">
+                </li>
+                <li class="no-padding">
+                    <ul class="collapsible">
                         <li>
-                                <div class="collapsible-header">
-                                    <a href="employees_list" style="display: block; color: black">Employees Details</a>
-                                </div>
-                            </li>
+                            <div class="collapsible-header">
+                                    <i class="material-icons icon-blue">supervised_user_circle</i>
+                                <a href="employees_list" style="display: block; color: black">Employees Details</a>
+                            </div>
+                        </li>
                         <li>
-                                <div class="collapsible-header">
-                                    <a href="add_applicant" style="display: block; color: black">Add Applicant</a>
-                                </div>
-                            </li>
-                    <li>
-                        <div class="collapsible-header">Add Employees</div>
-                        <div class="collapsible-body">
-                            <a href="add_employee" style="display: block; padding-left: 20px; color: black">Add Staff</a>
-                            <a href="add_labour" style="display: block;  padding-left: 20px; color: black">Add Labour</a>
-                        </div>
-
-
-                    </li>
-                    <li>
-                        <div class="collapsible-header">Letters</div>
-                        <div class="collapsible-body">
-                            <a href="appointment_letter" style="display: block; padding-left: 20px;color: black">Appointment Letter</a>
-                            <a href="contract_letter" style="display: block; padding-left: 20px;color: black">Contract Letter</a>
-                            <a href="confirmation_letter" style="display: block; padding-left: 20px;color: black">Conformation Letter</a>
-                            <a href="supported_docs" style="display: block; padding-left: 20px;color: black">Supported Docs</a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="collapsible-header">
-                            <a href="leaves_applications" style="display: block; color: black">Leaves Application</a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="collapsible-header">
-                            <a href="resignations_info" style="display: block;color: black">Resignation info</a>
-                        </div>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-
-    </div>
-<!-- end of nav -->
-    <div class="container">
-        <div class="jumbotron" style='padding:2em'>
-            <h2 class='text-center'>Human Resource Management</h2>
+                            <div class="collapsible-header">
+                                    <i class="material-icons icon-blue">person_add
+                                        </i>
+                                <a href="add_applicant" style="display: block; color: black">Add Applicant</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header">
+                                <i class="material-icons icon-blue">group_add
+                                    </i>
+                                Add Employees
+                            </div>
+                            <div class="collapsible-body">
+                                 <a href="add_employee" style="display: block; padding-left: 20px; color: black">Add Staff</a>
+                                <a href="add_labour" style="display: block;  padding-left: 20px; color: black">Add Labour</a>
+                            </div>
+    
+    
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons icon-blue">email</i>Letters</div>
+                            <div class="collapsible-body">
+                                <a href="appointment_letter" style="display: block; padding-left: 20px;color: black">Appointment
+                                    Letter</a>
+                                <a href="contract_letter" style="display: block; padding-left: 20px;color: black">Contract
+                                    Letter</a>
+                                <a href="confirmation_letter" style="display: block; padding-left: 20px;color: black">Conformation
+                                    Letter</a>
+                                <a href="supported_docs" style="display: block; padding-left: 20px;color: black">Supported
+                                    Docs</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header">
+                                    <i class="material-icons icon-blue">file_copy</i>
+                                <a href="leaves_applications" style="display: block; color: black">Leaves Application</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header">
+                                    <i class="material-icons icon-blue">call_missed_outgoing</i>
+                                <a href="resignations_info" style="display: block;color: black">Resignation info</a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+    
         </div>
+        <!-- end of nav -->
+                    <div class="container-fluid">
+
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="card">
+                    <div class="card hrm-content-card">
                         <div class="card-header">
                             <h4>Resignations</h4>
                         </div>
                         <div class="card-body">
-                        <div class="input-group mb-3">
-   <div class="input-group-prepend">
-     <span class="input-group-text ">Search By Name , Dept ,email,ext,phone etc</span>
-   </div>
-   <input type="text" class="form-control " placeholder="Search By Name , Dept ,email,ext,phone etc"  onkeyup="search(this,'employees_table')">
- </div>
-                            <table class="table table-light">
-                                <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Dept.</th>
-                                        <th>Designation</th>
-                                        <th>Reason</th>
-                                        <th>Action</th>
-
-                                    </tr>
-                                </thead>
-                                <tbody id='resignations_table'>
-
-                                </tbody>
-                            </table>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control " placeholder="Search By Name , Dept ,email,ext,phone etc"
+                                    onkeyup="search(this,'employees_table')">
+                            </div>
                         </div>
                     </div>
 
                 </div>
             </div>
+            <div class="table-responsive">
+
+                <table class="table table-bordered">
+                    <thead class="thead-light">
+                        <tr class="d-flex text-center">
+                            <th class="col-2">Name</th>
+                            <th class="col-2">Dept.</th>
+                            <th class="col-2">Designation</th>
+                            <th class="col-4">Reason</th>
+                            <th class="col-2">Action</th>
+
+                        </tr>
+                    </thead>
+                    <tbody id='resignations_table'>
+
+                    </tbody>
+                </table>
+            </div>
+
+
         </div>
     </div>
-    
+
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -139,68 +158,68 @@
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        <script>
-            $(document).ready(function () {
-                $('.collapsible').collapsible();
-            });
-        
-            $(document).ready(function () {
-                $('.sidenav').sidenav();
-            });
-        </script>
-        <script>
-    var resignations;
-       function load(){
-           console.log('happening..');
-        var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        resignations = JSON.parse(this.responseText).resignations;
-      let table=document.getElementById('resignations_table');
-      let str='';
-      let resignation_status;
-      resignations.forEach((e)=>{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.collapsible').collapsible();
+        });
 
-        resignation_status =e.status===0? `<button class="btn btn-primary" onClick="resignations_action('`+e._id+`',1)" >Approve</button>
-        <button onClick="resignations_action('`+e._id+`',-1)" class="btn btn-primary">Reject</button>` : e.status===1? `<span>Approved</span>` : `<span>Rejected</span>`;
+        $(document).ready(function () {
+            $('.sidenav').sidenav();
+        });
+    </script>
+    <script>
+        var resignations;
+        function load() {
+            console.log('happening..');
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    resignations = JSON.parse(this.responseText).resignations;
+                    let table = document.getElementById('resignations_table');
+                    let str = '';
+                    let resignation_status;
+                    resignations.forEach((e) => {
 
-       str += `<tr><td>`+e.employee_name+`</td><td>`+e.dept+`</td><td>`+e.designation+`</td><td>`+e.reason+`</td><td>`+resignation_status+`</td></tr>`;
-      });
-      table.innerHTML = str;
-    }
-  };
-  xhttp.open("GET", "./get_resignations_info", true);
-  xhttp.send(); 
-       }
-       load();
-       function resignations_action(id,flag){
-          $.post('./resignations_action',{id,flag},function(data){
-            console.log(data);
-            load();
-          }) 
-       }
-       function search(e,table_id) {
-    var input, filter, found, table, tr, td, i, j;
-    input = e;
-    filter = input.value.toUpperCase();
-    table = document.getElementById(table_id);
-    tr = table.getElementsByTagName("tr");
-    for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td");
-        for (j = 0; j < td.length; j++) {
-            if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
-                found = true;
+                        resignation_status = e.status === 0 ? `<button class="btn btn-primary" onClick="resignations_action('` + e._id + `',1)" >Approve</button>
+        <button onClick="resignations_action('`+ e._id + `',-1)" class="btn btn-primary">Reject</button>` : e.status === 1 ? `<span>Approved</span>` : `<span>Rejected</span>`;
+
+                        str += `<tr class="d-flex"><td class="col-2">` + e.employee_name + `</td><td class="col-2">` + e.dept + `</td><td class="col-2">` + e.designation + `</td><td class="col-4">` + e.reason + `</td><td class="col-2">` + resignation_status + `</td></tr>`;
+                    });
+                    table.innerHTML = str;
+                }
+            };
+            xhttp.open("GET", "./get_resignations_info", true);
+            xhttp.send();
+        }
+        load();
+        function resignations_action(id, flag) {
+            $.post('./resignations_action', { id, flag }, function (data) {
+                console.log(data);
+                load();
+            })
+        }
+        function search(e, table_id) {
+            var input, filter, found, table, tr, td, i, j;
+            input = e;
+            filter = input.value.toUpperCase();
+            table = document.getElementById(table_id);
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td");
+                for (j = 0; j < td.length; j++) {
+                    if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        found = true;
+                    }
+                }
+                if (found) {
+                    tr[i].style.display = "";
+                    found = false;
+                } else {
+                    tr[i].style.display = "none";
+                }
             }
         }
-        if (found) {
-            tr[i].style.display = "";
-            found = false;
-        } else {
-            tr[i].style.display = "none";
-        }
-    }
-}
     </script>
 </body>
 
