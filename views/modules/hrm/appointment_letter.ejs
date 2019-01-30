@@ -1223,11 +1223,10 @@ crossorigin="anonymous"></script>
 <script>
     $(document).ready(function () {
         $('.collapsible').collapsible();
+        $('.sidenav').sidenav();
+
     });
 
-    $(document).ready(function () {
-        $('.sidenav').sidenav();
-    });
 </script>
 
 <script>
@@ -1241,18 +1240,20 @@ crossorigin="anonymous"></script>
     }
     load();
 
-    function printDiv(divName) {
-        var printContents = divName.innerHTML;
-        var originalContents = document.body.innerHTML;
+    // function printDiv(divName) {
+    //     var printContents = divName.innerHTML;
+    //     var originalContents = document.body.innerHTML;
 
-        document.body.innerHTML = printContents;
-        footer.style.display = "block"
+    //     document.body.innerHTML = printContents;
+    //     footer.style.display = "block"
 
-        window.print();
+    //     window.print();
 
-        document.body.innerHTML = originalContents;
-        footer.style.display = "none"
-    }
+    //     document.body.innerHTML = originalContents;
+    //     footer.style.display = "none"
+    //     $('.collapsible').collapsible();
+    //     $('.sidenav').sidenav();
+    // }
 
     function foot(footer) {
         footer.style.display = "none"
@@ -1387,7 +1388,9 @@ crossorigin="anonymous"></script>
 
         document.body.innerHTML = originalContents;
         document.getElementById('ttl').innerHTML = "Appointment Letter - Human Resource Management"
-        document.getElementById(`foot${count + 1}`).style.display = "none"        
+        document.getElementById(`foot${count + 1}`).style.display = "none" 
+        $('.collapsible').collapsible();
+        $('.sidenav').sidenav();       
     }
 </script>
 
